@@ -1,6 +1,35 @@
 ---
 ja:
   activerecord:
+    models:
+      admin_user: 管理者ユーザ
+      student: 学生
+      student_detail: 学生詳細
+      business_category: 業種
+      company: 企業
+      employee: 企業ユーザ
+      employee_detail: 企業ユーザ詳細
+    attributes:
+      student_detail:
+        name: 氏名
+        disable_notification: 通知拒否
+        birthday: 生年月日
+        school_name: 学校・大学名
+        department: 学部・学科
+      business_category:
+        name: 業種名
+      company:
+        name: 企業名
+        company_url: ホームページURL
+        phone_number: 窓口電話番号
+        business_category_id: 業種
+        address: 本社所在地
+        business_description: 事業内容
+        number_of_employee: 従業員数
+        manager_name: 担当者氏名
+        manager_email: 担当者メールアドレス
+      employee_detail:
+        name: 氏名
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

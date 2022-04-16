@@ -1,29 +1,22 @@
-<h2><%= t('.sign_up') %></h2>
+<div style="width: 360px;" class="pages-margin-top mx-auto">
+  <h2 class="text-center mb-4">新規登録(学生)</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= bootstrap_form_with(model: @student, url: student_registration_path, local: true) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= f.email_field :email, autofocus: true %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= f.fields_for :student_detail do |f_student_detail| %>
+  <%= f_student_detail.text_field :name %>
+  <%= f_student_detail.date_field :birthday %>
+  <%= f_student_detail.text_field :school_name %>
+  <%= f_student_detail.text_field :department %>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <%= f.submit "登録", class: "btn btn-primary w-100" %>
+  <% end %>
+  <%= render "devise/shared/links" %>
 
-  <div class="actions">
-    <%= f.submit t('.sign_up') %>
-  </div>
-<% end %>
-
-<%= render "students/shared/links" %>
+</div>
