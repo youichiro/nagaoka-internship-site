@@ -1,7 +1,7 @@
 ja:
   activerecord:
     attributes:
-      user:
+      user: &user_attributes
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -25,9 +25,15 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      student: *user_attributes
+      employee: *user_attributes
+      admin_user: *user_attributes
     models:
       user: ユーザー
-  devise:
+      student: 学生
+      employee: 企業ユーザ
+      admin_user: 管理者ユーザ
+  devise: &devise
     confirmations:
       confirmed: メールアドレスが確認できました。
       new:
@@ -141,3 +147,6 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  students: *devise
+  employees: *devise
+  admin_users: *devise
