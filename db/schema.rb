@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_16_093859) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_16_094047) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +34,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_16_093859) do
     t.index ["confirmation_token"], name: "index_admin_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "employee_details", force: :cascade do |t|
+    t.bigint "employee_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employee_id"], name: "index_employee_details_on_employee_id", unique: true
   end
 
   create_table "employees", force: :cascade do |t|
@@ -92,5 +100,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_16_093859) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "employee_details", "employees"
   add_foreign_key "student_details", "students"
 end
