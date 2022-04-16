@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :admin_users
   devise_for :employees
-  devise_for :students
+  devise_for :students, controllers: {
+    registrations: 'students/registrations'
+  }
 end
