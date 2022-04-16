@@ -1,0 +1,18 @@
+<main>
+  <div class="card">
+    <%= image_tag "top_sample2.jpg", class: "card-img-top img-fluid hero-img" %>
+  </div>
+  <div class="container mt-5 hoge">
+    <h1>インターンシップサイトです！！</h1>
+
+    <% if student_signed_in? %>
+    <p>ログイン中</p>
+    <p> メールアドレス： <%= current_student.email %> </p>
+    <%= link_to "ログアウト", destroy_student_session_path, method: :delete %>
+    <% else %>
+    <p> 現在ログインしていません </p>
+    <%= link_to "ログイン", new_student_session_path, class: 'post' %>
+    <%= link_to "新規登録", new_student_registration_path, class: 'post' %>
+    <% end %>
+  </div>
+</main>
