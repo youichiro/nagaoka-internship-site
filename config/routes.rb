@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   get '/hello', to: 'hello#index'
 
   devise_for :admin_users
-  devise_for :employees
   devise_for :students, controllers: {
     registrations: 'students/registrations',
     sessions: 'students/sessions',
+  }
+  devise_for :employees, controllers: {
+    registrations: 'employees/registrations',
+    sessions: 'employees/sessions',
   }
 end

@@ -1,29 +1,29 @@
-<h2><%= t('.sign_up') %></h2>
+<div style="width: 360px;" class="pages-margin-top mx-auto">
+  <h2 class="text-center mb-4">新規登録(企業向け)</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= bootstrap_form_with(model: @employee, url: employee_registration_path, local: true) do |f| %>
+  <%= f.email_field :email %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <%= f.fields_for :company, @company do |f_company| %>
+  <%= f_company.text_field :name %>
+  <%= f_company.text_field :company_url %>
+  <%= f_company.telephone_field :phone_number %>
+  <%= f_company.collection_select :business_category_id, BusinessCategory.all, :id, :name, { include_blank: "選択してください" } %>
+  <%= f_company.text_field :address %>
+  <%= f_company.text_field :business_description %>
+  <%= f_company.text_field :number_of_employee %>
+  <%= f_company.text_field :manager_name %>
+  <%= f_company.email_field :manager_email %>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+  <%= f.fields_for :employee_detail do |f_employee_detail| %>
+  <%= f_employee_detail.text_field :name %>
+  <% end %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+  <%= f.submit "登録", class: "btn btn-primary w-100" %>
+  <% end %>
+  <%= render "devise/shared/links" %>
 
-  <div class="actions">
-    <%= f.submit t('.sign_up') %>
-  </div>
-<% end %>
-
-<%= render "employees/shared/links" %>
+</div>
