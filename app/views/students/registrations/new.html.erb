@@ -1,9 +1,7 @@
 <div style="width: 360px;" class="pages-margin-top mx-auto">
-  <h2 class="text-center mb-4">新規登録(学生)</h2>
+  <h2 class="text-center mb-4">新規登録</h2>
 
   <%= bootstrap_form_with(model: @student, url: student_registration_path, local: true) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
   <%= f.email_field :email, autofocus: true %>
   <%= f.password_field :password %>
   <%= f.password_field :password_confirmation %>
