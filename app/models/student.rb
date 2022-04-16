@@ -4,4 +4,8 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :timeoutable, :trackable
+
+  has_one :student_detail, dependent: :destroy
+
+  accepts_nested_attributes_for :student_detail
 end
