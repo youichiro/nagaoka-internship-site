@@ -1,6 +1,7 @@
 class Company < ApplicationRecord
   validates :name, presence: true, uniqueness: true, length: { maximum: 100 }
   validates :phone_number, presence: true
+  validates :business_category_id, presence: true
   validates :address, presence: true, length: { maximum: 100 }
   validates :manager_name, presence: true, length: { maximum: 100 }
   validates :manager_email, presence: true
