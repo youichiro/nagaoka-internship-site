@@ -3,8 +3,8 @@
 <%= render @internship %>
 
 <div>
-  <%= link_to "Edit this internship", edit_internship_path(@internship) %> |
-  <%= link_to "Back to internships", internships_path %>
+  <%= link_to "Edit this internship", edit_company_internship_path(@internship) %> |
+  <%= link_to "Back to internships", company_internships_path %>
 
   <%= button_to "Destroy this internship", @internship, method: :delete %>
 </div>

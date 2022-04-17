@@ -1,4 +1,4 @@
-<%= form_with(model: internship) do |form| %>
+<%= form_with(model: internship, url: company_internships_path) do |form| %>
   <% if internship.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(internship.errors.count, "error") %> prohibited this internship from being saved:</h2>

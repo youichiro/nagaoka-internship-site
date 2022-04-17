@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :internships
   root to: 'home#index'
   get '/hello', to: 'hello#index'
 
@@ -15,4 +14,8 @@ Rails.application.routes.draw do
 
   resources :students, only: [:show]
   resources :employees, only: [:show]
+
+  resources :companies do
+    resources :internships
+  end
 end

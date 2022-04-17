@@ -6,9 +6,9 @@
   <% @internships.each do |internship| %>
     <%= render internship %>
     <p>
-      <%= link_to "Show this internship", internship %>
+      <%= link_to "Show this internship", company_internship %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New internship", new_internship_path %>
+<%= link_to "New internship", new_company_internship_path %>
