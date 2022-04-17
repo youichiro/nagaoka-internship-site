@@ -22,6 +22,8 @@
         <li class="nav-item">
           <%- if student_signed_in? %>
           <%= link_to "ログアウト", destroy_student_session_path, method: :delete, class: "btn btn-outline-primary" %>
+          <% elsif employee_signed_in? %>
+          <%= link_to "ログアウト", destroy_employee_session_path, method: :delete, class: "btn btn-outline-primary" %>
           <% else %>
           <%= link_to "ログイン", new_student_session_path, class: "btn btn-outline-primary" %>
           <% end %>
