@@ -8,5 +8,5 @@ class Company < ApplicationRecord
   validates :number_of_employee, numericality: { only_integer: true, greater_than_or_equal_to: 0}
 
   belongs_to :business_category
-  has_many :employees
+  has_many :employees, dependent: :destroy
 end
