@@ -1,6 +1,21 @@
 <div style="width: 360px;" class="pages-margin-top mx-auto">
   <h2 class="text-center mb-4">新規登録(企業向け)</h2>
 
+  <ul class="nav nav-tabs nav-fill mb-4" id="userTypeTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link <%= "active" if resource_name == :student %>" id="student-tab" type="button" role="tab"
+        href="/students/sign_up">
+        学生で登録
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link <%= "active" if resource_name == :employee %>" id="company-tab" type="button" role="tab"
+        href="/employees/sign_up">
+        企業で登録
+      </a>
+    </li>
+  </ul>
+
   <%= bootstrap_form_with(model: @employee, url: employee_registration_path, local: true) do |f| %>
   <%= f.email_field :email %>
   <%= f.password_field :password %>
