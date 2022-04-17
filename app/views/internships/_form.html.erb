@@ -1,0 +1,17 @@
+<%= form_with(model: internship) do |form| %>
+  <% if internship.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(internship.errors.count, "error") %> prohibited this internship from being saved:</h2>
+
+      <ul>
+        <% internship.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

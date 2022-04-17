@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :internships
   root to: 'home#index'
   get '/hello', to: 'hello#index'
 
