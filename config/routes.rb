@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     sessions: 'employees/sessions',
   }
 
+  resources :students, only: [:show]
   resources :employees, only: [:show]
 end

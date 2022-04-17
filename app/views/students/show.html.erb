@@ -1,0 +1,28 @@
+<div class="container" style="max-width: 640px;">
+  <h2 class="h2 my-5">学生情報</h1>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <th><%= t 'activerecord.attributes.student_detail.name' %></th>
+          <td><%= @student.student_detail.name %></td>
+        </tr>
+        <tr>
+          <th><%= t 'activerecord.attributes.student_detail.disable_notification' %></th>
+          <td><%= @student.student_detail.disable_notification %></td>
+        </tr>
+        <tr>
+          <th><%= t 'activerecord.attributes.student_detail.birthday' %></th>
+          <td><%= @student.student_detail.birthday %></td>
+        </tr>
+        <tr>
+          <th><%= t 'activerecord.attributes.student_detail.school_name' %></th>
+          <td><%= @student.student_detail.school_name %></td>
+        </tr>
+        <tr>
+          <th><%= t 'activerecord.attributes.student_detail.department' %></th>
+          <td><%= @student.student_detail.department %></td>
+        </tr>
+      </tbody>
+    </table>
+</div>
