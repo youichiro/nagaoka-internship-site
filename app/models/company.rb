@@ -9,4 +9,5 @@ class Company < ApplicationRecord
 
   belongs_to :business_category
   has_many :employees, dependent: :destroy
+  has_many :internships, dependent: :destroy
 end
