@@ -9,6 +9,7 @@ ja:
       company: 企業
       employee: 企業ユーザ
       employee_detail: 企業ユーザ詳細
+      internship: インターンシップ
     attributes:
       student_detail:
         name: 氏名
@@ -30,6 +31,17 @@ ja:
         manager_email: 担当者メールアドレス
       employee_detail:
         name: 氏名
+      internship:
+        title: タイトル
+        description: 内容
+        start_date: 開始日
+        end_date: 終了日
+        deadline: 申し込み締切
+        location: 実施場所
+        target: 対象学生
+        video_url: 紹介動画URL
+        acceptable_number: 受け入れ可能人数
+        others: その他
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

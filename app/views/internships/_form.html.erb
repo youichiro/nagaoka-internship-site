@@ -1,17 +1,15 @@
-<%= form_with(model: internship, url: company_internships_path) do |form| %>
-  <% if internship.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(internship.errors.count, "error") %> prohibited this internship from being saved:</h2>
+<%= bootstrap_form_with(model: internship, url: company_internships_path, local: true) do |f| %>
+<%= f.text_field :title %>
+<%= f.text_area :description %>
+<%= f.date_field :start_date %>
+<%= f.date_field :end_date %>
+<%= f.date_field :deadline %>
+<%= f.text_field :location %>
+<%= f.text_field :target %>
+<%= f.url_field :video_url %>
+<%= f.url_field :thumbnail_url %>
+<%= f.number_field :acceptable_number %>
+<%= f.text_area :others %>
 
-      <ul>
-        <% internship.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<%= f.submit "登録", class: "btn btn-primary w-100" %>
 <% end %>

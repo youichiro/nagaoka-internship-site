@@ -28,7 +28,7 @@
   <%= f_company.collection_select :business_category_id, BusinessCategory.all, :id, :name, { include_blank: "選択してください" } %>
   <%= f_company.text_field :address %>
   <%= f_company.text_field :business_description %>
-  <%= f_company.text_field :number_of_employee %>
+  <%= f_company.number_field :number_of_employee %>
   <%= f_company.text_field :manager_name %>
   <%= f_company.email_field :manager_email %>
   <% end %>
