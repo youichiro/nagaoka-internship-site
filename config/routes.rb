@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     registrations: 'employees/registrations',
     sessions: 'employees/sessions',
   }
+
+  resources :employees, only: [:show]
 end
