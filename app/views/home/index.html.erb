@@ -4,18 +4,5 @@
   </div>
   <div class="container mt-5 hoge">
     <h1>インターンシップサイトです！！</h1>
-
-    <% if student_signed_in? || employee_signed_in? %>
-    <p>ログイン中</p>
-    <p> メールアドレス： <%= current_student&.email || current_employee&.email %> </p>
-    <%= link_to "ログアウト(学生)", destroy_student_session_path, method: :delete %>
-    <%= link_to "ログアウト(企業)", destroy_employee_session_path, method: :delete %>
-    <% else %>
-    <p> 現在ログインしていません </p>
-    <%= link_to "ログイン(学生)", new_student_session_path, class: 'post' %>
-    <%= link_to "ログイン(企業)", new_employee_session_path, class: 'post' %>
-    <%= link_to "新規登録(学生)", new_student_registration_path, class: 'post' %>
-    <%= link_to "新規登録(企業)", new_employee_registration_path, class: 'post' %>
-    <% end %>
   </div>
 </main>
