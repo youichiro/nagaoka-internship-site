@@ -6,7 +6,8 @@
   <% @internships.each do |internship| %>
     <%= render internship %>
     <p>
-      <%= link_to "Show this internship", company_internship %>
+      <%= internship.title %>
+      <%= link_to "Show this internship", company_internship_path(id: internship.id) %>
     </p>
   <% end %>
 </div>

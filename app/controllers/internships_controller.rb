@@ -21,10 +21,12 @@ class InternshipsController < ApplicationController
 
   # POST /internships
   def create
-    @internship = Internship.new(internship_params)
+    a = internship_params
+    a[:company_id] = params[:company_id].to_i
+    @internship = Internship.new(a)
 
     if @internship.save
-      redirect_to @internship, notice: "Internship was successfully created."
+      redirect_to company_internships_path, notice: "Internship was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -53,6 +55,9 @@ class InternshipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def internship_params
-      params.fetch(:internship, {})
+      params.require(:internship).permit(
+        :title, :description, :start_date, :end_date, :deadline,
+        :location, :target, :video_url, :thumbnail_url, :acceptable_number, :others, :company_id
+      )
     end
 end
