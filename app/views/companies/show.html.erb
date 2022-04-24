@@ -1,10 +1,48 @@
 <div style="width: 360px;" class="pages-margin-top mx-auto">
 
-<h1>企業情報詳細</h1>
+  <h1>企業情報詳細</h1>
 
-<div>
-  <%= @company.name %>
+  <table class="table">
+    <tbody>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.name' %></th>
+        <td><%= @company.name %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.company_url' %></th>
+        <td><%= @company.company_url %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.phone_number' %></th>
+        <td><%= @company.phone_number %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.business_category.name' %></th>
+        <td><%= @company.business_category.name %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.address' %></th>
+        <td><%= @company.address %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.business_description' %></th>
+        <td><%= @company.business_description %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.number_of_employee' %></th>
+        <td><%= @company.number_of_employee %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.manager_name' %></th>
+        <td><%= @company.manager_name %></td>
+      </tr>
+      <tr>
+        <th><%= t 'activerecord.attributes.company.manager_email' %></th>
+        <td><%= @company.manager_email %></td>
+      </tr>
+    </tbody>
+  </table>
+
   <%= link_to "編集する", edit_company_path(@company) %> |
   <%= link_to "戻る", companies_path %>
-</div>
 </div>

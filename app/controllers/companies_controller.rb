@@ -8,7 +8,6 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    console
     @company = Company.find(params[:id])
   end
 
