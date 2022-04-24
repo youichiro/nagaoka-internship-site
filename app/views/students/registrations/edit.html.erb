@@ -7,6 +7,13 @@
   <%= f.password_field :password_confirmation %>
   <%= f.password_field :current_password %>
 
+  <%= f.fields_for :student_detail, @student.student_detail do |f_student_detail| %>
+  <%= f_student_detail.text_field :name %>
+  <%= f_student_detail.date_field :birthday %>
+  <%= f_student_detail.text_field :school_name %>
+  <%= f_student_detail.text_field :department %>
+  <% end %>
+
   <%= f.submit "変更する", class: "btn btn-primary w-100" %>
   <% end %>
 
