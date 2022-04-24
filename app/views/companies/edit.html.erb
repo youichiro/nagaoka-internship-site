@@ -1,0 +1,24 @@
+<div style="width: 360px;" class="pages-margin-top mx-auto">
+
+<h1>企業情報編集</h1>
+
+<%= bootstrap_form_with(model: @company, url: company_path, method: :put, local: true) do |f| %>
+<%= f.text_field :name %>
+<%= f.text_field :company_url %>
+<%= f.telephone_field :phone_number %>
+<%= f.collection_select :business_category_id, BusinessCategory.all, :id, :name, { include_blank: "選択してください" } %>
+<%= f.text_field :address %>
+<%= f.text_field :business_description %>
+<%= f.number_field :number_of_employee %>
+<%= f.text_field :manager_name %>
+<%= f.email_field :manager_email %>
+
+<%= f.submit "登録", class: "btn btn-primary w-100" %>
+<% end %>
+
+<div>
+  <%= link_to "詳細に戻る", @company %> |
+  <%= link_to "一覧に戻る", companies_path %>
+</div>
+
+</div>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :students, only: [:show]
   resources :employees, only: [:show]
 
-  resources :companies, only: [:index, :show] do
+  resources :companies, only: [:index, :show, :edit, :update] do
     resources :internships
   end
 end

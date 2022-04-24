@@ -1,25 +1,20 @@
 class InternshipsController < ApplicationController
-  before_action :set_internship, only: %i[ show edit update destroy ]
-
-  # GET /internships
   def index
     @internships = Internship.all
   end
 
-  # GET /internships/1
   def show
+    @internship = Internship.find(params[:id])
   end
 
-  # GET /internships/new
   def new
     @internship = Internship.new
   end
 
-  # GET /internships/1/edit
   def edit
+    @internship = Internship.find(params[:id])
   end
 
-  # POST /internships
   def create
     a = internship_params
     a[:company_id] = params[:company_id].to_i
@@ -32,8 +27,8 @@ class InternshipsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /internships/1
   def update
+    @internship = Internship.find(params[:id])
     if @internship.update(internship_params)
       redirect_to @internship, notice: "Internship was successfully updated."
     else
@@ -41,23 +36,18 @@ class InternshipsController < ApplicationController
     end
   end
 
-  # DELETE /internships/1
   def destroy
+    @internship = Internship.find(params[:id])
     @internship.destroy
     redirect_to internships_url, notice: "Internship was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_internship
-      @internship = Internship.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def internship_params
-      params.require(:internship).permit(
-        :title, :description, :start_date, :end_date, :deadline,
-        :location, :target, :video_url, :thumbnail_url, :acceptable_number, :others, :company_id
-      )
-    end
+  def internship_params
+    params.require(:internship).permit(
+      :title, :description, :start_date, :end_date, :deadline,
+      :location, :target, :video_url, :thumbnail_url, :acceptable_number, :others, :company_id
+    )
+  end
 end
