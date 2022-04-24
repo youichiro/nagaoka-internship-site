@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="d-flex gap-5 my-5">
+    <div class="list-group">
+      <%= link_to "企業情報", employee_path(current_employee.id), class: "list-group-item list-group-item-action #{current_page?( employee_path(current_employee.id)) ? 'active' : ''}" %>
+      <%= link_to "ユーザ情報の編集", edit_employee_registration_path, class: "list-group-item list-group-item-action #{current_page?(edit_employee_registration_path) ? 'active' : ''}" %>
+      <%= link_to "企業情報の編集", edit_company_path(@company || @employee.company), class: "list-group-item list-group-item-action #{current_page?(edit_company_path(@company || @employee.company)) ? 'active' : ''}" %>
+      <a class="list-group-item list-group-item-action">インターンシップの登録</a>
+    </div>
+    <%= yield %>
+  </div>
+</div>

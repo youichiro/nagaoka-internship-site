@@ -1,6 +1,7 @@
-<div class="container" style="max-width: 640px;">
-  <h2 class="h2 my-5">企業ユーザ情報</h2>
+<%= render 'partial/employee_mypage_layout' do %>
 
+<div class="w-100">
+  <h2 class="h2">企業ユーザ情報</h2>
   <table class="table">
     <tbody>
       <tr>
@@ -45,7 +46,5 @@
       </tr>
     </tbody>
   </table>
-
-  <%= link_to "企業ユーザ情報を編集する", edit_employee_registration_path, class: "btn btn-outline-primary my-3" %>
-  <%= link_to "企業情報を編集する", edit_company_path(@employee.company), class: "btn btn-outline-primary my-3" %>
 </div>
+<% end %>

@@ -1,4 +1,5 @@
-<div style="width: 360px;" class="pages-margin-top mx-auto">
+<%= render 'partial/employee_mypage_layout' do %>
+<div style="width: 480px; margin: 0 auto;">
 
 <h1>企業情報編集</h1>
 
@@ -16,9 +17,5 @@
 <%= f.submit "更新する", class: "btn btn-primary w-100" %>
 <% end %>
 
-<div>
-  <%= link_to "戻る", :back %> |
-  <%= link_to "一覧に戻る", companies_path %>
 </div>
-
-</div>
+<% end %>
