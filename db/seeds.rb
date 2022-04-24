@@ -4,12 +4,12 @@ BusinessCategory.insert_all([
   { name: '自動車販売' },
 ])
 
-student = Student.create!(
+student = Student.create(
   email: 'admin1@gmail.com',
   password: 'password',
   confirmed_at: Time.zone.now,
 )
-StudentDetail.create!(
+StudentDetail.create(
   student: student,
   name: 'テスト生徒ユーザ',
   disable_notification: false,
@@ -18,7 +18,7 @@ StudentDetail.create!(
   department: 'ほげ学部',
 )
 
-company = Company.create!(
+company = Company.create(
   name: '株式会社ほげ',
   company_url: 'https://hoge.com',
   phone_number: '0000-00-0000',
@@ -29,13 +29,13 @@ company = Company.create!(
   manager_name: 'youichiro',
   manager_email: 'admin@gmail.com',
 )
-employee = Employee.create!(
+employee = Employee.create(
   email: 'admin2@gmail.com',
   password: 'password',
   confirmed_at: Time.zone.now,
   company: company,
 )
-EmployeeDetail.create!(
+EmployeeDetail.create(
   employee: employee,
   name: 'テスト企業ユーザ',
 )
