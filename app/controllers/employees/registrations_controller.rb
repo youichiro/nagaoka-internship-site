@@ -67,9 +67,10 @@ class Employees::RegistrationsController < Devise::RegistrationsController
   end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    resource.company.destroy
+    super
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
