@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>企業情報一覧</h1>
+
+<div>
+  <% @companies.each do |company| %>
+  <p>
+    <%= company.name %>
+    <%= link_to "詳細", company_path(company) %>
+  </p>
+  <% end %>
+</div>
