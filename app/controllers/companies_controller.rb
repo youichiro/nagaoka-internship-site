@@ -14,10 +14,8 @@ class CompaniesController < ApplicationController
   def update
     @company = Company.find(params[:id])
     if @company.update(company_params)
-      logger.debug 'AAA'
       redirect_to @company, notice: "Company was successfully updated."
     else
-      logger.debug 'BBB'
       render :edit, status: :unprocessable_entity
     end
   end
