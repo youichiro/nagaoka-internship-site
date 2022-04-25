@@ -1,50 +1,47 @@
 <%= render 'partial/employee_mypage_layout' do %>
-
-<div class="w-100">
-  <h2 class="h2">企業ユーザ情報</h2>
-  <table class="table">
-    <tbody>
-      <tr>
-        <th><%= t 'activerecord.attributes.employee_detail.name' %></th>
-        <td><%= @employee.employee_detail.name %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.name' %></th>
-        <td><%= @employee.company.name %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.company_url' %></th>
-        <td><%= @employee.company.company_url %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.phone_number' %></th>
-        <td><%= @employee.company.phone_number %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.business_category.name' %></th>
-        <td><%= @employee.company.business_category.name %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.address' %></th>
-        <td><%= @employee.company.address %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.business_description' %></th>
-        <td><%= @employee.company.business_description %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.number_of_employee' %></th>
-        <td><%= @employee.company.number_of_employee %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.manager_name' %></th>
-        <td><%= @employee.company.manager_name %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.manager_email' %></th>
-        <td><%= @employee.company.manager_email %></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<h2 class="text-center mb-4">企業ユーザ情報</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= t 'activerecord.attributes.employee_detail.name' %></th>
+      <td><%= @employee.employee_detail.name %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.name' %></th>
+      <td><%= @employee.company.name %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.company_url' %></th>
+      <td><%= @employee.company.company_url %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.phone_number' %></th>
+      <td><%= @employee.company.phone_number %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.business_category.name' %></th>
+      <td><%= @employee.company.business_category.name %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.address' %></th>
+      <td><%= @employee.company.address %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.business_description' %></th>
+      <td><%= @employee.company.business_description %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.number_of_employee' %></th>
+      <td><%= @employee.company.number_of_employee %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.manager_name' %></th>
+      <td><%= @employee.company.manager_name %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.company.manager_email' %></th>
+      <td><%= @employee.company.manager_email %></td>
+    </tr>
+  </tbody>
+</table>
 <% end %>

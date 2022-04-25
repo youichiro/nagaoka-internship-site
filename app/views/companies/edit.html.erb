@@ -1,7 +1,5 @@
 <%= render 'partial/employee_mypage_layout' do %>
-<div style="width: 480px; margin: 0 auto;">
-
-<h1>企業情報編集</h1>
+<h2 class="text-center mb-4">企業情報編集</h2>
 
 <%= bootstrap_form_with(model: @company, url: company_path, method: :put, local: true) do |f| %>
 <%= f.text_field :name %>
@@ -17,5 +15,4 @@
 <%= f.submit "更新する", class: "btn btn-primary w-100" %>
 <% end %>
 
-</div>
 <% end %>
