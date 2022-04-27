@@ -1,24 +1,29 @@
 class InternshipsController < ApplicationController
   def index
     @internships = Internship.all
+    @company = Company.find(params[:company_id])
   end
 
   def show
     @internship = Internship.find(params[:id])
+    @company = @internship.company
   end
 
   def new
     @internship = Internship.new
+    @company = Company.find(params[:company_id])
   end
 
   def edit
     @internship = Internship.find(params[:id])
+    @company = @internship.company
   end
 
   def create
     a = internship_params
     a[:company_id] = params[:company_id].to_i
     @internship = Internship.new(a)
+    @company = Company.find(params[:company_id])
 
     if @internship.save
       redirect_to company_internships_path, notice: "Internship was successfully created."
@@ -30,7 +35,7 @@ class InternshipsController < ApplicationController
   def update
     @internship = Internship.find(params[:id])
     if @internship.update(internship_params)
-      redirect_to @internship, notice: "Internship was successfully updated."
+      redirect_to company_internship_path(id: @internship.id), notice: "Internship was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +44,7 @@ class InternshipsController < ApplicationController
   def destroy
     @internship = Internship.find(params[:id])
     @internship.destroy
-    redirect_to internships_url, notice: "Internship was successfully destroyed."
+    redirect_to company_internships_url(@internship.company), notice: "Internship was successfully destroyed."
   end
 
   private

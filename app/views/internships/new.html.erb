@@ -1,8 +1,6 @@
-<div style="width: 360px;" class="pages-margin-top mx-auto">
+<%= render 'partial/employee_mypage_layout' do %>
 <h2 class="text-center mb-4">インターンシップ登録</h2>
 
-<%= render "form", internship: @internship %>
+<%= render "form", internship: @internship, url: company_internships_path, submit_label: '作成する' %>
 
-<%= link_to "インターンシップ一覧に戻る", company_internships_path %>
-
-</div>
+<% end %>

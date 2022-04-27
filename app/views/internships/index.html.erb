@@ -1,15 +1,10 @@
-<p style="color: green"><%= notice %></p>
+<%= render 'partial/employee_mypage_layout' do %>
+<h2 class="text-center mb-4">インターンシップ一覧</h2>
 
-<h1>Internships</h1>
-
-<div id="internships">
+<ul class="list-group list-group-flush">
   <% @internships.each do |internship| %>
-    <%= render internship %>
-    <p>
-      <%= internship.title %>
-      <%= link_to "Show this internship", company_internship_path(id: internship.id) %>
-    </p>
+  <%= link_to internship.title, company_internship_path(id: internship.id), class: "list-group-item list-group-item-action" %>
   <% end %>
-</div>
+</ul>
 
-<%= link_to "New internship", new_company_internship_path %>
+<% end %>

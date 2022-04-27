@@ -1,4 +1,4 @@
-<%= bootstrap_form_with(model: internship, url: company_internships_path, local: true) do |f| %>
+<%= bootstrap_form_with(model: internship, url: url, local: true) do |f| %>
 <%= f.text_field :title %>
 <%= f.text_area :description %>
 <%= f.date_field :start_date %>
@@ -11,5 +11,5 @@
 <%= f.number_field :acceptable_number %>
 <%= f.text_area :others %>
 
-<%= f.submit "登録", class: "btn btn-primary w-100" %>
+<%= f.submit submit_label, class: "btn btn-primary w-100" %>
 <% end %>
