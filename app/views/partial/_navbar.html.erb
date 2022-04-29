@@ -20,7 +20,9 @@
           <a class="nav-link" href="#">お問い合わせ</a>
         </li>
         <li class="nav-item">
-          <% resource_name = student_signed_in? ? 'student' : employee_signed_in? ? 'employee': nil %>
+          <% current_user = current_student || current_employee || current_admin_user %>
+          <% resource_name = current_user&.model_name&.singular %>
+
           <% if resource_name.present? %>
           <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="navbarDropdown1" data-bs-toggle="dropdown"
