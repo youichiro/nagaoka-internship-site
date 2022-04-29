@@ -22,4 +22,17 @@ Rails.application.routes.draw do
   resources :companies, only: [:index, :show, :edit, :update] do
     resources :internships, controller: 'companies/internships'
   end
+
+  namespace :admin do
+    resources :companies
+    resources :student_details
+    resources :business_categories
+    resources :internships
+    resources :employee_details
+    resources :employees
+    resources :students
+    resources :admin_users
+
+    root to: "business_categories#index"
+  end
 end
