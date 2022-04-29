@@ -4,6 +4,12 @@ BusinessCategory.insert_all([
   { name: '自動車販売' },
 ])
 
+AdminUser.create(
+  email: 'admin@gmail.com',
+  password: 'password',
+  confirmed_at: Time.zone.now,
+)
+
 student = Student.create(
   email: 'admin1@gmail.com',
   password: 'password',
