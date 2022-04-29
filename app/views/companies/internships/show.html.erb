@@ -1,61 +1,6 @@
 <%= render 'partial/employee_mypage_layout' do %>
-<h3 class="mb-4"><%= @internship.title %></h3>
 
-<div class="text-center my-3">
-  <% if @internship.thumbnail.representable? %>
-  <%= image_tag @internship.thumbnail.representation(resize_to_limit: [800, 800]), class: 'w-100' %>
-  <% elsif %>
-  <%= image_tag "no_image.png", class: 'w-100' %>
-  <% end %>
-</div>
-
-<table class="table">
-  <tbody>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.description' %></th>
-      <td><%= @internship.description %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.start_date' %></th>
-      <td><%= @internship.start_date %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.end_date' %></th>
-      <td><%= @internship.end_date %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.deadline' %></th>
-      <td><%= @internship.deadline %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.location' %></th>
-      <td><%= @internship.location %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.target' %></th>
-      <td><%= @internship.target %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.acceptable_number' %></th>
-      <td><%= @internship.acceptable_number %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.others' %></th>
-      <td><%= @internship.others %></td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="text-center my-3">
-  <% if @internship.video.representable? %>
-  <%= video_tag rails_blob_path(@internship.video), controls: true, class: 'w-100' %>
-  <% elsif %>
-  <%= link_to rails_blob_path(@internship.video, disposition: "attachment") do %>
-  <p>動画をダウンロード</p>
-  <% end %>
-  <% end %>
-</div>
-
+<%= render 'partial/internship_detail', internship: @internship %>
 
 <div class="d-flex justify-content-between">
   <%= link_to "戻る", company_internships_path(@company) %>
