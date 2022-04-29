@@ -1,5 +1,6 @@
 class Companies::InternshipsController < ApplicationController
   before_action :authenticate_employee!
+  before_action :validate_company!
 
   def index
     @internships = Internship.all
@@ -50,6 +51,10 @@ class Companies::InternshipsController < ApplicationController
   end
 
   private
+
+  def validate_company!
+    redirect_to root_path, alert: "権限がありません" if params[:company_id].to_i != current_employee.company.id
+  end
 
   def internship_params
     params.require(:internship).permit(

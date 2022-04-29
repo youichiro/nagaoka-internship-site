@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_employee!, only: [:edit, :update]
+  before_action :set_company, only: [:edit, :update]
 
   def index
     @companies = Company.all
@@ -10,19 +11,22 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    @company = Company.find(params[:id])
   end
 
   def update
-    @company = Company.find(params[:id])
     if @company.update(company_params)
-      redirect_to @company, notice: "Company was successfully updated."
+      redirect_to employee_path(current_employee), notice: "Company was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   private
+
+  def set_company
+    redirect_to root_path, alert: "権限がありません" if params[:id].to_i != current_employee.company.id
+    @company = Company.find(current_employee.company.id)
+  end
 
   def company_params
     params.require(:company).permit(
