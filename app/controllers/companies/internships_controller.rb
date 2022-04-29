@@ -1,4 +1,6 @@
 class Companies::InternshipsController < ApplicationController
+  before_action :authenticate_employee!
+
   def index
     @internships = Internship.all
     @company = Company.find(params[:company_id])

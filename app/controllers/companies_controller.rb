@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_employee!, only: [:edit, :update]
+
   def index
     @companies = Company.all
   end
