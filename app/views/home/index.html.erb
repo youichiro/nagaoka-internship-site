@@ -2,27 +2,17 @@
   <div class="card">
     <%= image_tag "top_sample2.jpg", class: "card-img-top img-fluid hero-img" %>
   </div>
-  <div class="container mt-5 hoge">
+  <div class="container mt-5">
     <section class="section">
       <h3 class="section-title mb-4 p-2">インターンシップ情報</h3>
-      <div class="row row-cols-3 g-2">
-        <% @internships.each do |internship| %>
-        <div class="col card p-3 border-0">
-          <% if internship.thumbnail.representable? %>
-          <%= link_to image_tag(internship.thumbnail.representation(resize_to_limit: [800, 800]), class: "card-img-top w-100"), internship, class: "ratio ratio-16x9" %>
-          <% elsif %>
-          <%= image_tag "no_image.png", class: 'w-100' %>
-          <% end %>
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= link_to internship.title, internship %>
-            </h5>
-            <p class="card-text">aaa</p>
-          </div>
-        </div>
-        <% end %>
-      </div>
+      <%= render 'partial/internships', internships: @internships %>
       <%= link_to "全て見る", internships_path %>
+    </section>
+
+    <section class="section">
+      <h3 class="section-title mb-4 p-2">講座一覧</h3>
+      <%= render 'partial/courses', courses: @courses %>
+      <%= link_to "全て見る", courses_path %>
     </section>
   </div>
 </main>
