@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_29_173559) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_29_174252) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -69,6 +69,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_173559) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_announcement_categories_on_name", unique: true
+  end
+
+  create_table "announcements", force: :cascade do |t|
+    t.bigint "announcement_category_id", null: false
+    t.string "title", null: false
+    t.text "contents", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["announcement_category_id"], name: "index_announcements_on_announcement_category_id"
   end
 
   create_table "business_categories", force: :cascade do |t|
@@ -194,6 +203,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_173559) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "announcements", "announcement_categories"
   add_foreign_key "companies", "business_categories"
   add_foreign_key "employee_details", "employees"
   add_foreign_key "employees", "companies"
