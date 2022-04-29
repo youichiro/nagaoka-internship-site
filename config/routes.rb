@@ -24,14 +24,14 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :companies
+    resources :admin_users
+    resources :students
     resources :student_details
     resources :business_categories
-    resources :internships
-    resources :employee_details
+    resources :companies
     resources :employees
-    resources :students
-    resources :admin_users
+    resources :employee_details
+    resources :internships
 
     root to: "business_categories#index"
   end
