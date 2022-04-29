@@ -4,4 +4,5 @@ class Internship < ApplicationRecord
 
   belongs_to :company
   has_one_attached :thumbnail
+  has_one_attached :video
 end

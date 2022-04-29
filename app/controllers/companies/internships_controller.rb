@@ -52,7 +52,7 @@ class Companies::InternshipsController < ApplicationController
   def internship_params
     params.require(:internship).permit(
       :title, :description, :start_date, :end_date, :deadline,
-      :location, :target, :video_url, :thumbnail_url, :thumbnail, :acceptable_number, :others, :company_id
+      :location, :target, :video_url, :thumbnail, :video, :acceptable_number, :others, :company_id
     )
   end
 end

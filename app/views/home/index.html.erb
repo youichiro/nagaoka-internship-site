@@ -6,7 +6,6 @@
     <section class="section">
       <h3 class="section-title mb-4 p-2">インターンシップ情報</h3>
       <div class="row row-cols-3 g-2">
-
         <% @internships.each do |internship| %>
         <div class="col card p-3 border-0">
           <% if internship.thumbnail.representable? %>
@@ -22,8 +21,8 @@
           </div>
         </div>
         <% end %>
-
       </div>
+      <%= link_to "全て見る", internships_path %>
     </section>
   </div>
 </main>
