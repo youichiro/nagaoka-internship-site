@@ -36,8 +36,12 @@
       <td><%= @internship.video_url %></td>
     </tr>
     <tr>
-      <th><%= t 'activerecord.attributes.internship.thumbnail_url' %></th>
-      <td><%= @internship.thumbnail_url %></td>
+      <th><%= t 'activerecord.attributes.internship.thumbnail' %></th>
+      <td>
+        <% if @internship.thumbnail.representable? %>
+        <%= image_tag @internship.thumbnail.representation(resize_to_limit: [100, 100]) %>
+        <% end %>
+      </td>
     </tr>
     <tr>
       <th><%= t 'activerecord.attributes.internship.acceptable_number' %></th>

@@ -3,4 +3,5 @@ class Internship < ApplicationRecord
   # validates :end_date, comparison: { greater_than: :start_date }
 
   belongs_to :company
+  has_one_attached :thumbnail
 end

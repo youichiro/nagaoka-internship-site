@@ -40,6 +40,7 @@ ja:
         location: 実施場所
         target: 対象学生
         video_url: 紹介動画URL
+        thumbnail: サムネイル
         acceptable_number: 受け入れ可能人数
         others: その他
     errors:
