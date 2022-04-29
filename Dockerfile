@@ -1,7 +1,7 @@
 FROM ruby:3.1.2
 
 RUN apt-get update -qq \
-  && apt-get install -y vim nodejs postgresql-client npm libvips libvips-dev \
+  && apt-get install -y vim nodejs postgresql-client npm libvips libvips-dev ffmpeg \
   && rm -rf /var/lib/apt/lists/* \
   && npm install --global yarn
 
