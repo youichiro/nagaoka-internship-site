@@ -14,8 +14,10 @@ Rails.application.routes.draw do
 
   resources :students, only: [:show]
   resources :employees, only: [:show]
+  resources :internships, only: [:show]
 
   resources :companies, only: [:index, :show, :edit, :update] do
     resources :internships, controller: 'companies/internships'
   end
+
 end
