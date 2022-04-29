@@ -9,10 +9,8 @@ class InternshipDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     company: Field::BelongsTo,
-    thumbnail_attachment: Field::HasOne,
-    thumbnail_blob: Field::HasOne,
-    video_attachment: Field::HasOne,
-    video_blob: Field::HasOne,
+    video: Field::ActiveStorage.with_options(index_display_preview: false),
+    thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
@@ -21,8 +19,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     deadline: Field::Date,
     location: Field::String,
     target: Field::String,
-    video_url: Field::String,
-    thumbnail_url: Field::String,
     acceptable_number: Field::Number,
     others: Field::Text,
     created_at: Field::DateTime,
@@ -35,20 +31,15 @@ class InternshipDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
+    id
     company
-    thumbnail_attachment
-    thumbnail_blob
-    video_attachment
+    thumbnail
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     company
-    thumbnail_attachment
-    thumbnail_blob
-    video_attachment
-    video_blob
     id
     title
     description
@@ -57,8 +48,8 @@ class InternshipDashboard < Administrate::BaseDashboard
     deadline
     location
     target
-    video_url
-    thumbnail_url
+    video
+    thumbnail
     acceptable_number
     others
     created_at
@@ -70,10 +61,6 @@ class InternshipDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     company
-    thumbnail_attachment
-    thumbnail_blob
-    video_attachment
-    video_blob
     title
     description
     start_date
@@ -81,8 +68,8 @@ class InternshipDashboard < Administrate::BaseDashboard
     deadline
     location
     target
-    video_url
-    thumbnail_url
+    video
+    thumbnail
     acceptable_number
     others
   ].freeze

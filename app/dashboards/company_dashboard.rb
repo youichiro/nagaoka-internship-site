@@ -11,8 +11,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     business_category: Field::BelongsTo,
     employees: Field::HasMany,
     internships: Field::HasMany,
-    video_attachment: Field::HasOne,
-    video_blob: Field::HasOne,
+    video: Field::ActiveStorage.with_options(index_display_preview: false),
     id: Field::Number,
     name: Field::String,
     company_url: Field::String,
@@ -35,7 +34,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     business_category
     employees
     internships
-    video_attachment
+    video
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -44,8 +43,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     business_category
     employees
     internships
-    video_attachment
-    video_blob
+    video
     id
     name
     company_url
@@ -66,8 +64,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     business_category
     employees
     internships
-    video_attachment
-    video_blob
+    video
     name
     company_url
     phone_number
