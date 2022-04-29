@@ -31,9 +31,15 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
               <li>
+                <% if resource_name != 'admin_user' %>
                 <%= link_to "マイページ", send("#{resource_name}_path", send("current_#{resource_name}").id), class: "dropdown-item" %>
+                <% elsif %>
+                <%= link_to "管理者画面", '/admin', class: "dropdown-item" %>
+                <% end %>
               </li>
-              <li><%= link_to "ログアウト", send("destroy_#{resource_name}_session_path"), method: :delete, class: "dropdown-item" %></li>
+              <li>
+                <%= link_to "ログアウト", send("destroy_#{resource_name}_session_path"), method: :delete, class: "dropdown-item" %>
+              </li>
             </ul>
           </div>
           <% else %>
