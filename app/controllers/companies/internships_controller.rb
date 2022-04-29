@@ -1,4 +1,4 @@
-class InternshipsController < ApplicationController
+class Companies::InternshipsController < ApplicationController
   def index
     @internships = Internship.all
     @company = Company.find(params[:company_id])

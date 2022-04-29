@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   resources :employees, only: [:show]
 
   resources :companies, only: [:index, :show, :edit, :update] do
-    resources :internships
+    resources :internships, controller: 'companies/internships'
   end
 end
