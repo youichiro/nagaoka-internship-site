@@ -1,12 +1,14 @@
 <%= render 'partial/employee_mypage_layout' do %>
-<h2 class="text-center mb-4">インターンシップ詳細</h2>
+<h3 class="mb-4"><%= @internship.title %></h3>
+
+<div class="text-center">
+  <% if @internship.thumbnail.representable? %>
+  <%= image_tag @internship.thumbnail.representation(resize_to_limit: [400, 200]) %>
+  <% end %>
+</div>
 
 <table class="table">
   <tbody>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.title' %></th>
-      <td><%= @internship.title %></td>
-    </tr>
     <tr>
       <th><%= t 'activerecord.attributes.internship.description' %></th>
       <td><%= @internship.description %></td>
@@ -36,14 +38,6 @@
       <td><%= @internship.video_url %></td>
     </tr>
     <tr>
-      <th><%= t 'activerecord.attributes.internship.thumbnail' %></th>
-      <td>
-        <% if @internship.thumbnail.representable? %>
-        <%= image_tag @internship.thumbnail.representation(resize_to_limit: [100, 100]) %>
-        <% end %>
-      </td>
-    </tr>
-    <tr>
       <th><%= t 'activerecord.attributes.internship.acceptable_number' %></th>
       <td><%= @internship.acceptable_number %></td>
     </tr>
@@ -55,8 +49,11 @@
 </table>
 
 
-<div class="d-flex gap-2 justify-content-end">
-  <%= link_to "編集する", edit_company_internship_path(@internship), class: 'btn btn-primary' %>
-  <%= button_to "削除する", company_internship_path(@internship), method: :delete, data: { confirm: t('.are_you_sure') }, class: 'btn btn-danger flex-1' %>
+<div class="d-flex justify-content-between">
+  <%= link_to "戻る", company_internships_path(@company) %>
+  <div class="d-flex gap-2">
+    <%= link_to "編集する", edit_company_internship_path(@internship), class: 'btn btn-primary' %>
+    <%= button_to "削除する", company_internship_path(@internship), method: :delete, data: { confirm: t('.are_you_sure') }, class: 'btn btn-danger flex-1' %>
+  </div>
 </div>
 <% end %>
