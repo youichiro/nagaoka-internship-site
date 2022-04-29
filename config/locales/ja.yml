@@ -10,6 +10,7 @@ ja:
       employee: 企業ユーザ
       employee_detail: 企業ユーザ詳細
       internship: インターンシップ
+      course: 講座
     attributes:
       student_detail:
         name: 氏名
@@ -37,12 +38,22 @@ ja:
         description: 内容
         start_date: 開始日
         end_date: 終了日
-        deadline: 申し込み締切
+        deadline: 申し込み締切日
         location: 実施場所
         target: 対象学生
         video: 紹介動画
         thumbnail: サムネイル
         acceptable_number: 受け入れ可能人数
+        others: その他
+      course:
+        title: タイトル
+        description: 内容
+        event_date: 開催日
+        deadline: 申し込み締切日
+        place: 開催場所
+        target: 対象
+        is_online: オンライン/オフライン
+        acceptable_number: 参加可能人数
         others: その他
     errors:
       messages:
