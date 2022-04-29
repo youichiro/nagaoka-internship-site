@@ -24,8 +24,6 @@ class AdminUserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     email
-    encrypted_password
-    reset_password_token
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
@@ -48,22 +46,23 @@ class AdminUserDashboard < Administrate::BaseDashboard
     updated_at
   ].freeze
 
-  FORM_ATTRIBUTES = %i[
-    email
-    encrypted_password
-    reset_password_token
-    reset_password_sent_at
-    remember_created_at
-    sign_in_count
-    current_sign_in_at
-    last_sign_in_at
-    current_sign_in_ip
-    last_sign_in_ip
-    confirmation_token
-    confirmed_at
-    confirmation_sent_at
-    unconfirmed_email
-  ].freeze
+  FORM_ATTRIBUTES = []
+  # FORM_ATTRIBUTES = %i[
+  #   email
+  #   encrypted_password
+  #   reset_password_token
+  #   reset_password_sent_at
+  #   remember_created_at
+  #   sign_in_count
+  #   current_sign_in_at
+  #   last_sign_in_at
+  #   current_sign_in_ip
+  #   last_sign_in_ip
+  #   confirmation_token
+  #   confirmed_at
+  #   confirmation_sent_at
+  #   unconfirmed_email
+  # ].freeze
 
   COLLECTION_FILTERS = {}.freeze
 end

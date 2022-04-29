@@ -10,23 +10,23 @@ class EmployeeDetailDashboard < Administrate::BaseDashboard
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
-    employee
-    id
-    name
-    created_at
-  ].freeze
-
-  SHOW_PAGE_ATTRIBUTES = %i[
-    employee
     id
     name
     created_at
     updated_at
   ].freeze
 
-  FORM_ATTRIBUTES = %i[
-    employee
+  SHOW_PAGE_ATTRIBUTES = %i[
+    id
     name
+    created_at
+    updated_at
+    employee
+  ].freeze
+
+  FORM_ATTRIBUTES = %i[
+    name
+    employee
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

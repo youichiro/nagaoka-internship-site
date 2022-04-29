@@ -23,14 +23,13 @@ class StudentDashboard < Administrate::BaseDashboard
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
-    student_detail
     id
     email
-    encrypted_password
+    created_at
+    updated_at
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
-    student_detail
     id
     email
     encrypted_password
@@ -48,28 +47,27 @@ class StudentDashboard < Administrate::BaseDashboard
     unconfirmed_email
     created_at
     updated_at
+    student_detail
   ].freeze
 
-  # FORM_ATTRIBUTES
-  # an array of attributes that will be displayed
-  # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = %i[
-    student_detail
-    email
-    encrypted_password
-    reset_password_token
-    reset_password_sent_at
-    remember_created_at
-    sign_in_count
-    current_sign_in_at
-    last_sign_in_at
-    current_sign_in_ip
-    last_sign_in_ip
-    confirmation_token
-    confirmed_at
-    confirmation_sent_at
-    unconfirmed_email
-  ].freeze
+  FORM_ATTRIBUTES = []
+  # FORM_ATTRIBUTES = %i[
+  #   email
+  #   encrypted_password
+  #   reset_password_token
+  #   reset_password_sent_at
+  #   remember_created_at
+  #   sign_in_count
+  #   current_sign_in_at
+  #   last_sign_in_at
+  #   current_sign_in_ip
+  #   last_sign_in_ip
+  #   confirmation_token
+  #   confirmed_at
+  #   confirmation_sent_at
+  #   unconfirmed_email
+  #   student_detail
+  # ].freeze
 
   COLLECTION_FILTERS = {}.freeze
 end

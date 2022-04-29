@@ -14,14 +14,12 @@ class StudentDetailDashboard < Administrate::BaseDashboard
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
-    student
     id
     name
-    disable_notification
+    student
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
-    student
     id
     name
     disable_notification
@@ -30,15 +28,16 @@ class StudentDetailDashboard < Administrate::BaseDashboard
     department
     created_at
     updated_at
+    student
   ].freeze
 
   FORM_ATTRIBUTES = %i[
-    student
     name
     disable_notification
     birthday
     school_name
     department
+    student
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

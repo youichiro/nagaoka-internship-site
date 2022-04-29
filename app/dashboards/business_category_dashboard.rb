@@ -10,14 +10,13 @@ class BusinessCategoryDashboard < Administrate::BaseDashboard
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
-    companies
     id
     name
     created_at
+    updated_at
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
-    companies
     id
     name
     created_at
@@ -25,7 +24,6 @@ class BusinessCategoryDashboard < Administrate::BaseDashboard
   ].freeze
 
   FORM_ATTRIBUTES = %i[
-    companies
     name
   ].freeze
 

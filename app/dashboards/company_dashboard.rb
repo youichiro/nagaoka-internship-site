@@ -20,17 +20,13 @@ class CompanyDashboard < Administrate::BaseDashboard
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
-    business_category
-    employees
-    internships
-    video
+    id
+    name
+    created_at
+    updated_at
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
-    business_category
-    employees
-    internships
-    video
     id
     name
     company_url
@@ -40,15 +36,15 @@ class CompanyDashboard < Administrate::BaseDashboard
     number_of_employee
     manager_name
     manager_email
+    video
     created_at
     updated_at
-  ].freeze
-
-  FORM_ATTRIBUTES = %i[
     business_category
     employees
     internships
-    video
+  ].freeze
+
+  FORM_ATTRIBUTES = %i[
     name
     company_url
     phone_number
@@ -57,6 +53,8 @@ class CompanyDashboard < Administrate::BaseDashboard
     number_of_employee
     manager_name
     manager_email
+    video
+    business_category
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

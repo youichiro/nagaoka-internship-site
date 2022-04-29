@@ -22,11 +22,12 @@ class InternshipDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     company
-    thumbnail
+    title
+    created_at
+    updated_at
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
-    company
     id
     title
     description
@@ -35,16 +36,16 @@ class InternshipDashboard < Administrate::BaseDashboard
     deadline
     location
     target
-    video
     thumbnail
+    video
     acceptable_number
     others
     created_at
     updated_at
+    company
   ].freeze
 
   FORM_ATTRIBUTES = %i[
-    company
     title
     description
     start_date
@@ -52,10 +53,11 @@ class InternshipDashboard < Administrate::BaseDashboard
     deadline
     location
     target
-    video
     thumbnail
+    video
     acceptable_number
     others
+    company
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze
