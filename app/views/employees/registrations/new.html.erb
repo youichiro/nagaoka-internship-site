@@ -1,4 +1,4 @@
-<div style="width: 360px;" class="pages-margin-top mx-auto">
+<div class="my-container-sm">
   <h2 class="text-center mb-4">新規登録(企業向け)</h2>
 
   <ul class="nav nav-tabs nav-fill mb-4" id="userTypeTab" role="tablist">
@@ -27,10 +27,11 @@
   <%= f_company.telephone_field :phone_number %>
   <%= f_company.collection_select :business_category_id, BusinessCategory.all, :id, :name, { include_blank: "選択してください" } %>
   <%= f_company.text_field :address %>
-  <%= f_company.text_field :business_description %>
+  <%= f_company.text_area :business_description %>
   <%= f_company.number_field :number_of_employee %>
   <%= f_company.text_field :manager_name %>
   <%= f_company.email_field :manager_email %>
+  <%= f_company.file_field :video %>
   <% end %>
 
   <%= f.fields_for :employee_detail do |f_employee_detail| %>

@@ -29,6 +29,7 @@ ja:
         number_of_employee: 従業員数
         manager_name: 担当者氏名
         manager_email: 担当者メールアドレス
+        video: 紹介動画
       employee_detail:
         name: 氏名
       internship:
@@ -39,7 +40,7 @@ ja:
         deadline: 申し込み締切
         location: 実施場所
         target: 対象学生
-        video_url: 紹介動画URL
+        video: 紹介動画
         thumbnail: サムネイル
         acceptable_number: 受け入れ可能人数
         others: その他

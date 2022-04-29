@@ -7,10 +7,11 @@
 <%= f.telephone_field :phone_number %>
 <%= f.collection_select :business_category_id, BusinessCategory.all, :id, :name, { include_blank: "選択してください" } %>
 <%= f.text_field :address %>
-<%= f.text_field :business_description %>
+<%= f.text_area :business_description %>
 <%= f.number_field :number_of_employee %>
 <%= f.text_field :manager_name %>
 <%= f.email_field :manager_email %>
+<%= f.file_field :video %>
 
 <%= f.submit "更新する", class: "btn btn-primary w-100" %>
 <% end %>

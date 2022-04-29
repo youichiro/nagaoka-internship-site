@@ -1,14 +1,11 @@
-<div style="width: 360px;" class="pages-margin-top mx-auto">
-
-<h1>企業情報一覧</h1>
-
-<div>
-  <% @companies.each do |company| %>
-  <p>
-    <%= company.name %>
-    <%= link_to "詳細", company_path(company) %>
-  </p>
-  <% end %>
-</div>
-
+<div class="my-container">
+  <h1>企業情報一覧</h1>
+  <div>
+    <% @companies.each do |company| %>
+    <p>
+      <%= company.name %>
+      <%= link_to "詳細", company_path(company) %>
+    </p>
+    <% end %>
+  </div>
 </div>

@@ -1,4 +1,4 @@
-<div style="width: 360px;" class="pages-margin-top mx-auto">
+<div class="my-container">
 
   <h1>企業情報詳細</h1>
 
@@ -42,6 +42,12 @@
       </tr>
     </tbody>
   </table>
+
+  <div class="text-center my-5">
+    <% if @company.video.representable? %>
+    <%= video_tag rails_blob_path(@company.video), controls: true, class: 'w-100' %>
+    <% end %>
+  </div>
 
   <%= link_to "戻る", companies_path %>
 </div>
