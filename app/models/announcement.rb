@@ -1,4 +1,4 @@
-class Accouncement < ApplicationRecord
+class Announcement < ApplicationRecord
   validates :title, presence: true, length: { maximum: 100 }
   validates :contents, presence: true
 
