@@ -6,6 +6,7 @@ class AnnouncementDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     contents: Field::Text,
+    thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -22,6 +23,7 @@ class AnnouncementDashboard < Administrate::BaseDashboard
     id
     title
     contents
+    thumbnail
     created_at
     updated_at
     announcement_category
@@ -30,6 +32,7 @@ class AnnouncementDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     title
     contents
+    thumbnail
     announcement_category
   ].freeze
 

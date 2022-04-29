@@ -1,0 +1,26 @@
+<h3 class="my-5"><%= announcement.title %></h3>
+
+<div class="my-3 w-100">
+  <% if announcement.thumbnail.representable? %>
+  <%= image_tag announcement.thumbnail.representation(resize_to_limit: [800, 800]), class: 'w-100' %>
+  <% elsif %>
+  <%= image_tag "no_image.png", class: 'w-100' %>
+  <% end %>
+</div>
+
+<table class="table my-5">
+  <tbody>
+    <tr>
+      <th><%= t 'activerecord.attributes.announcement.contents' %></th>
+      <td><%= announcement.contents %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.announcement.created_at' %></th>
+      <td><%= announcement.created_at %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.announcement.updated_at' %></th>
+      <td><%= announcement.updated_at %></td>
+    </tr>
+  </tbody>
+</table>

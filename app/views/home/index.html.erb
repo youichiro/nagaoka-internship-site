@@ -14,5 +14,11 @@
       <%= render 'partial/courses', courses: @courses %>
       <%= link_to "全て見る", courses_path %>
     </section>
+
+    <section class="section">
+      <h3 class="section-title mb-4 p-2">お知らせ一覧</h3>
+      <%= render 'partial/announcements', announcements: @announcements %>
+      <%= link_to "全て見る", announcements_path %>
+    </section>
   </div>
 </main>
