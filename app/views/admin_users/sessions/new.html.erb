@@ -1,4 +1,5 @@
 <div class="my-container-sm">
+  <h3 class="my-5">管理者ログイン</h3>
   <%= bootstrap_form_with(model: resource, url: session_path(resource_name), local: true) do |f| %>
   <%= f.email_field :email, autofocus: true %>
   <%= f.password_field :password %>
