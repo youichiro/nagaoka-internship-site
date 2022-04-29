@@ -48,7 +48,7 @@
 
 <div class="text-center my-3">
   <% if @internship.video.representable? %>
-  <%= image_tag @internship.video.preview(resize_to_limit: [800, 800]), class: 'w-100' %>
+  <%= video_tag rails_blob_path(@internship.video), controls: true, class: 'w-100' %>
   <% elsif %>
   <%= link_to rails_blob_path(@internship.video, disposition: "attachment") do %>
   <p>動画をダウンロード</p>
