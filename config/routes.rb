@@ -34,6 +34,8 @@ Rails.application.routes.draw do
     resources :employee_details
     resources :internships
     resources :courses
+    resources :announcement_categories
+    resources :announcements
 
     root to: "business_categories#index"
   end

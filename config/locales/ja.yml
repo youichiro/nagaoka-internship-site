@@ -11,6 +11,8 @@ ja:
       employee_detail: 企業ユーザ詳細
       internship: インターンシップ
       course: 講座
+      announcement_category: お知らせカテゴリー
+      announcement: お知らせ
     attributes:
       student_detail:
         name: 氏名
@@ -55,6 +57,11 @@ ja:
         is_online: オンライン/オフライン
         acceptable_number: 参加可能人数
         others: その他
+      announcement_category:
+        name: カテゴリ名
+      announcement:
+        title: タイトル
+        contents: 本文
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
