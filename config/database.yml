@@ -13,3 +13,7 @@ development:
 test:
   <<: *default
   database: nagaoka_internship_site_test
+
+production:
+  <<: *default
+  database: nagaoka_internship_site_production
