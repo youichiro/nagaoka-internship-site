@@ -54,6 +54,7 @@ gem 'devise-i18n'
 gem "bootstrap_form"
 gem "administrate"
 gem 'administrate-field-active_storage'
+gem 'sd_notify'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
