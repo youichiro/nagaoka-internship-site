@@ -25,7 +25,6 @@ if rails_env == 'production'
     File.join(rails_root, 'log', 'puma-error.log'),
     true
   )
-  daemonize
 else
   port ENV.fetch("PORT") { 3000 }
 end
