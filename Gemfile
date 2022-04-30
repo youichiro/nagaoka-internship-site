@@ -46,12 +46,11 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 gem 'devise'
 gem 'devise-i18n'
 gem "bootstrap_form"
-gem 'image_processing', '~> 1.2'
 gem "administrate"
 gem 'administrate-field-active_storage'
 
