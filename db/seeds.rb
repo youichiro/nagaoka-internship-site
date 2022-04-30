@@ -1,12 +1,18 @@
 BusinessCategory.insert_all([
-  { name: 'IT・通信' },
+  { name: 'メーカー(電気・電子・機械・食品・その他)' },
   { name: '建設・建築' },
-  { name: '自動車販売' },
+  { name: '小売・流通・自動車販売・運送・運輸' },
+  { name: '卸売・商社' },
+  { name: 'ソフトウエア・IT・通信' },
+  { name: 'サービス・飲食・宿泊' },
+  { name: '金融・保険' },
+  { name: '官公庁・組合・団体・非営利団体' },
+  { name: 'その他' },
 ])
 
 AdminUser.create(
-  email: 'admin@gmail.com',
-  password: 'password',
+  email: ENV.fetch('ADMIN_USER_EMAIL'),
+  password: ENV.fetch('ADMIN_USER_PASSWORD'),
   confirmed_at: Time.zone.now,
 )
 
