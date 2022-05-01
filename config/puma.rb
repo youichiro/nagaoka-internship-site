@@ -17,12 +17,12 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 #
 rails_env = ENV.fetch('RAILS_ENV') { 'development' }
 if rails_env == 'production' || rails_env == 'staging'
-  bind "unix://#{Rails.root}/tmp/sockets/#{rails_env}/puma.sock"
+  bind "unix://#{Rails.root}/tmp/sockets/puma-#{rails_env}.sock"
   rails_root = Rails.root
-  state_path File.join(rails_root, 'tmp', 'pids', rails_env, 'puma.state')
+  state_path File.join(rails_root, 'tmp', 'pids', "puma-#{rails_env}.state")
   stdout_redirect(
-    File.join(rails_root, 'log', rails_env, 'puma.log'),
-    File.join(rails_root, 'log', rails_env, 'puma-error.log'),
+    File.join(rails_root, 'log', "puma-#{rails_env}.log"),
+    File.join(rails_root, 'log', "puma-#{rails_env}-error.log"),
     true
   )
 else
