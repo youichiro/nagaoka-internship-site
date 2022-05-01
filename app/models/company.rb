@@ -5,7 +5,7 @@ class Company < ApplicationRecord
   validates :address, presence: true, length: { maximum: 100 }
   validates :manager_name, presence: true, length: { maximum: 100 }
   validates :manager_email, presence: true
-  validates :number_of_employee, numericality: { only_integer: true, greater_than_or_equal_to: 0}
+  validates :number_of_employee, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, allow_blank: true
 
   belongs_to :business_category
   has_many :employees, dependent: :destroy
