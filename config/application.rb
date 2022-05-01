@@ -37,5 +37,7 @@ module Myapp
     config.i18n.default_locale = :ja
 
     config.active_storage.variant_processor = :vips
+
+    config.active_record.async_query_executor = :global_thread_pool
   end
 end
