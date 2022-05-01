@@ -5,3 +5,7 @@ label.required:after {
   content:" *";
   color: red;
 }
+
+// my css
+@import './common.scss';
+@import './home_index.scss';
