@@ -54,7 +54,7 @@ ja:
         deadline: 申し込み締切日
         place: 開催場所
         target: 対象
-        is_online: オンライン/オフライン
+        is_online: オンラインで実施するか
         acceptable_number: 参加可能人数
         others: その他
       announcement_category:
