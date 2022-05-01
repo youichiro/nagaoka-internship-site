@@ -14,6 +14,10 @@ test:
   <<: *default
   database: nagaoka_internship_site_test
 
+staging:
+  <<: *default
+  database: nagaoka_internship_site_staging
+
 production:
   <<: *default
   database: nagaoka_internship_site_production

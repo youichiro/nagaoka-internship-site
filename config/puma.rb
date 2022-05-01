@@ -16,13 +16,13 @@ worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
 rails_env = ENV.fetch('RAILS_ENV') { 'development' }
-if rails_env == 'production'
-  bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+if rails_env == 'production' || rails_env == 'staging'
+  bind "unix://#{Rails.root}/tmp/sockets/#{rails_env}/puma.sock"
   rails_root = Rails.root
-  state_path File.join(rails_root, 'tmp', 'pids', 'puma.state')
+  state_path File.join(rails_root, 'tmp', 'pids', rails_env, 'puma.state')
   stdout_redirect(
-    File.join(rails_root, 'log', 'puma.log'),
-    File.join(rails_root, 'log', 'puma-error.log'),
+    File.join(rails_root, 'log', rails_env, 'puma.log'),
+    File.join(rails_root, 'log', rails_env, 'puma-error.log'),
     true
   )
 else

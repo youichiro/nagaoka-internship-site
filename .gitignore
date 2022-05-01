@@ -36,5 +36,6 @@
 /node_modules
 
 .env
+.env.staging
 .env.production
 .ruby-version
