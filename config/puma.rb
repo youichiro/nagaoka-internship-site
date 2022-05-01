@@ -14,7 +14,7 @@ if rails_env == 'production' || rails_env == 'staging'
     File.join(rails_root, 'log', "puma-#{rails_env}-error.log"),
     true
   )
-  pidfile ENV.fetch("PIDFILE") { "tmp/pids/server-#{rails_env}.pid" }
+  pidfile "tmp/pids/server-#{rails_env}.pid"
 else
   port ENV.fetch("PORT") { 3000 }
   pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
