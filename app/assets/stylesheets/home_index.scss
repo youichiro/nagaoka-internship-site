@@ -9,8 +9,10 @@
 }
 
 .section-title {
-  background-color: dodgerblue;
-  color: white;
+  // background-color: dodgerblue;
+  background-color: $cyan-200;
+  // color: white;
+  color: $gray-700;
   border-radius: 4px;
   font-size: larger;
   @extend .mt-5;
