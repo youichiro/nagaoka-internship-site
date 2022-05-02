@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_02_121455) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_02_121826) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -122,6 +122,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_02_121455) do
     t.text "others"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "course_category_id", null: false
+    t.index ["course_category_id"], name: "index_courses_on_course_category_id"
   end
 
   create_table "employee_details", force: :cascade do |t|
@@ -212,6 +214,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_02_121455) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "announcements", "announcement_categories"
   add_foreign_key "companies", "business_categories"
+  add_foreign_key "courses", "course_categories"
   add_foreign_key "employee_details", "employees"
   add_foreign_key "employees", "companies"
   add_foreign_key "internships", "companies"
