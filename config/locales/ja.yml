@@ -10,6 +10,7 @@ ja:
       employee: 企業ユーザ
       employee_detail: 企業ユーザ詳細
       internship: インターンシップ
+      course_category: 講座カテゴリー
       course: 講座
       announcement_category: お知らせカテゴリー
       announcement: お知らせ
@@ -47,9 +48,12 @@ ja:
         thumbnail: サムネイル
         acceptable_number: 受け入れ可能人数
         others: その他
+      course_category:
+        name: カテゴリー名
       course:
         title: タイトル
         description: 内容
+        course_category_id: 講座カテゴリー
         event_date: 開催日
         deadline: 申し込み締切日
         place: 開催場所
@@ -58,7 +62,7 @@ ja:
         acceptable_number: 参加可能人数
         others: その他
       announcement_category:
-        name: カテゴリ名
+        name: カテゴリー名
       announcement:
         title: タイトル
         contents: 本文

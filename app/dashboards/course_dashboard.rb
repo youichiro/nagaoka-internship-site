@@ -5,6 +5,7 @@ class CourseDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
+    course_category: Field::BelongsTo,
     event_date: Field::Date,
     deadline: Field::Date,
     place: Field::String,
@@ -21,6 +22,7 @@ class CourseDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     title
+    course_category
     created_at
     updated_at
   ].freeze
@@ -29,6 +31,7 @@ class CourseDashboard < Administrate::BaseDashboard
     id
     title
     description
+    course_category
     event_date
     deadline
     place
@@ -45,6 +48,7 @@ class CourseDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     title
     description
+    course_category
     event_date
     deadline
     place

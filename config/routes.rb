@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :employees
     resources :employee_details
     resources :internships
+    resources :course_categories
     resources :courses
     resources :announcement_categories
     resources :announcements
