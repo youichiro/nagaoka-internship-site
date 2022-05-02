@@ -4,10 +4,18 @@
   object-position: 50% 60%;
 }
 
+.section {
+  @extend .pb-5;
+}
+
 .section-title {
   background-color: dodgerblue;
   color: white;
   border-radius: 4px;
+  font-size: larger;
+  @extend .mt-5;
+  @extend .mb-4;
+  @extend .p-2;
 }
 
 .card-img-top {

@@ -2,23 +2,29 @@
   <div class="card">
     <%= image_tag "top_sample2.jpg", class: "card-img-top img-fluid hero-img" %>
   </div>
-  <div class="container mt-5">
+  <div class="container">
     <section class="section">
-      <h3 class="section-title mb-4 p-2">インターンシップ情報</h3>
+      <p class="section-title">インターンシップ情報</p>
       <%= render 'partial/internships', internships: @internships %>
-      <%= link_to "全て見る", internships_path %>
+      <div class="text-center">
+        <%= link_to "全て見る", internships_path, class: 'link-secondary' %>
+      </div>
     </section>
 
     <section class="section">
-      <h3 class="section-title mb-4 p-2">講座一覧</h3>
+      <p class="section-title">講座一覧</p>
       <%= render 'partial/courses', courses: @courses %>
-      <%= link_to "全て見る", courses_path %>
+      <div class="text-center">
+        <%= link_to "全て見る", courses_path, class: 'link-secondary' %>
+      </div>
     </section>
 
     <section class="section">
-      <h3 class="section-title mb-4 p-2">お知らせ一覧</h3>
+      <p class="section-title">お知らせ一覧</p>
       <%= render 'partial/announcements', announcements: @announcements %>
-      <%= link_to "全て見る", announcements_path %>
+      <div class="text-center">
+        <%= link_to "全て見る", announcements_path, class: 'link-secondary' %>
+      </div>
     </section>
   </div>
 </main>

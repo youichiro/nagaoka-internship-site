@@ -1,5 +1,5 @@
 <%= render 'partial/employee_mypage_layout' do %>
-<h2 class="text-center mb-4">ユーザ情報編集</h2>
+<h2 class="text-center mb-5">ユーザ情報編集</h2>
 
 <%= bootstrap_form_with(model: @employee, url: employee_registration_path, method: :put, local: true) do |f| %>
 <%= f.email_field :email, autofocus: true %>
