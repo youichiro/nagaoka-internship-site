@@ -1,20 +1,12 @@
 <div class="my-container">
 
-  <h1>企業情報詳細</h1>
+  <h2 class="my-5"><%= @company.name %></h2>
 
   <table class="table">
     <tbody>
       <tr>
-        <th><%= t 'activerecord.attributes.company.name' %></th>
-        <td><%= @company.name %></td>
-      </tr>
-      <tr>
         <th><%= t 'activerecord.attributes.company.company_url' %></th>
         <td><%= @company.company_url %></td>
-      </tr>
-      <tr>
-        <th><%= t 'activerecord.attributes.company.contact_contact_phone_number' %></th>
-        <td><%= @company.contact_phone_number %></td>
       </tr>
       <tr>
         <th><%= t 'activerecord.attributes.business_category.name' %></th>
@@ -37,6 +29,10 @@
         <td><%= @company.contact_name %></td>
       </tr>
       <tr>
+        <th><%= t 'activerecord.attributes.company.contact_phone_number' %></th>
+        <td><%= @company.contact_phone_number %></td>
+      </tr>
+      <tr>
         <th><%= t 'activerecord.attributes.company.contact_email' %></th>
         <td><%= @company.contact_email %></td>
       </tr>
@@ -45,6 +41,7 @@
 
   <div class="text-center my-5">
     <% if @company.video.representable? %>
+    <p><%= t 'activerecord.attributes.company.video' %></p>
     <%= video_tag rails_blob_path(@company.video), controls: true, class: 'w-100' %>
     <% end %>
   </div>

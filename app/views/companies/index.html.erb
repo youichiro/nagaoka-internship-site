@@ -1,11 +1,8 @@
 <div class="my-container">
-  <h1>企業情報一覧</h1>
-  <div>
+  <h2 class="my-5">参加企業一覧</h2>
+  <div class="list-group list-group-flush">
     <% @companies.each do |company| %>
-    <p>
-      <%= company.name %>
-      <%= link_to "詳細", company_path(company) %>
-    </p>
+    <p class="list-group-item"><%= link_to company.name, company %></p>
     <% end %>
   </div>
 </div>
