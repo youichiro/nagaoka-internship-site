@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_015354) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_04_022222) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -99,6 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_015354) do
     t.string "contact_email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "video_url"
     t.index ["business_category_id"], name: "index_companies_on_business_category_id"
     t.index ["name"], name: "index_companies_on_name", unique: true
   end
