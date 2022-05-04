@@ -3,9 +3,23 @@
     <h2>参加企業一覧</h2>
     <span><%= @companies.size %>件</span>
   </div>
-  <div class="list-group list-group-flush">
+
+  <div class="row row-cols-md-3 row-cols-2 g-2">
     <% @companies.each do |company| %>
-    <p class="list-group-item"><%= link_to company.name, company %></p>
+    <div class="col card p-3 border-0">
+      <% if company.gif_url.present? %>
+      <%= link_to image_tag(company.gif_url, class: "w-100"), company, class: "ratio ratio-16x9" %>
+      <% else %>
+      <%= link_to image_tag("no_image.png", class: "object-fit-cover w-100"), company, class: "ratio ratio-16x9" %>
+      <% end %>
+
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= link_to company.name, company %>
+        </h5>
+      </div>
+    </div>
     <% end %>
   </div>
+
 </div>
