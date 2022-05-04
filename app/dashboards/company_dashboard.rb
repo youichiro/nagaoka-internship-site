@@ -16,6 +16,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_name: Field::String,
     contact_email: Field::String,
     video_url: Field::String,
+    gif_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -40,6 +41,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_email
     video
     video_url
+    gif_url
     created_at
     updated_at
     employees
@@ -58,6 +60,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_email
     video
     video_url
+    gif_url
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

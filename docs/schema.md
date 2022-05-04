@@ -82,6 +82,7 @@ classDiagram
     *contact_name
     *contact_email
     video_url
+    gif_url
   }
 
   class business_categories {
