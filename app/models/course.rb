@@ -5,5 +5,4 @@ class Course < ApplicationRecord
   belongs_to :course_category
   belongs_to :course_attendance_type
   has_one_attached :thumbnail
-  has_one_attached :video
 end

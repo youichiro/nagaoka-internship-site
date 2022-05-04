@@ -16,7 +16,6 @@ class CourseDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
-    video: Field::ActiveStorage.with_options(index_display_preview: false),
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
@@ -42,7 +41,6 @@ class CourseDashboard < Administrate::BaseDashboard
     created_at
     updated_at
     thumbnail
-    video
   ].freeze
 
   FORM_ATTRIBUTES = %i[
@@ -57,7 +55,6 @@ class CourseDashboard < Administrate::BaseDashboard
     acceptable_number
     others
     thumbnail
-    video
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

@@ -49,9 +49,3 @@
     </tr>
   </tbody>
 </table>
-
-<div class="text-center my-3">
-  <% if course.video.representable? %>
-  <%= video_tag rails_blob_path(course.video), controls: true, class: 'w-100' %>
-  <% end %>
-</div>
