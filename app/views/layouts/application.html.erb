@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>長岡のしごと場</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-  </head>
+<head>
+  <title>長岡のしごと場</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body style="margin-bottom: 128px;">
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+</head>
+
+<body class="min-vh-100 d-flex flex-column">
+  <main style="flex: 1;">
     <%= render 'partial/navbar' %>
     <%= render 'partial/flash' %>
     <%= yield %>
-    <script src="https://player.vimeo.com/api/player.js" defer></script>
-  </body>
+  </main>
+  <footer class="mt-5" style=" background-color: whitesmoke;">
+    <%= render 'partial/footer' %>
+  </footer>
+  <script src="https://player.vimeo.com/api/player.js" defer></script>
+</body>
+
 </html>
