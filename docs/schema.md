@@ -100,6 +100,7 @@ classDiagram
     location
     target
     video_url
+    gif_url
     acceptable_number
     others
   }
