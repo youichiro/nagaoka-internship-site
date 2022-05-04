@@ -11,4 +11,9 @@ class Company < ApplicationRecord
   has_many :employees, dependent: :destroy
   has_many :internships, dependent: :destroy
   has_one_attached :video
+
+  def vimeo_id
+    return unless video_url
+    video_url.split('/').last
+  end
 end
