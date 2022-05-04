@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_04_013653) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_04_015354) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -92,7 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_04_013653) do
     t.string "company_url", default: ""
     t.string "contact_phone_number", null: false
     t.bigint "business_category_id", null: false
-    t.string "address", null: false
+    t.string "address"
     t.text "business_description", default: ""
     t.integer "number_of_employee"
     t.string "contact_name", null: false
