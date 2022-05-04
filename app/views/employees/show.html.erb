@@ -1,11 +1,7 @@
 <%= render 'partial/employee_mypage_layout' do %>
-<h2 class="text-center mb-4">企業ユーザ情報</h2>
+<h2 class="text-center mb-4">企業情報</h2>
 <table class="table">
   <tbody>
-    <tr>
-      <th><%= t 'activerecord.attributes.employee_detail.name' %></th>
-      <td><%= @employee.employee_detail.name %></td>
-    </tr>
     <tr>
       <th><%= t 'activerecord.attributes.company.name' %></th>
       <td><%= @employee.company.name %></td>
@@ -13,10 +9,6 @@
     <tr>
       <th><%= t 'activerecord.attributes.company.company_url' %></th>
       <td><%= @employee.company.company_url %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.company.contact_phone_number' %></th>
-      <td><%= @employee.company.contact_phone_number %></td>
     </tr>
     <tr>
       <th><%= t 'activerecord.attributes.business_category.name' %></th>
@@ -39,6 +31,10 @@
       <td><%= @employee.company.contact_name %></td>
     </tr>
     <tr>
+      <th><%= t 'activerecord.attributes.company.contact_phone_number' %></th>
+      <td><%= @employee.company.contact_phone_number %></td>
+    </tr>
+    <tr>
       <th><%= t 'activerecord.attributes.company.contact_email' %></th>
       <td><%= @employee.company.contact_email %></td>
     </tr>
@@ -47,7 +43,24 @@
 
 <div class="text-center my-5">
   <% if @employee.company.video.representable? %>
+  <p><%= t 'activerecord.attributes.company.video' %></p>
   <%= video_tag rails_blob_path(@employee.company.video), controls: true, class: 'w-100' %>
   <% end %>
 </div>
+
+<h2 class="text-center mt-5 mb-4">ユーザー情報</h2>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th><%= t 'activerecord.attributes.employee.email' %></th>
+      <td><%= @employee.email %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.employee_detail.name' %></th>
+      <td><%= @employee.employee_detail.name %></td>
+    </tr>
+  </tbody>
+</table>
+
 <% end %>
