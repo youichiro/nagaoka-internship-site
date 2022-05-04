@@ -36,6 +36,7 @@ ja:
         contact_phone_number: お問い合わせ電話番号
         contact_name: お問い合わせ担当者
         contact_email: お問い合わせメールアドレス
+        thumbnail: サムネイル
         video: 企業紹介動画
         video_url: 企業紹介動画URL
         gif_url: GIFのURL

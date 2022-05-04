@@ -6,6 +6,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     employees: Field::HasMany,
     internships: Field::HasMany,
     video: Field::ActiveStorage.with_options(index_display_preview: false),
+    thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
     id: Field::Number,
     name: Field::String,
     company_url: Field::String,
@@ -39,6 +40,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     number_of_employee
     contact_name
     contact_email
+    thumbnail
     video
     video_url
     gif_url
@@ -58,6 +60,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     number_of_employee
     contact_name
     contact_email
+    thumbnail
     video
     video_url
     gif_url
