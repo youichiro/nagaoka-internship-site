@@ -1,5 +1,8 @@
 <div class="my-container">
-  <h2 class="my-5">参加企業一覧</h2>
+  <div class="my-5 d-flex gap-4 align-items-center">
+    <h2>参加企業一覧</h2>
+    <span><%= @companies.size %>件</span>
+  </div>
   <div class="list-group list-group-flush">
     <% @companies.each do |company| %>
     <p class="list-group-item"><%= link_to company.name, company %></p>

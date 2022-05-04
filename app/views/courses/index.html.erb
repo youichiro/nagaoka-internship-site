@@ -1,4 +1,7 @@
-<div class="container">
-  <h2 class="my-5">講座一覧</h2>
+<div class="my-container">
+  <div class="my-5 d-flex gap-4 align-items-center">
+    <h2>講座一覧</h2>
+    <span><%= @courses.size %>件</span>
+  </div>
   <%= render 'partial/courses', courses: @courses %>
 </div>

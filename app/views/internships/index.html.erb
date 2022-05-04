@@ -1,4 +1,7 @@
 <div class="container">
-  <h2 class="my-5">インターンシップ一覧</h2>
+  <div class="my-5 d-flex gap-4 align-items-center">
+    <h2>インターンシップ一覧</h2>
+    <span><%= @internships.size %>件</span>
+  </div>
   <%= render 'partial/internships', internships: @internships %>
 </div>
