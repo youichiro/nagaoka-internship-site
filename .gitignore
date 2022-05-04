@@ -43,3 +43,9 @@
 /tmp/db_dump/*
 !/tmp/db_dump/
 !/tmp/db_dump/.keep
+/tmp/db_dump/staging/*
+!/tmp/db_dump/staging/
+!/tmp/db_dump/staging/.keep
+/tmp/db_dump/production/*
+!/tmp/db_dump/production/
+!/tmp/db_dump/production/.keep
