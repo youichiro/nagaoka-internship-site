@@ -17,6 +17,7 @@
               <span class="badge bg-primary" style="margin-top: 2px;"><%= course.course_category.name %></span>
             </div>
             <p class="card-text">開催日: <%= l course.event_date %></p>
+            <p class="card-text">参加方法: <%= course.course_attendance_type.name %></p>
             <p class="card-text"><%= course.description %></p>
           </div>
         </div>
