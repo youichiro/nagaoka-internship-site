@@ -17,6 +17,7 @@ classDiagram
   internship_orders -- internships
 
   course_categories -- courses
+  course_attendance_types -- courses
   students -- student_course_orders
   student_course_orders -- courses
   employees -- employee_course_orders
@@ -116,6 +117,11 @@ classDiagram
   }
 
   class course_categories {
+    *id
+    *name
+  }
+
+  class course_attendance_types {
     *id
     *name
   }
