@@ -16,6 +16,7 @@ classDiagram
   internship_carts -- internships
   internship_orders -- internships
 
+  course_categories -- courses
   students -- student_course_orders
   student_course_orders -- courses
   employees -- employee_course_orders
@@ -47,7 +48,7 @@ classDiagram
     disable_notification
     *birthday
     *school_name
-    *department #学部学科
+    *department
   }
 
   class employees {
@@ -72,13 +73,14 @@ classDiagram
     *id
     *name
     company_url
-    *phone_number
-    *business_category_id #業種
-    *address
+    *contact_phone_number
+    *business_category_id
+    address
     business_description
     number_of_employee
-    *manager_name #担当者名
-    *manager_email #担当者メールアドレス
+    *contact_name
+    *contact_email
+    video_url
   }
 
   class business_categories {
@@ -95,8 +97,10 @@ classDiagram
     end_date
     deadline
     location
-    target #対象
-    acceptable_number #受け入れ可能人数
+    target
+    video_url
+    acceptable_number
+    others
   }
 
   class internship_carts {
@@ -111,6 +115,11 @@ classDiagram
     *internship_id
   }
 
+  class course_categories {
+    *id
+    *name
+  }
+
   class courses {
     *id
     *title
@@ -118,11 +127,11 @@ classDiagram
     *event_date
     deadline
     place
-    target_user
-    target_department
+    target
     *is_online
     acceptable_number #受け入れ可能人数
     others
+    *course_category_id
   }
 
   class student_course_orders {
