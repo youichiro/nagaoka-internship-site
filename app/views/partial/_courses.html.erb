@@ -12,9 +12,12 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title"><%= link_to course.title, course %></h5>
+            <div class="d-flex gap-2 align-items-start">
+              <h5 class="card-title"><%= link_to course.title, course %></h5>
+              <span class="badge bg-primary" style="margin-top: 2px;"><%= course.course_category.name %></span>
+            </div>
+            <p class="card-text">開催日: <%= l course.event_date %></p>
             <p class="card-text"><%= course.description %></p>
-            <p class="card-text"><%= course.course_category.name %></p>
           </div>
         </div>
       </div>

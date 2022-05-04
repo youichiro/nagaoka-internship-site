@@ -8,19 +8,7 @@
   <% end %>
 </div>
 
-<table class="table my-5">
-  <tbody>
-    <tr>
-      <th><%= t 'activerecord.attributes.announcement.contents' %></th>
-      <td><%= announcement.contents %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.announcement.created_at' %></th>
-      <td><%= announcement.created_at %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.announcement.updated_at' %></th>
-      <td><%= announcement.updated_at %></td>
-    </tr>
-  </tbody>
-</table>
+<p>作成日: <%= l announcement.created_at, format: :ymd %></p>
+<p>
+  <td><%= announcement.contents %></td>
+</p>

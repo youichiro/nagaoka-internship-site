@@ -11,7 +11,11 @@
       <h5 class="card-title">
         <%= link_to internship.title, internship %>
       </h5>
-      <p class="card-text">aaa</p>
+      <div class="card-text d-flex">
+        <span class="card-text"><%= internship.company.business_category.name %></span>
+        <span class="mx-2">|</span>
+        <span class="card-text"><%= internship.terms ? "#{internship.terms}日間" : "-" %></span>
+      </div>
     </div>
   </div>
   <% end %>

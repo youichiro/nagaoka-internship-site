@@ -42,6 +42,14 @@
       <th><%= t 'activerecord.attributes.internship.others' %></th>
       <td><%= internship.others %></td>
     </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.created_at' %></th>
+      <td><%= l internship.created_at, format: :ymd %></td>
+    </tr>
+    <tr>
+      <th><%= t 'activerecord.attributes.updated_at' %></th>
+      <td><%= l internship.updated_at, format: :ymd %></td>
+    </tr>
   </tbody>
 </table>
 

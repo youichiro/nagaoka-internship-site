@@ -5,4 +5,10 @@ class Internship < ApplicationRecord
   belongs_to :company
   has_one_attached :thumbnail
   has_one_attached :video
+
+  def terms
+    if start_date.present? && end_date.present?
+      (end_date - start_date).to_i
+    end
+  end
 end
