@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
+  root to: 'pages#home'
   get '/hello', to: 'hello#index'
 
   devise_for :admin_users, only: [:sessions], controllers: {
