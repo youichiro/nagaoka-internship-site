@@ -5,6 +5,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     company: Field::BelongsTo,
     video: Field::ActiveStorage.with_options(index_display_preview: false),
     thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
+    gif: Field::ActiveStorage.with_options(index_display_preview: false),
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
@@ -43,6 +44,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     others
     video
     video_url
+    gif
     created_at
     updated_at
   ].freeze
@@ -61,6 +63,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     others
     video
     video_url
+    gif
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze
