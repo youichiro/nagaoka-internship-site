@@ -1,8 +1,10 @@
 <div class="row row-cols-md-3 row-cols-2 g-2">
   <% internships.each do |internship| %>
   <div class="col card p-3 border-0">
-    <% if internship.thumbnail.representable? %>
-    <%= link_to image_tag(internship.thumbnail.representation(resize_to_limit: [800, 800]), class: "object-fit-cover w-100"), internship, class: "ratio ratio-16x9" %>
+    <% if internship.gif.representable? %>
+    <%= link_to image_tag(internship.gif.representation(resize_to_limit: [800, 800]), class: "object-fit-cover w-100"), internship, class: "ratio ratio-16x9" %>
+    <% elsif internship.thumbnail.representable? %>
+    <%= image_tag internship.thumbnail.representation(resize_to_limit: [800, 800]), class: 'w-100' %>
     <% else %>
     <%= link_to image_tag("no_image.png", class: "object-fit-cover w-100"), internship, class: "ratio ratio-16x9" %>
     <% end %>
