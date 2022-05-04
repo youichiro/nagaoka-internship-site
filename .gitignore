@@ -39,3 +39,7 @@
 .env.staging
 .env.production
 .ruby-version
+
+/tmp/db_dump/*
+!/tmp/db_dump/
+!/tmp/db_dump/.keep
