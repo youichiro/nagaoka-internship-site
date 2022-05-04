@@ -26,11 +26,13 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
       student: *user_attributes
-      employee: *user_attributes
+      employee:
+        <<: *user_attributes
+        email: ログイン用メールアドレス
       admin_user: *user_attributes
     models:
       user: ユーザー
-      student: 学生
+      student: 学生ユーザ
       employee: 企業ユーザ
       admin_user: 管理者ユーザ
   devise: &devise

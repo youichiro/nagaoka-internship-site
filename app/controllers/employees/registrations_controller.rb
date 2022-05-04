@@ -16,8 +16,8 @@ class Employees::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     company_params = params[:employee][:company].permit(
-      :name, :company_url, :phone_number, :business_category_id, :address,
-      :business_description, :number_of_employee, :manager_name, :manager_email, :video
+      :name, :company_url, :contact_phone_number, :business_category_id, :address,
+      :business_description, :number_of_employee, :contact_name, :contact_email, :video
     )
     @company = Company.new(company_params)
     @company.save

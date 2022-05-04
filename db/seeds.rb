@@ -47,13 +47,13 @@ StudentDetail.create(
 company = Company.create(
   name: '株式会社ほげ',
   company_url: 'https://hoge.com',
-  phone_number: '0000-00-0000',
+  contact_phone_number: '0000-00-0000',
   business_category: BusinessCategory.first,
   address: 'ほげ',
   business_description: '元気いっぱい',
   number_of_employee: 1,
-  manager_name: 'youichiro',
-  manager_email: 'admin@gmail.com',
+  contact_name: 'youichiro',
+  contact_email: 'admin@gmail.com',
 )
 employee = Employee.create(
   email: 'admin2@gmail.com',
@@ -69,13 +69,13 @@ EmployeeDetail.create(
 company2 = Company.create(
   name: '株式会社ほげ2',
   company_url: 'https://hoge.com',
-  phone_number: '0000-00-0000',
+  contact_phone_number: '0000-00-0000',
   business_category: BusinessCategory.first,
   address: 'ほげ',
   business_description: '元気いっぱい',
   number_of_employee: 1,
-  manager_name: 'youichiro',
-  manager_email: 'admin@gmail.com',
+  contact_name: 'youichiro',
+  contact_email: 'admin@gmail.com',
 )
 employee2 = Employee.create(
   email: 'admin21@gmail.com',

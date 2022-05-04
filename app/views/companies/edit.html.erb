@@ -4,13 +4,13 @@
 <%= bootstrap_form_with(model: @company, url: company_path, method: :put, local: true) do |f| %>
 <%= f.text_field :name %>
 <%= f.text_field :company_url %>
-<%= f.telephone_field :phone_number %>
+<%= f.telephone_field :contact_phone_number %>
 <%= f.collection_select :business_category_id, BusinessCategory.all, :id, :name, { include_blank: "選択してください" } %>
 <%= f.text_field :address %>
 <%= f.text_area :business_description %>
 <%= f.number_field :number_of_employee %>
-<%= f.text_field :manager_name %>
-<%= f.email_field :manager_email %>
+<%= f.text_field :contact_name %>
+<%= f.email_field :contact_email %>
 <%= f.file_field :video %>
 
 <%= f.submit "更新する", class: "btn btn-primary w-100" %>

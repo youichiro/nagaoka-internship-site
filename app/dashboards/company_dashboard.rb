@@ -9,12 +9,12 @@ class CompanyDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     company_url: Field::String,
-    phone_number: Field::String,
+    contact_phone_number: Field::String,
     address: Field::String,
     business_description: Field::Text,
     number_of_employee: Field::Number,
-    manager_name: Field::String,
-    manager_email: Field::String,
+    contact_name: Field::String,
+    contact_email: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -30,12 +30,12 @@ class CompanyDashboard < Administrate::BaseDashboard
     id
     name
     company_url
-    phone_number
+    contact_phone_number
     address
     business_description
     number_of_employee
-    manager_name
-    manager_email
+    contact_name
+    contact_email
     video
     created_at
     updated_at
@@ -47,12 +47,12 @@ class CompanyDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     company_url
-    phone_number
+    contact_phone_number
     address
     business_description
     number_of_employee
-    manager_name
-    manager_email
+    contact_name
+    contact_email
     video
     business_category
   ].freeze
