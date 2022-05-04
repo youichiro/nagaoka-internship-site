@@ -5,7 +5,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     company: Field::BelongsTo,
     video: Field::ActiveStorage.with_options(index_display_preview: false),
     thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
-    gif: Field::ActiveStorage.with_options(index_display_preview: false),
     id: Field::Number,
     title: Field::String,
     description: Field::Text,
@@ -17,22 +16,23 @@ class InternshipDashboard < Administrate::BaseDashboard
     acceptable_number: Field::Number,
     others: Field::Text,
     video_url: Field::String,
+    gif_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
     id
-    company
     title
+    company
     created_at
     updated_at
   ].freeze
 
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    company
     title
+    company
     description
     start_date
     end_date
@@ -44,14 +44,14 @@ class InternshipDashboard < Administrate::BaseDashboard
     others
     video
     video_url
-    gif
+    gif_url
     created_at
     updated_at
   ].freeze
 
   FORM_ATTRIBUTES = %i[
-    company
     title
+    company
     description
     start_date
     end_date
@@ -63,7 +63,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     others
     video
     video_url
-    gif
+    gif_url
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

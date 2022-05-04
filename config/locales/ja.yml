@@ -53,7 +53,7 @@ ja:
         others: その他
         video: インターンシップ紹介動画
         video_url: インターンシップ紹介動画URL
-        gif: GIF
+        gif_url: GIFのURL
       course_category:
         name: カテゴリー名
       course_attendance_type:
