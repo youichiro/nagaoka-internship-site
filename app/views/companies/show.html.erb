@@ -39,12 +39,5 @@
     </tbody>
   </table>
 
-  <div class="text-center my-5">
-    <% if @company.video.representable? %>
-    <p><%= t 'activerecord.attributes.company.video' %></p>
-    <%= video_tag rails_blob_path(@company.video), controls: true, class: 'w-100' %>
-    <% end %>
-  </div>
-
   <%= link_to "戻る", companies_path %>
 </div>
