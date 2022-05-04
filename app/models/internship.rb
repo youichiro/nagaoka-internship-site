@@ -16,4 +16,12 @@ class Internship < ApplicationRecord
     return unless video_url
     video_url.split('/').last
   end
+
+  def image_urls
+    array = []
+    array = array + [gif_url] if gif_url.present?
+    array = array + [thumbnail.representation(resize_to_limit: [800, 800])] if thumbnail.representable?
+    array = ['no_image.png'] if array.empty?
+    array
+  end
 end
