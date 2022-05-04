@@ -135,7 +135,7 @@ classDiagram
     place
     target
     *is_online
-    acceptable_number #受け入れ可能人数
+    acceptable_number
     others
     *course_category_id
     *course_attendance_type_id
