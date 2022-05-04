@@ -1,21 +1,13 @@
 <div style="max-width: 1000px; margin: 0 auto;">
   <div class="list-group list-group-flush">
     <% announcements.each do |announcement| %>
-    <div class="list-group-item card">
-      <div class="row">
-        <div class="col-md-4">
-          <% if announcement.thumbnail.representable? %>
-          <%= link_to image_tag(announcement.thumbnail.representation(resize_to_limit: [800, 800]), class: "object-fit-cover w-100"), announcement, class: "ratio-16x9" %>
-          <% elsif %>
-          <%= link_to image_tag("no_image.png", class: 'object-fit-cover w-100'), announcement, class: "ratio-16x9" %>
-          <% end %>
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title"><%= link_to announcement.title, announcement %></h5>
-            <p class="card-text"><%= announcement.contents %></p>
-          </div>
-        </div>
+    <div class="list-group-item d-flex flex-column flex-md-row gap-2">
+      <div class='d-flex align-items-start gap-2 flex-shrink-0 me-1'>
+        <span><%= announcement.created_at.strftime('%Y年%m月%d日') %></span>
+        <span class="badge bg-primary align-self-start" style="margin-top: 2px;"><%= announcement.announcement_category.name %></span>
+      </div>
+      <div style='flex: 1;'>
+        <p><%= link_to announcement.title, announcement %></p>
       </div>
     </div>
     <% end %>
