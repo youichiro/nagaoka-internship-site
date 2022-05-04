@@ -138,6 +138,7 @@ classDiagram
     acceptable_number #受け入れ可能人数
     others
     *course_category_id
+    *course_attendance_type_id
   }
 
   class student_course_orders {
