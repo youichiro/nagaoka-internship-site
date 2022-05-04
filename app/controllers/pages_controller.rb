@@ -4,4 +4,11 @@ class PagesController < ApplicationController
     @courses = Course.all.limit(4)
     @announcements = Announcement.all.limit(4)
   end
+
+  def privacy_policy
+  end
+
+  def terms_of_service
+  end
+
 end
