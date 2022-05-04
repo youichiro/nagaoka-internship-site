@@ -37,6 +37,8 @@ class Companies::InternshipsController < ApplicationController
 
   def update
     @internship = Internship.find(params[:id])
+    @company = @internship.company
+
     if @internship.update(internship_params)
       redirect_to company_internship_path(id: @internship.id), notice: "Internship was successfully updated."
     else
