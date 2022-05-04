@@ -11,7 +11,6 @@ class CourseDashboard < Administrate::BaseDashboard
     deadline: Field::Date,
     place: Field::String,
     target: Field::String,
-    is_online: Field::Boolean,
     acceptable_number: Field::Number,
     others: Field::Text,
     created_at: Field::DateTime,
@@ -38,7 +37,6 @@ class CourseDashboard < Administrate::BaseDashboard
     deadline
     place
     target
-    is_online
     acceptable_number
     others
     created_at
@@ -56,7 +54,6 @@ class CourseDashboard < Administrate::BaseDashboard
     deadline
     place
     target
-    is_online
     acceptable_number
     others
     thumbnail

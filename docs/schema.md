@@ -134,7 +134,6 @@ classDiagram
     deadline
     place
     target
-    *is_online
     acceptable_number
     others
     *course_category_id
