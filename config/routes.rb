@@ -39,6 +39,6 @@ Rails.application.routes.draw do
     resources :announcement_categories
     resources :announcements
 
-    root to: "business_categories#index"
+    root to: "companies#index"
   end
 end

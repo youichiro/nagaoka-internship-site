@@ -15,6 +15,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     number_of_employee: Field::Number,
     contact_name: Field::String,
     contact_email: Field::String,
+    video_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,6 +30,7 @@ class CompanyDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
+    business_category
     company_url
     contact_phone_number
     address
@@ -37,15 +39,16 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_name
     contact_email
     video
+    video_url
     created_at
     updated_at
-    business_category
     employees
     internships
   ].freeze
 
   FORM_ATTRIBUTES = %i[
     name
+    business_category
     company_url
     contact_phone_number
     address
@@ -54,7 +57,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_name
     contact_email
     video
-    business_category
+    video_url
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

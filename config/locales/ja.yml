@@ -36,6 +36,7 @@ ja:
         contact_name: お問い合わせ担当者
         contact_email: お問い合わせメールアドレス
         video: 企業紹介動画
+        video_url: 企業紹介動画URL
       employee_detail:
         name: ユーザー氏名
       internship:
