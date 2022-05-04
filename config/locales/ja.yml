@@ -11,6 +11,7 @@ ja:
       employee_detail: 企業ユーザ詳細
       internship: インターンシップ
       course_category: 講座カテゴリー
+      course_attendance_type: 講座参加方法
       course: 講座
       announcement_category: お知らせカテゴリー
       announcement: お知らせ
@@ -54,10 +55,13 @@ ja:
         video_url: インターンシップ紹介動画URL
       course_category:
         name: カテゴリー名
+      course_attendance_type:
+        name: 参加方法
       course:
         title: タイトル
         description: 内容
         course_category_id: 講座カテゴリー
+        course_attendance_type_id: 講座参加方法
         event_date: 開催日
         deadline: 申し込み締切日
         place: 開催場所

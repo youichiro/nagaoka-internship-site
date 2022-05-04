@@ -38,6 +38,7 @@ Rails.application.routes.draw do
     resources :employee_details
     resources :internships
     resources :course_categories
+    resources :course_attendance_types
     resources :courses
     resources :announcement_categories
     resources :announcements
