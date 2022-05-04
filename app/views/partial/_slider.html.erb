@@ -1,10 +1,12 @@
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <% if image_urls.size > 1 %>
   <div class="carousel-indicators">
     <% image_urls.size.times do |i| %>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= i %>" class="active"
       aria-current="true" aria-label="Slide <%= i+1 %>"></button>
     <% end %>
   </div>
+  <% end %>
   <div class="carousel-inner">
     <% image_urls.each_with_index do |url, i| %>
     <div class="carousel-item <%= 'active' if i == 0 %>">

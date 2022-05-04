@@ -9,6 +9,8 @@
     <div class="col card p-3 border-0">
       <% if company.gif_url.present? %>
       <%= link_to image_tag(company.gif_url, class: "w-100"), company, class: "ratio ratio-16x9" %>
+      <% elsif company.thumbnail.representable? %>
+      <%= link_to image_tag(company.thumbnail.representation(resize_to_limit: [800, 800]), class: 'object-fit-cover w-100'), company, class: "ratio ratio-16x9" %>
       <% else %>
       <%= link_to image_tag("no_image.png", class: "object-fit-cover w-100"), company, class: "ratio ratio-16x9" %>
       <% end %>
