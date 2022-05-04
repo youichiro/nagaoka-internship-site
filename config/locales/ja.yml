@@ -47,10 +47,11 @@ ja:
         deadline: 申し込み締切日
         location: 実施場所
         target: 対象学生
-        video: インターンシップ紹介動画
         thumbnail: サムネイル
         acceptable_number: 受け入れ可能人数
         others: その他
+        video: インターンシップ紹介動画
+        video_url: インターンシップ紹介動画URL
       course_category:
         name: カテゴリー名
       course:

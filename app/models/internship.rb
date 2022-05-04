@@ -11,4 +11,9 @@ class Internship < ApplicationRecord
       (end_date - start_date).to_i
     end
   end
+
+  def vimeo_id
+    return unless video_url
+    video_url.split('/').last
+  end
 end

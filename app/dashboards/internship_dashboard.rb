@@ -15,6 +15,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     target: Field::String,
     acceptable_number: Field::Number,
     others: Field::Text,
+    video_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -29,6 +30,7 @@ class InternshipDashboard < Administrate::BaseDashboard
 
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    company
     title
     description
     start_date
@@ -37,15 +39,16 @@ class InternshipDashboard < Administrate::BaseDashboard
     location
     target
     thumbnail
-    video
     acceptable_number
     others
+    video
+    video_url
     created_at
     updated_at
-    company
   ].freeze
 
   FORM_ATTRIBUTES = %i[
+    company
     title
     description
     start_date
@@ -54,10 +57,10 @@ class InternshipDashboard < Administrate::BaseDashboard
     location
     target
     thumbnail
-    video
     acceptable_number
     others
-    company
+    video
+    video_url
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze
