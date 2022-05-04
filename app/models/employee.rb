@@ -5,6 +5,8 @@ class Employee < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
 
+  validates :agreement_terms, allow_nil: false, acceptance: true, on: :create
+
   belongs_to :company
   has_one :employee_detail, dependent: :destroy
 

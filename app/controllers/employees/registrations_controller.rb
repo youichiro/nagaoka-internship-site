@@ -87,6 +87,7 @@ class Employees::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [
       :company_id,
+      :agreement_terms,
       employee_detail_attributes: [:name]
     ])
   end
