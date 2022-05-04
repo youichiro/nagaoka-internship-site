@@ -38,6 +38,8 @@
   <%= f_employee_detail.text_field :name %>
   <% end %>
 
+  <%= render "partial/terms_of_service_modal" %>
+
   <%= f.check_box :agreement_terms, label: '利用規約に同意する' %>
 
   <%= f.submit "登録", class: "btn btn-primary w-100 my-3" %>
