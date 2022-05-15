@@ -5,6 +5,7 @@ class AnnouncementCategoryDashboard < Administrate::BaseDashboard
     announcements: Field::HasMany,
     id: Field::Number,
     name: Field::String,
+    color: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -12,6 +13,7 @@ class AnnouncementCategoryDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
+    color
     created_at
     updated_at
   ].freeze
@@ -19,12 +21,14 @@ class AnnouncementCategoryDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
+    color
     created_at
     updated_at
   ].freeze
 
   FORM_ATTRIBUTES = %i[
     name
+    color
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

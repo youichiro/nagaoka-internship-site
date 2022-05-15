@@ -73,6 +73,7 @@ ja:
         others: その他
       announcement_category:
         name: カテゴリー名
+        color: カラー
       announcement:
         title: タイトル
         contents: 本文
