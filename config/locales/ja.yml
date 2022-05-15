@@ -58,6 +58,7 @@ ja:
         gif_url: GIFのURL
       course_category:
         name: カテゴリー名
+        color: カラー
       course_attendance_type:
         name: 参加方法
       course:
