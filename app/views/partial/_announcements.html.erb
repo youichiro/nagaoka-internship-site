@@ -1,13 +1,13 @@
 <div style="max-width: 1000px; margin: 0 auto;">
   <div class="list-group list-group-flush">
     <% announcements.each do |announcement| %>
-    <div class="list-group-item d-flex flex-column flex-md-row gap-2">
+    <div class="list-group-item d-flex flex-column flex-md-row gap-2 py-3">
       <div class='d-flex align-items-start gap-2 flex-shrink-0 me-1'>
         <span><%= l announcement.created_at, format: :ymd %></span>
         <span class="badge" style="margin-top: 2px; background-color: <%= announcement.announcement_category.bg_color %>;"><%= announcement.announcement_category.name %></span>
       </div>
       <div style='flex: 1;'>
-        <p><%= link_to announcement.title, announcement, class: 'link-primary' %></p>
+        <span><%= link_to announcement.title, announcement, class: 'link-primary' %></span>
       </div>
     </div>
     <% end %>
