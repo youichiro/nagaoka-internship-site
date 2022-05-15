@@ -14,7 +14,7 @@
           <div class="card-body">
             <div class="d-flex gap-2 align-items-start">
               <h5 class="card-title"><%= link_to course.title, course, class: 'link-primary' %></h5>
-              <span class="badge bg-primary" style="margin-top: 2px;"><%= course.course_category.name %></span>
+              <span class="badge" style="margin-top: 2px; background-color: <%= course.course_category.bg_color %>;"><%= course.course_category.name %></span>
             </div>
             <p class="card-text">開催日: <%= l course.event_date %></p>
             <p class="card-text">参加方法: <%= course.course_attendance_type.name %></p>

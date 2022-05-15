@@ -4,7 +4,7 @@
     <div class="list-group-item d-flex flex-column flex-md-row gap-2">
       <div class='d-flex align-items-start gap-2 flex-shrink-0 me-1'>
         <span><%= l announcement.created_at, format: :ymd %></span>
-        <span class="badge bg-primary" style="margin-top: 2px;"><%= announcement.announcement_category.name %></span>
+        <span class="badge" style="margin-top: 2px; background-color: <%= announcement.announcement_category.bg_color %>;"><%= announcement.announcement_category.name %></span>
       </div>
       <div style='flex: 1;'>
         <p><%= link_to announcement.title, announcement, class: 'link-primary' %></p>
