@@ -7,7 +7,7 @@
         <span class="badge bg-primary" style="margin-top: 2px;"><%= announcement.announcement_category.name %></span>
       </div>
       <div style='flex: 1;'>
-        <p><%= link_to announcement.title, announcement %></p>
+        <p><%= link_to announcement.title, announcement, class: 'link-primary' %></p>
       </div>
     </div>
     <% end %>

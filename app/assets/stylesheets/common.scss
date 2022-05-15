@@ -1,3 +1,8 @@
+label.required:after {
+  content:" *";
+  color: red;
+}
+
 .my-container {
   max-width: 880px;
   margin: 0 auto;
@@ -8,4 +13,54 @@
   max-width: 360px;
   margin: 0 auto;
   padding: 8px;
+}
+
+.link-primary {
+  color: $gray-800;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+
+.link-primary-with-underline {
+  color: $gray-800;
+  text-decoration: underline;
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+
+.link-secondary {
+  color: $gray-600;
+  text-decoration: none;
+
+  &:hover {
+    color: $gray-800;
+    text-decoration: underline;
+  }
+}
+
+.link-secondary-with-underline {
+  color: $gray-600;
+  text-decoration: underline;
+
+  &:hover {
+    color: $gray-800;
+    text-decoration: underline;
+  }
+}
+
+.link-info {
+  color: $orange-500;
+  text-decoration: none;
+
+  &:hover {
+    color: $orange-500;
+    text-decoration: underline;
+  }
 }

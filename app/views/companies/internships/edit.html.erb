@@ -3,6 +3,6 @@
 
 <%= render "form", internship: @internship, url: company_internship_path(@company.id), submit_label: "更新する" %>
 
-<%= link_to "戻る", company_internship_path(@internship) %>
+<%= link_to "戻る", company_internship_path(@internship), class: 'link-primary-with-underline' %>
 
 <% end %>

@@ -1,10 +1,6 @@
+@import 'custom_bootstrap_variables.scss';
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
-
-label.required:after {
-  content:" *";
-  color: red;
-}
 
 // custom css
 @import './common.scss';

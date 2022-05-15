@@ -3,7 +3,7 @@
 <%= render 'partial/internship_detail', internship: @internship %>
 
 <div class="d-flex justify-content-between">
-  <%= link_to "戻る", company_internships_path(@company) %>
+  <%= link_to "戻る", company_internships_path(@company), class: 'link-primary-with-underline' %>
   <div class="d-flex gap-2">
     <%= link_to "編集する", edit_company_internship_path(@company), class: 'btn btn-primary' %>
     <%= button_to "削除する", company_internship_path(@company), method: :delete, data: { confirm: t('.are_you_sure') }, class: 'btn btn-danger flex-1' %>

@@ -19,14 +19,22 @@
   <%= bootstrap_form_with(model: resource, url: session_path(resource_name), local: true) do |f| %>
   <%= f.email_field :email, autofocus: true %>
   <%= f.password_field :password %>
+
+  <%- if devise_mapping.recoverable? %>
+  <%= link_to "パスワードを忘れた方はこちら", new_password_path(resource_name), class: 'link-secondary text-end' %><br />
+  <% end %>
+
   <% if devise_mapping.rememberable? %>
-  <div class="field">
+  <div class="field mt-3">
     <%= f.check_box :remember_me %>
   </div>
   <% end %>
 
-  <%= f.submit "ログイン", class: "btn btn-primary w-100" %>
+  <%= f.submit "ログイン", class: "btn btn-primary w-100 my-3" %>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  <div class="my-5 text-center">
+  <i class="bi bi-chevron-right"></i>
+  <%= link_to "会員登録はこちら", new_registration_path(resource_name), class: 'link-secondary' %><br />
+  </div>
 </div>
