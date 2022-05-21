@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_21_111436) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_21_204801) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -196,6 +196,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_111436) do
     t.index ["company_id"], name: "index_internships_on_company_id"
   end
 
+  create_table "student_course_orders", force: :cascade do |t|
+    t.bigint "student_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_student_course_orders_on_course_id"
+    t.index ["student_id", "course_id"], name: "index_student_course_orders_on_student_id_and_course_id", unique: true
+    t.index ["student_id"], name: "index_student_course_orders_on_student_id"
+  end
+
   create_table "student_details", force: :cascade do |t|
     t.bigint "student_id", null: false
     t.string "name", null: false
@@ -241,5 +251,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_111436) do
   add_foreign_key "employee_details", "employees"
   add_foreign_key "employees", "companies"
   add_foreign_key "internships", "companies"
+  add_foreign_key "student_course_orders", "courses"
+  add_foreign_key "student_course_orders", "students"
   add_foreign_key "student_details", "students"
 end
