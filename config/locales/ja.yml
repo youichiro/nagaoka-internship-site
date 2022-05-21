@@ -37,8 +37,6 @@ ja:
         contact_name: お問い合わせ担当者
         contact_email: お問い合わせメールアドレス
         thumbnail: サムネイル
-        video: 企業紹介動画
-        video_url: 企業紹介動画URL
         gif_url: GIFのURL
       employee_detail:
         name: ユーザー氏名
@@ -53,8 +51,6 @@ ja:
         thumbnail: サムネイル
         acceptable_number: 受け入れ可能人数
         others: その他
-        video: インターンシップ紹介動画
-        video_url: インターンシップ紹介動画URL
         gif_url: GIFのURL
       course_category:
         name: カテゴリー名

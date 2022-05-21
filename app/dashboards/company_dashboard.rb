@@ -5,7 +5,6 @@ class CompanyDashboard < Administrate::BaseDashboard
     business_category: Field::BelongsTo,
     employees: Field::HasMany,
     internships: Field::HasMany,
-    video: Field::ActiveStorage.with_options(index_display_preview: false),
     thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
     id: Field::Number,
     name: Field::String,
@@ -16,7 +15,6 @@ class CompanyDashboard < Administrate::BaseDashboard
     number_of_employee: Field::Number,
     contact_name: Field::String,
     contact_email: Field::String,
-    video_url: Field::String,
     gif_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -41,8 +39,6 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_name
     contact_email
     thumbnail
-    video
-    video_url
     gif_url
     created_at
     updated_at
@@ -61,8 +57,6 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_name
     contact_email
     thumbnail
-    video
-    video_url
     gif_url
   ].freeze
 

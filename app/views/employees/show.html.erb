@@ -46,13 +46,6 @@
   </tbody>
 </table>
 
-<div class="text-center my-5">
-  <% if @employee.company.video.representable? %>
-  <p><%= t 'activerecord.attributes.company.video' %></p>
-  <%= video_tag rails_blob_path(@employee.company.video), controls: true, class: 'w-100' %>
-  <% end %>
-</div>
-
 <h2 class="text-center mt-5 mb-4">ユーザー情報</h2>
 
 <table class="table">

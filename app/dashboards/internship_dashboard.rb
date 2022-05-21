@@ -3,7 +3,6 @@ require "administrate/base_dashboard"
 class InternshipDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     company: Field::BelongsTo,
-    video: Field::ActiveStorage.with_options(index_display_preview: false),
     thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
     id: Field::Number,
     title: Field::String,
@@ -15,7 +14,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     target: Field::String,
     acceptable_number: Field::Number,
     others: Field::Text,
-    video_url: Field::String,
     gif_url: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -42,8 +40,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     thumbnail
     acceptable_number
     others
-    video
-    video_url
     gif_url
     created_at
     updated_at
@@ -61,8 +57,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     thumbnail
     acceptable_number
     others
-    video
-    video_url
     gif_url
   ].freeze
 

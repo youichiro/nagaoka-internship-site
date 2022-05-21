@@ -10,13 +10,7 @@ class Company < ApplicationRecord
   belongs_to :business_category
   has_many :employees, dependent: :destroy
   has_many :internships, dependent: :destroy
-  has_one_attached :video
   has_one_attached :thumbnail
-
-  def vimeo_id
-    return unless video_url
-    video_url.split('/').last
-  end
 
   def image_urls
     array = []

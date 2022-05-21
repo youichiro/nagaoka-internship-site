@@ -81,7 +81,6 @@ classDiagram
     number_of_employee
     *contact_name
     *contact_email
-    video_url
     gif_url
   }
 
@@ -100,7 +99,6 @@ classDiagram
     deadline
     location
     target
-    video_url
     gif_url
     acceptable_number
     others
