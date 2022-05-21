@@ -1,5 +1,5 @@
 <%= render 'partial/employee_mypage_layout' do %>
-<h2 class="text-center mb-4">インターンシップ編集</h2>
+<h2 class="mb-4">インターンシップ編集</h2>
 
 <%= render "form", internship: @internship, url: company_internship_path(@company.id), submit_label: "更新する" %>
 
