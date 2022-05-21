@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   resources :admin_users, only: [:show]
   resources :students, only: [:show]
-  resources :employees, only: [:show]
+  resources :employees, only: [:show] do
+    resources :course_orders, controller: 'employees/course_orders', only: [:index]
+  end
   resources :internships, only: [:index, :show]
   resources :courses, only: [:index, :show]
   resources :announcements, only: [:index, :show]
