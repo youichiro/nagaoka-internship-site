@@ -3,14 +3,25 @@ class Employees::CourseOrdersController < ApplicationController
   before_action :validate_employee!
 
   def index
-    @employee = Employee.find(params[:employee_id])
-    @employee_course_orders = EmployeeCourseOrder.where(employee: @employee)
+    @employee = Employee.find(current_employee.id)
+    @orders = EmployeeCourseOrder.where(employee: @employee)
   end
 
   def destroy
     @order = EmployeeCourseOrder.find(params[:id])
     @order.destroy
     redirect_to employee_course_orders_url(@order.employee), notice: "講座の申し込みをキャンセルしました"
+  end
+
+  def create
+    @course = Course.find(params[:course_id])
+    @order = EmployeeCourseOrder.new(employee: current_employee, course: @course)
+
+    if @order.save
+      redirect_to request.referer, notice: "講座を申し込みました. マイページから確認できます."
+    else
+      redirect_to request.referer, alert: '申し込みできませんでした'
+    end
   end
 
   private
