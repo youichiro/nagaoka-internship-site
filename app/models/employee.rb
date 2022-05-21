@@ -9,6 +9,8 @@ class Employee < ApplicationRecord
 
   belongs_to :company
   has_one :employee_detail, dependent: :destroy
+  has_many :courses, through: :employee_course_orders
+  has_many :employee_course_orders
 
   accepts_nested_attributes_for :employee_detail
 end
