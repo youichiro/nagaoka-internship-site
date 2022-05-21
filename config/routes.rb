@@ -42,6 +42,7 @@ Rails.application.routes.draw do
     resources :course_categories
     resources :course_attendance_types
     resources :courses
+    resources :student_course_orders
     resources :employee_course_orders
     resources :announcement_categories
     resources :announcements
