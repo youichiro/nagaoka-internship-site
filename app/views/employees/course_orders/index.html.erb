@@ -1,1 +1,10 @@
-<h1>hoge</h1>
+<%= render 'partial/employee_mypage_layout' do %>
+<h2 class="text-center mb-4">申し込み講座一覧</h2>
+
+<ul class="list-group">
+  <% @employee_course_orders.each do |order| %>
+  <%= link_to order.course.title, course_path(id: order.course.id), class: "list-group-item list-group-item-action" %>
+  <% end %>
+</ul>
+
+<% end %>

@@ -3,8 +3,8 @@ class Employees::CourseOrdersController < ApplicationController
   before_action :validate_employee!
 
   def index
-    console
-    @employee_course_orders = EmployeeCourseOrder.where(employee_id: params[:employee_id])
+    @employee = Employee.find(params[:employee_id])
+    @employee_course_orders = EmployeeCourseOrder.where(employee: @employee)
   end
 
   private
