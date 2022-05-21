@@ -1,5 +1,5 @@
-<div class="my-container">
-  <h2 class="my-5">学生情報</h2>
+<%= render 'partial/student_mypage_layout' do %>
+  <h2 class="mb-4">学生情報</h2>
 
   <table class="table">
     <tbody>
@@ -25,6 +25,4 @@
       </tr>
     </tbody>
   </table>
-
-  <%= link_to "ユーザ情報を編集する", edit_student_registration_path, class: "btn btn-outline-primary my-3" %>
-</div>
+<% end %>
