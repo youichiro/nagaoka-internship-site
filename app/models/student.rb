@@ -8,6 +8,8 @@ class Student < ApplicationRecord
   validates :agreement_terms, allow_nil: false, acceptance: true, on: :create
 
   has_one :student_detail, dependent: :destroy
+  has_many :courses, through: :student_course_orders
+  has_many :student_course_orders
 
   accepts_nested_attributes_for :student_detail
 end
