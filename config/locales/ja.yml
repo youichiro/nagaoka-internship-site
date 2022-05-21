@@ -13,6 +13,7 @@ ja:
       course_category: 講座カテゴリー
       course_attendance_type: 講座参加方法
       course: 講座
+      employee_course_order: 企業ユーザの講座申し込み
       announcement_category: お知らせカテゴリー
       announcement: お知らせ
     attributes:
@@ -68,6 +69,9 @@ ja:
         target: 対象
         acceptable_number: 参加可能人数
         others: その他
+      employee_course_order:
+        employee_id: 企業ユーザ
+        course_id: 講座
       announcement_category:
         name: カテゴリー名
         color: カラー
