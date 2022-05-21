@@ -5,6 +5,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    @order = EmployeeCourseOrder.find_by(employee: current_employee, course: @course)
+    @employee_order = EmployeeCourseOrder.find_by(employee: current_employee, course: @course)
+    @student_order = StudentCourseOrder.find_by(student: current_student, course: @course)
   end
 end

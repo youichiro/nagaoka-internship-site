@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   }
 
   resources :admin_users, only: [:show]
-  resources :students, only: [:show]
+  resources :students, only: [:show] do
+    resources :course_orders, controller: 'students/course_orders', only: [:index, :create, :destroy]
+  end
   resources :employees, only: [:show] do
     resources :course_orders, controller: 'employees/course_orders', only: [:index, :create, :destroy]
   end
