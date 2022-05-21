@@ -8,6 +8,7 @@
       <%= link_to "企業情報の編集", edit_company_path(company), class: "list-group-item list-group-item-action #{current_page?(edit_company_path(company)) ? 'active' : ''}" %>
       <%= link_to "インターンシップの登録", new_company_internship_path(company), class: "list-group-item list-group-item-action #{current_page?(new_company_internship_path(company)) ? 'active' : ''}" %>
       <%= link_to "インターンシップ一覧", company_internships_path(company), class: "list-group-item list-group-item-action #{current_page?(company_internships_path(company)) ? 'active' : ''}" %>
+      <%= link_to "申し込み講座一覧", employee_course_orders_path(current_employee.id), class: "list-group-item list-group-item-action #{current_page?(employee_course_orders_path(current_employee.id)) ? 'active' : ''}" %>
     </div>
 
     <div class="w-100">

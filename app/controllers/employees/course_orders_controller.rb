@@ -7,6 +7,12 @@ class Employees::CourseOrdersController < ApplicationController
     @employee_course_orders = EmployeeCourseOrder.where(employee: @employee)
   end
 
+  def destroy
+    @order = EmployeeCourseOrder.find(params[:id])
+    @order.destroy
+    redirect_to employee_course_orders_url(@order.employee), notice: "講座の申し込みをキャンセルしました"
+  end
+
   private
 
   def validate_employee!
