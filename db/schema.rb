@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_21_105917) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_21_110030) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -178,7 +178,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_21_105917) do
     t.date "deadline"
     t.string "location", default: ""
     t.string "target", default: ""
-    t.string "video_url"
     t.integer "acceptable_number"
     t.text "others"
     t.datetime "created_at", null: false
