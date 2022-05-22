@@ -18,6 +18,7 @@ class Employees::CourseOrdersController < ApplicationController
     @order = EmployeeCourseOrder.new(employee: current_employee, course: @course)
 
     if @order.save
+      EmployeeMailer.with(employee: current_employee, course: @course).course_order_confirm_mail.deliver_later
       redirect_to request.referer, notice: "講座を申し込みました. マイページから確認できます."
     else
       redirect_to request.referer, alert: '申し込みできませんでした'

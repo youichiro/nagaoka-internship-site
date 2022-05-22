@@ -1,0 +1,16 @@
+<p><%= @employee.employee_detail.name %> 様</p>
+<p>
+  長岡のしごと場をご利用いただきありがとうございます。<br>
+  以下の講座のお申し込みを受け付けましたのでご連絡いたします。
+</p>
+<p>【講座内容のご確認】</p>
+<dl>
+  <dt>講座名</dt>
+  <dd><%= @course.title %></dd>
+
+  <dt>開催日</dt>
+  <dd><%= l @course.event_date %></dd>
+
+  <dt>開催方法</dt>
+  <dd><%= @course.course_attendance_type.name %></dd>
+</dl>
