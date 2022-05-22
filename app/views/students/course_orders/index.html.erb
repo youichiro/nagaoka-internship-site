@@ -1,6 +1,10 @@
 <%= render 'partial/student_mypage_layout' do %>
 <h2 class="mb-4">申し込み講座一覧</h2>
 
+<% if @orders.empty? %>
+<p>お申し込みしている講座はありません</p>
+<% end %>
+
 <ul class="list-group">
   <% @orders.each do |order| %>
   <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
