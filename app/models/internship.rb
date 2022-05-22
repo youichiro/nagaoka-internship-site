@@ -3,6 +3,11 @@ class Internship < ApplicationRecord
   # validates :end_date, comparison: { greater_than: :start_date }
 
   belongs_to :company
+  has_many :students, through: :internship_carts
+  has_many :internship_carts, dependent: :destroy
+  has_many :students, through: :internship_orders
+  has_many :internship_orders, dependent: :destroy
+
   has_one_attached :thumbnail
 
   def terms
