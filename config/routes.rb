@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :course_orders, controller: 'students/course_orders', only: [:index, :create, :destroy]
     resources :internships, controller: 'students/internships', only: [:index]
     resources :internship_carts, controller: 'students/internship_carts', only: [:create, :destroy]
+    resources :internship_orders, controller: 'students/internship_orders', only: [:create]
   end
   resources :employees, only: [:show] do
     resources :course_orders, controller: 'employees/course_orders', only: [:index, :create, :destroy]

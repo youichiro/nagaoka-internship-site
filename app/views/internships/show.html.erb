@@ -10,7 +10,7 @@
   <div clsas="my-5">
     <%= button_to "お気に入りに追加する", student_internship_carts_path(current_student),
       params: { internship_id: @internship.id },
-      class: "btn btn-primary #{@cart.present? ? 'disabled' : ''}"
+      class: "btn btn-primary #{@cart.present? || @order.present? ? 'disabled' : ''}"
     %>
   </div>
   <% end %>
