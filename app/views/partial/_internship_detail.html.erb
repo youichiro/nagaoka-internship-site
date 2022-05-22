@@ -1,4 +1,4 @@
-<h3 class="my-5"><%= internship.title %></h3>
+<h3><%= internship.title %></h3>
 
 <div class="my-3 w-100">
   <%= render "partial/slider", image_urls: internship.image_urls %>
@@ -48,7 +48,3 @@
     </tr>
   </tbody>
 </table>
-
-<div class="my-5 text-center">
-  <%= link_to "紹介動画を見る", "https://nagaoka-shukatsuondemand.jp/all-internship/", :target=>["_blank"], class: "btn btn-primary" %>
-</div>

@@ -7,12 +7,6 @@ class Students::CourseOrdersController < ApplicationController
     @orders = StudentCourseOrder.where(student: @student)
   end
 
-  def destroy
-    @order = StudentCourseOrder.find(params[:id])
-    @order.destroy
-    redirect_to student_course_orders_url(@order.student), notice: "講座の申し込みをキャンセルしました"
-  end
-
   def create
     @course = Course.find(params[:course_id])
     @order = StudentCourseOrder.new(student: current_student, course: @course)
@@ -23,6 +17,12 @@ class Students::CourseOrdersController < ApplicationController
     else
       redirect_to request.referer, alert: '申し込みできませんでした'
     end
+  end
+
+  def destroy
+    @order = StudentCourseOrder.find(params[:id])
+    @order.destroy
+    redirect_to student_course_orders_url(@order.student), notice: "講座の申し込みをキャンセルしました"
   end
 
   private

@@ -1,4 +1,19 @@
 <div class="my-container">
-  <%= render 'partial/internship_detail', internship: @internship %>
+  <div class="my-5">
+    <%= render 'partial/internship_detail', internship: @internship %>
+  </div>
+  <div class="my-5 text-center">
+    <%= link_to "紹介動画を見る", "https://nagaoka-shukatsuondemand.jp/all-internship/", :target=>["_blank"], class: "btn btn-primary" %>
+  </div>
+
+  <% if current_student %>
+  <div clsas="my-5">
+    <%= button_to "お気に入りに追加する", student_internship_carts_path(current_student),
+      params: { internship_id: @internship.id },
+      class: "btn btn-primary #{@cart.present? ? 'disabled' : ''}"
+    %>
+  </div>
+  <% end %>
+
   <%= link_to "戻る", :back, class: 'link-primary-with-underline' %>
 </div>
