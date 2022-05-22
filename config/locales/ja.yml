@@ -10,6 +10,8 @@ ja:
       employee: 企業ユーザ
       employee_detail: 企業ユーザ詳細
       internship: インターンシップ
+      internship_cart: インターンシップカート
+      internship_order: インターンシップ申し込み
       course_category: 講座カテゴリー
       course_attendance_type: 講座参加方法
       course: 講座
@@ -54,6 +56,13 @@ ja:
         acceptable_number: 受け入れ可能人数
         others: その他
         gif_url: GIFのURL
+      internship_cart:
+        student_id: 学生ユーザ
+        internship_id: インターンシップ
+      internship_order:
+        student_id: 学生ユーザ
+        internship_id: インターンシップ
+        is_contacted: 連絡済みか
       course_category:
         name: カテゴリー名
         color: カラー
