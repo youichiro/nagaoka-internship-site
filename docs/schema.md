@@ -114,6 +114,7 @@ classDiagram
     *id
     *student_id
     *internship_id
+    is_contacted
   }
 
   class course_categories {
