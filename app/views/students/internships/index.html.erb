@@ -21,6 +21,7 @@
   <% @carts.each do |cart| %>
   <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
     <%= link_to cart.internship.title, internship_path(id: cart.internship.id), class: "link-primary" %>
+    <%= button_to "キャンセル", student_internship_cart_path(id: cart.id), method: :delete, class: 'btn btn-danger btn-sm' %>
   </li>
   <% end %>
 </ul>

@@ -1,10 +1,11 @@
-class Students::InternshipsController < ApplicationController
+class Students::InternshipCartsController < ApplicationController
   before_action :authenticate_student!
   before_action :validate_student!
 
-  def index
-    @carts = InternshipCart.where(student: current_student)
-    @orders = InternshipOrder.where(student: current_student)
+  def destroy
+    @cart = InternshipCart.find(params[:id])
+    @cart.destroy
+    redirect_to student_internships_url(@cart.student)
   end
 
   private
