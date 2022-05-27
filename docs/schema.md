@@ -102,6 +102,7 @@ classDiagram
     gif_url
     acceptable_number
     others
+    is_public
   }
 
   class internship_carts {
