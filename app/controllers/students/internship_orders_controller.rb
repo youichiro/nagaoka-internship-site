@@ -7,6 +7,7 @@ class Students::InternshipOrdersController < ApplicationController
     @order = InternshipOrder.new(student: current_student, internship: @cart.internship)
     @cart.destroy!
     if @order.save
+      StudentMailer.with(student: current_student, internship: @cart.internship).internship_order_confirm_mail.deliver_later
       redirect_to request.referer, notice: "インターンシップを申し込みました"
     else
       redirect_to request.referer, status: :unprocessable_entity, alert: "インターンシップを申し込めませんでした"
