@@ -13,6 +13,11 @@ class Students::InternshipOrdersController < ApplicationController
     end
   end
 
+  def contact
+    @order = InternshipOrder.find(params[:internship_order_id])
+    @order.toggle!(:is_contacted)
+  end
+
   private
 
   def validate_student!
