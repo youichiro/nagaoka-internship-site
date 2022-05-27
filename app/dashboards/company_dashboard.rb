@@ -16,6 +16,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_name: Field::String,
     contact_email: Field::String,
     gif_url: Field::String,
+    is_public: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -40,6 +41,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_email
     thumbnail
     gif_url
+    is_public
     created_at
     updated_at
     employees
@@ -58,6 +60,7 @@ class CompanyDashboard < Administrate::BaseDashboard
     contact_email
     thumbnail
     gif_url
+    is_public
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze

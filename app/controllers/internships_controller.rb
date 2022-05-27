@@ -1,6 +1,6 @@
 class InternshipsController < ApplicationController
   def index
-    @internships = Internship.all
+    @internships = Internship.where(is_public: true)
   end
 
   def show
