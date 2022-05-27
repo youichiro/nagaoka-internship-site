@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: [:edit, :update]
 
   def index
-    @companies = Company.all
+    @companies = Company.where(is_public: true)
   end
 
   def show
