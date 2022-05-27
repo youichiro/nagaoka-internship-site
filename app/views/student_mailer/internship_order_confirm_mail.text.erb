@@ -1,0 +1,13 @@
+<%= @student.student_detail.name %> 様
+長岡のしごと場をご利用いただきありがとうございます。
+
+以下のインターンシップのお申し込みを受け付けましたのでご連絡いたします。
+
+【インターンシップ内容のご確認】
+インターンシップ名:<%= @internship.title %>
+会社名: <%= @internship.company.name %>
+<% if @internship.start_date.present? && @internship.end_date.present? %>
+開催日: <%= l @internship.start_date %> ~ <%= l @internship.end_date %>
+<% else %>
+開催日: 未確定
+<% end %>
