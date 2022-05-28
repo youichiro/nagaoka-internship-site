@@ -6,13 +6,14 @@
     <%= f.search_field :title_cont %>
     <br>
     <%= f.label :company_business_category_name_eq, '業種' %>
-    <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { include_blank: "選択してください" } %>
+    <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { include_blank: "指定しない" } %>
     <br>
-    <%= f.label :terms_matches_any, '期間' %>
-    <%= f.radio_button :terms_matches_any, '' %>指定しない
-    <%= f.radio_button :terms_matches_any, '1' %>1日
-    <%= f.radio_button :terms_matches_any, '2' %>2日
-    <%= f.radio_button :terms_matches_any, '3' %>3日以上
+    <%= f.label :terms_eq, '期間' %>
+    <%= f.radio_button :terms_eq, '', { checked: true } %>指定しない
+    <%= f.radio_button :terms_eq, '1日' %>1日
+    <%= f.radio_button :terms_eq, '2日' %>2日
+    <%= f.radio_button :terms_eq, '1週間' %>1週間
+    <%= f.radio_button :terms_eq, '1週間より多い' %>1週間より多い
     <br>
     <%= f.submit '検索' %>
     <% end %>
