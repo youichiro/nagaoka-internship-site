@@ -29,11 +29,7 @@ Rails.application.routes.draw do
   resources :employees, only: [:show] do
     resources :course_orders, controller: 'employees/course_orders', only: [:index, :create, :destroy]
   end
-  resources :internships, only: [:index, :show] do
-    collection do
-      get 'search'
-    end
-  end
+  resources :internships, only: [:index, :show]
   resources :courses, only: [:index, :show]
   resources :announcements, only: [:index, :show]
 

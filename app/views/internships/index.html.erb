@@ -1,7 +1,7 @@
 <div class="container">
   <div class="my-5">
   <h2>検索</h2>
-    <%= search_form_for @q, url: search_internships_path do |f| %>
+    <%= search_form_for @q, url: internships_path do |f| %>
     <%= f.label :title_cont, 'インターンシップ名' %>
     <%= f.search_field :title_cont %>
     <br>
