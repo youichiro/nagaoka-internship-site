@@ -11,7 +11,8 @@
 
     <div class="card-body">
       <h5 class="card-title">
-        <%= link_to internship.title, internship, class: 'link-primary' %>
+        <p><%= link_to internship.title, internship, class: 'link-primary' %></p>
+        <p><%= internship.company.name %></p>
       </h5>
       <div class="card-text d-flex">
         <span class="card-text"><%= internship.company.business_category.name %></span>

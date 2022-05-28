@@ -1,4 +1,17 @@
 <div class="container">
+  <div class="my-5">
+  <h2>検索</h2>
+    <%= search_form_for @q, url: search_internships_path do |f| %>
+    <%= f.label :title_cont, 'インターンシップ名' %>
+    <%= f.search_field :title_cont %>
+    <br>
+    <%= f.label :company_business_category_name_eq, '業種' %>
+    <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { include_blank: "選択してください" } %>
+    <br>
+    <%= f.submit '検索' %>
+    <% end %>
+  </div>
+
   <div class="my-5 d-flex gap-4 align-items-center">
     <h2>インターンシップ一覧</h2>
     <span><%= @internships.size %>件</span>
