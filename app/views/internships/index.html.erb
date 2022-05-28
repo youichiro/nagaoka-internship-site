@@ -8,6 +8,12 @@
     <%= f.label :company_business_category_name_eq, '業種' %>
     <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { include_blank: "選択してください" } %>
     <br>
+    <%= f.label :terms_matches_any, '期間' %>
+    <%= f.radio_button :terms_matches_any, '' %>指定しない
+    <%= f.radio_button :terms_matches_any, '1' %>1日
+    <%= f.radio_button :terms_matches_any, '2' %>2日
+    <%= f.radio_button :terms_matches_any, '3' %>3日以上
+    <br>
     <%= f.submit '検索' %>
     <% end %>
   </div>
@@ -18,3 +24,4 @@
   </div>
   <%= render 'partial/internships', internships: @internships %>
 </div>
+

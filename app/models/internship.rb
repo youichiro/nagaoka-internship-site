@@ -12,7 +12,16 @@ class Internship < ApplicationRecord
 
   def terms
     if start_date.present? && end_date.present?
-      (end_date - start_date).to_i
+      (end_date - start_date).to_i + 1
+    end
+  end
+
+  def terms_label
+    case terms
+    when 1 then '1日'
+    when 2 then '2日'
+    when 3, 4, 5, 6, 7 then '1週間'
+    else '1週間より多い'
     end
   end
 
@@ -22,5 +31,11 @@ class Internship < ApplicationRecord
     array = array + [thumbnail.representation(resize_to_limit: [800, 800])] if thumbnail.representable?
     array = ['no_image.png'] if array.empty?
     array
+  end
+
+  private
+
+  ransacker :terms do
+    Arel.sql('end_date - start_date + 1')
   end
 end

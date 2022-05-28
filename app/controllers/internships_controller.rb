@@ -12,7 +12,6 @@ class InternshipsController < ApplicationController
   end
 
   def search
-    console
     @internships = @q.result
   end
 
