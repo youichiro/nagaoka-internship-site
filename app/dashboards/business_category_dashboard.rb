@@ -28,4 +28,8 @@ class BusinessCategoryDashboard < Administrate::BaseDashboard
   ].freeze
 
   COLLECTION_FILTERS = {}.freeze
+
+  def display_resource(resource)
+    "##{resource.id} #{resource.name}"
+  end
 end

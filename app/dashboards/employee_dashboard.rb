@@ -71,4 +71,8 @@ class EmployeeDashboard < Administrate::BaseDashboard
   # ].freeze
 
   COLLECTION_FILTERS = {}.freeze
+
+  def display_resource(resource)
+    "##{resource.id} #{resource.employee_detail.name}"
+  end
 end
