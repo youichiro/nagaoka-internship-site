@@ -4,6 +4,7 @@ class Internship < ApplicationRecord
   validates :end_date, presence: true, comparison: { greater_than_or_equal_to: :start_date }
 
   belongs_to :company
+  belongs_to :internship_category
   has_many :students, through: :internship_carts
   has_many :internship_carts, dependent: :destroy
   has_many :students, through: :internship_orders

@@ -18,6 +18,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     is_public: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    internship_category: Field::BelongsTo,
   }.freeze
 
   COLLECTION_ATTRIBUTES = %i[
@@ -32,6 +33,7 @@ class InternshipDashboard < Administrate::BaseDashboard
     id
     title
     company
+    internship_category
     description
     start_date
     end_date
@@ -50,6 +52,7 @@ class InternshipDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     title
     company
+    internship_category
     description
     start_date
     end_date
