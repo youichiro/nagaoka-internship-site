@@ -11,6 +11,7 @@ classDiagram
   companies -- employees
   companies -- internships
   internships -- internship_categories
+  internships -- internship_attendance_types
 
   students -- internship_carts
   students -- internship_orders
@@ -98,11 +99,17 @@ classDiagram
     color
   }
 
+  class internship_attendance_types {
+    *id
+    *name
+  }
+
   class internships {
     *id
     *company_id
     *title
     *internship_category_id
+    *internship_attendance_type_id
     description
     *start_date
     *end_date
