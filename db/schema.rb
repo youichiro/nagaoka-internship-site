@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_02_213903) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_215645) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -224,7 +224,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_213903) do
     t.datetime "updated_at", null: false
     t.string "gif_url"
     t.boolean "is_public", default: true
+    t.bigint "internship_category_id", null: false
     t.index ["company_id"], name: "index_internships_on_company_id"
+    t.index ["internship_category_id"], name: "index_internships_on_internship_category_id"
   end
 
   create_table "student_course_orders", force: :cascade do |t|
@@ -286,6 +288,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_213903) do
   add_foreign_key "internship_orders", "internships"
   add_foreign_key "internship_orders", "students"
   add_foreign_key "internships", "companies"
+  add_foreign_key "internships", "internship_categories"
   add_foreign_key "student_course_orders", "courses"
   add_foreign_key "student_course_orders", "students"
   add_foreign_key "student_details", "students"

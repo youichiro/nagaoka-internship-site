@@ -102,6 +102,7 @@ classDiagram
     *id
     *company_id
     *title
+    *internship_category_id
     description
     *start_date
     *end_date
