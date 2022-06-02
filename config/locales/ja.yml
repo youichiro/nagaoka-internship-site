@@ -89,6 +89,7 @@ ja:
         target: 対象
         acceptable_number: 参加可能人数
         others: その他
+        announcement: 限定公開情報
       student_course_order:
         student_id: 学生ユーザ
         course_id: 講座

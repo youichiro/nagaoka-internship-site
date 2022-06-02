@@ -13,6 +13,7 @@ class CourseDashboard < Administrate::BaseDashboard
     target: Field::String,
     acceptable_number: Field::Number,
     others: Field::Text,
+    announcement: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     thumbnail: Field::ActiveStorage.with_options(index_display_preview: false),
@@ -38,6 +39,7 @@ class CourseDashboard < Administrate::BaseDashboard
     target
     acceptable_number
     others
+    announcement
     created_at
     updated_at
     thumbnail
@@ -54,6 +56,7 @@ class CourseDashboard < Administrate::BaseDashboard
     target
     acceptable_number
     others
+    announcement
     thumbnail
   ].freeze
 
