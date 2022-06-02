@@ -5,6 +5,7 @@ class Internship < ApplicationRecord
 
   belongs_to :company
   belongs_to :internship_category
+  belongs_to :internship_attendance_type
   has_many :students, through: :internship_carts
   has_many :internship_carts, dependent: :destroy
   has_many :students, through: :internship_orders
