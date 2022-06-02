@@ -9,6 +9,7 @@ ja:
       company: 企業
       employee: 企業ユーザ
       employee_detail: 企業ユーザ詳細
+      internship_category: インターンシップカテゴリー
       internship: インターンシップ
       internship_cart: インターンシップカート
       internship_order: インターンシップ申し込み
@@ -45,6 +46,10 @@ ja:
         is_public: 公開しているか
       employee_detail:
         name: ユーザー氏名
+      internship_category:
+        name: カテゴリー名
+        description: 説明
+        color: カラー
       internship:
         title: タイトル
         description: 内容
