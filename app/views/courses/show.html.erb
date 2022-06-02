@@ -48,6 +48,12 @@
         <th><%= t 'activerecord.attributes.course.others' %></th>
         <td><%= @course.others %></td>
       </tr>
+      <% if current_student || current_employee || current_admin_user %>
+      <tr>
+        <th><%= t 'activerecord.attributes.course.announcement' %></th>
+        <td><%= @course.announcement %></td>
+      </tr>
+      <% end %>
     </tbody>
   </table>
 
