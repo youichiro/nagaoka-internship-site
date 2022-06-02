@@ -157,6 +157,7 @@ classDiagram
     others
     *course_category_id
     *course_attendance_type_id
+    announcement
   }
 
   class student_course_orders {
