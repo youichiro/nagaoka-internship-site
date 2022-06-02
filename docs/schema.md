@@ -10,6 +10,7 @@ classDiagram
   business_categories -- companies
   companies -- employees
   companies -- internships
+  internships -- internship_categories
 
   students -- internship_carts
   students -- internship_orders
@@ -88,6 +89,13 @@ classDiagram
   class business_categories {
     *id
     *name
+  }
+
+  class internship_categories {
+    *id
+    *name
+    description
+    color
   }
 
   class internships {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_28_230551) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_213903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -188,6 +188,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_28_230551) do
     t.index ["internship_id"], name: "index_internship_carts_on_internship_id"
     t.index ["student_id", "internship_id"], name: "index_internship_carts_on_student_id_and_internship_id", unique: true
     t.index ["student_id"], name: "index_internship_carts_on_student_id"
+  end
+
+  create_table "internship_categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description", default: ""
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "internship_orders", force: :cascade do |t|
