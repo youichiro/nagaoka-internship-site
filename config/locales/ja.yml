@@ -10,6 +10,7 @@ ja:
       employee: 企業ユーザ
       employee_detail: 企業ユーザ詳細
       internship_category: インターンシップカテゴリー
+      internship_attendance_type: インターンシップ参加方法
       internship: インターンシップ
       internship_cart: インターンシップカート
       internship_order: インターンシップ申し込み
@@ -50,6 +51,8 @@ ja:
         name: カテゴリー名
         description: 説明
         color: カラー
+      internship_attendance_type:
+        name: 参加方法
       internship:
         title: タイトル
         description: 内容

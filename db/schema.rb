@@ -181,7 +181,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_220637) do
   end
 
   create_table "internship_attendance_types", force: :cascade do |t|
-    t.string "CreateInternshipAttendanceTypes", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -46,6 +46,7 @@ Rails.application.routes.draw do
     resources :employees
     resources :employee_details
     resources :internship_categories
+    resources :internship_attendance_types
     resources :internships
     resources :internship_carts
     resources :internship_orders
