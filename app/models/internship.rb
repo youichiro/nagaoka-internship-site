@@ -37,6 +37,6 @@ class Internship < ApplicationRecord
   private
 
   ransacker :terms do
-    Arel.sql("case when end_date - start_date + 1 = 1 then '1日' when end_date - start_date + 1 = 2 then '2日' when end_date - start_date + 1 >= 3 and end_date - start_date + 1 <= 7 then '1週間' else '1週間より多い' end")
+    Arel.sql("case when end_date - start_date + 1 = 1 then '1日' when end_date - start_date + 1 >= 2 and end_date - start_date + 1 <= 4 then '2~4日' when end_date - start_date + 1 = 5 then '5日' else '5日より多い' end")
   end
 end

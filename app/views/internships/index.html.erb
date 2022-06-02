@@ -2,18 +2,21 @@
   <div class="my-5">
   <h2>検索</h2>
     <%= search_form_for @q, url: internships_path do |f| %>
-    <%= f.label :title_cont, 'インターンシップ名' %>
-    <%= f.search_field :title_cont %>
+    <%= f.label :terms_eq, '期間' %>
+    <%= f.radio_button :terms_eq, '', { checked: true } %>指定しない
+    <%= f.radio_button :terms_eq, '1日' %>1日
+    <%= f.radio_button :terms_eq, '2~4日' %>2~4日
+    <%= f.radio_button :terms_eq, '5日' %>5日
+    <%= f.radio_button :terms_eq, '5日より多い' %>5日より多い
     <br>
     <%= f.label :company_business_category_name_eq, '業種' %>
     <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { include_blank: "指定しない" } %>
     <br>
-    <%= f.label :terms_eq, '期間' %>
-    <%= f.radio_button :terms_eq, '', { checked: true } %>指定しない
-    <%= f.radio_button :terms_eq, '1日' %>1日
-    <%= f.radio_button :terms_eq, '2日' %>2日
-    <%= f.radio_button :terms_eq, '1週間' %>1週間
-    <%= f.radio_button :terms_eq, '1週間より多い' %>1週間より多い
+    <%= f.label :internship_category_name_eq, 'カテゴリー' %>
+    <%= f.collection_select :internship_category_name_eq, InternshipCategory.all, :name, :name, { include_blank: "指定しない" } %>
+    <br>
+    <%= f.label :internship_attendance_type_name_eq, '参加方法' %>
+    <%= f.collection_select :internship_attendance_type_name_eq, InternshipAttendanceType.all, :name, :name, { include_blank: "指定しない" } %>
     <br>
     <%= f.submit '検索' %>
     <% end %>
