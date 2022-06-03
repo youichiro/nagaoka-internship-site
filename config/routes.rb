@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/privacy_policy', to: 'pages#privacy_policy'
   get '/terms_of_service', to: 'pages#terms_of_service'
   get '/contact', to: 'pages#contact'
+  get '/comment_form', to: 'pages#comment_form'
 
   get '/hello', to: 'hello#index'
 

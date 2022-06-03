@@ -14,4 +14,6 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def comment_form
+  end
 end
