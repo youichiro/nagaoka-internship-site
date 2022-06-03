@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/privacy_policy', to: 'pages#privacy_policy'
   get '/terms_of_service', to: 'pages#terms_of_service'
+  get '/contact', to: 'pages#contact'
 
   get '/hello', to: 'hello#index'
 
