@@ -1,7 +1,7 @@
 <div class="">
-  <div class="list-group list-group-flush shadow-md">
+  <div class="list-group list-group-flush">
     <% internships.each do |internship| %>
-    <div class="list-group-item bg-white flex">
+    <div class="list-group-item md:shadow-md bg-white flex flex-col md:flex-row mb-2">
       <div class="flex-1 py-4">
         <% if internship.gif_url.present? %>
         <%= link_to image_tag(internship.gif_url, class: "w-100"), internship %>
@@ -12,7 +12,7 @@
         <% end %>
       </div>
 
-      <div class="flex-[2] px-6 py-4">
+      <div class="flex-[2] px-6 pt-2 pb-4 md:py-4">
         <div class="badge bg-primary mb-2">
           <%= internship.company.business_category.name %>
         </div>
