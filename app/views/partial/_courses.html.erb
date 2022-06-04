@@ -15,7 +15,7 @@
         <div class="mb-2">
           <%= link_to course.title, course, class: 'card-title' %>
         </div>
-        <p class="mb-2"><%= course.description %></p>
+        <p class="mb-4 text-slate-700"><%= course.description %></p>
         <div class="mb-2"><span class="card-info-th">開催日</span>　<%= l course.event_date %>
         </div>
         <div><span class="card-info-th">参加方法</span><%= course.course_attendance_type.name %></div>
