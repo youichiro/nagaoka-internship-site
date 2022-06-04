@@ -183,4 +183,12 @@ classDiagram
     *contents
     *annountment_category_id
   }
+
+  class nagaoka_companies {
+    *id
+    *number
+    *name
+    *business_category_id
+    company_url
+  }
 ```

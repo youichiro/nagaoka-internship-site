@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_02_223302) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_04_133908) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -238,6 +238,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_223302) do
     t.index ["internship_category_id"], name: "index_internships_on_internship_category_id"
   end
 
+  create_table "nagaoka_companies", force: :cascade do |t|
+    t.integer "number", null: false
+    t.string "name", null: false
+    t.string "company_url"
+    t.bigint "business_categories_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_categories_id"], name: "index_nagaoka_companies_on_business_categories_id"
+    t.index ["name"], name: "index_nagaoka_companies_on_name", unique: true
+    t.index ["number"], name: "index_nagaoka_companies_on_number", unique: true
+  end
+
   create_table "student_course_orders", force: :cascade do |t|
     t.bigint "student_id", null: false
     t.bigint "course_id", null: false
@@ -299,6 +311,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_223302) do
   add_foreign_key "internships", "companies"
   add_foreign_key "internships", "internship_attendance_types"
   add_foreign_key "internships", "internship_categories"
+  add_foreign_key "nagaoka_companies", "business_categories", column: "business_categories_id"
   add_foreign_key "student_course_orders", "courses"
   add_foreign_key "student_course_orders", "students"
   add_foreign_key "student_details", "students"
