@@ -11,7 +11,7 @@
     <%= link_to order.internship.title, internship_path(id: order.internship.id), class: "link-primary" %>
     <%= button_to "連絡したボタン",
       student_internship_order_contact_path(student_id: current_student.id, internship_order_id: order.id),
-      class: 'btn btn-primary'
+      class: 'btn btn-primary text-white'
     %>
   </li>
   <% end %>

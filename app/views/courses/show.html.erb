@@ -62,7 +62,7 @@
     <%= button_to "申し込む", employee_course_orders_path(current_employee),
       form: { data: { turbo_confirm: "Are you sure?" } },
       params: { course_id: @course.id },
-      class: "btn btn-primary #{@employee_order.present? ? 'disabled' : ''}"
+      class: "btn btn-primary text-white #{@employee_order.present? ? 'disabled' : ''}"
     %>
   </div>
   <% elsif current_student %>
@@ -70,7 +70,7 @@
     <%= button_to "申し込む", student_course_orders_path(current_student),
       form: { data: { turbo_confirm: "Are you sure?" } },
       params: { course_id: @course.id },
-      class: "btn btn-primary #{@student_order.present? ? 'disabled' : ''}"
+      class: "btn btn-primary text-white #{@student_order.present? ? 'disabled' : ''}"
     %>
   </div>
   <% end %>
