@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg py-3 shadow-sm bg-white">
+<nav class="navbar navbar-expand-lg py-3 shadow-sm bg-white navbar-light">
   <div class="container max-w-[1024px]">
-    <a href="/" class="navbar-brand font-bold">長岡のしごと場</a>
+    <a href="/" class="font-bold no-underline text-primary text-xl">長岡のしごと場</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,13 +8,13 @@
     <div class="collapse navbar-collapse ms-auto" id="navbarText">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link text-slate-700 hover:text-primary font-section" href="/steps">インターンシップ申し込みの流れ</a>
+          <a class="nav-link" href="/steps">インターンシップ申し込みの流れ</a>
         </li>
         <li class="nav-item px-1">
-          <a class="nav-link text-slate-700 hover:text-primary font-section" href="/companies">参加企業一覧</a>
+          <a class="nav-link" href="/companies">参加企業一覧</a>
         </li>
         <li class="nav-item pe-2">
-          <a class="nav-link text-slate-700 hover:text-primary font-section" href="/contact">お問い合わせ</a>
+          <a class="nav-link" href="/contact">お問い合わせ</a>
         </li>
         <li class="nav-item">
           <% current_user = current_student || current_employee || current_admin_user %>
