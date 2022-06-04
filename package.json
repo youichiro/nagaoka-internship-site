@@ -16,6 +16,7 @@
   "scripts": {
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
     "build:css-bootstrap": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.bootstrap.css --no-source-map --load-path=node_modules",
-    "build:css-tailwind": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.tailwind.css --minify"
+    "build:css-tailwind": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.tailwind.css --minify",
+    "build:css": "yarn build:css-bootstrap && yarn build:css-tailwind"
   }
 }
