@@ -1,0 +1,25 @@
+<div class="my-container">
+  <div class="row row-cols-1 row-cols-md-2 gx-5 gy-2">
+    <div class="col flex align-items-center">
+      <%= f.label :terms_eq, '期間', style: 'width: 140px' %>
+      <%= f.select :terms_eq, ['1日', '2~4日', '5日', '5日より多い'], { include_blank: '指定しない' }, { class: "form-select w-100" } %>
+    </div>
+    <div class="col flex align-items-center">
+      <%= f.label :company_business_category_name_eq, '業種', style: 'width: 140px' %>
+      <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { prompt: "指定しない" }, { class: "form-select w-100" } %>
+    </div>
+    <div class="col flex align-items-center">
+      <%= f.label :internship_category_name_eq, 'カテゴリー', style: 'width: 140px' %>
+      <%= f.collection_select :internship_category_name_eq, InternshipCategory.all, :name, :name, { prompt: "指定しない" }, { class: "form-select w-100" } %>
+    </div>
+    <div class="col flex align-items-center">
+      <%= f.label :internship_attendance_type_name_eq, '参加方法', style: 'width: 140px' %>
+      <%= f.collection_select :internship_attendance_type_name_eq, InternshipAttendanceType.all, :name, :name, { prompt: "指定しない" }, { class: "form-select w-100" } %>
+    </div>
+  </div>
+  <div class="text-center my-4">
+    <%= button_tag type: 'submit', class: 'btn btn-primary text-white', style: "width: 200px" do %>
+    <i class="bi bi-search"></i> 検索
+    <% end %>
+  </div>
+</div>
