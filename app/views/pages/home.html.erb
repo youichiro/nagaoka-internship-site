@@ -5,6 +5,11 @@
   <div class="container px-0">
     <section class="section">
       <p class="section-title">インターンシップ情報</p>
+
+      <%= search_form_for @q, url: internships_path do |f| %>
+      <%= render 'partial/internship_search_fields', f: f %>
+      <% end %>
+
       <%= render 'partial/internships', internships: @internships %>
       <div class="text-center mt-4">
         <%= link_to "全て見る", internships_path, class: 'link-primary-with-underline' %>

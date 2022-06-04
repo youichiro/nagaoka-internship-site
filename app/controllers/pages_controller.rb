@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @internships = Internship.where(is_public: true).limit(6).load_async
+    # これがないとエラーになるよ
+    @q = Internship.where(is_public: true).ransack(params[:q])
+
+    @internships = Internship.where(is_public: true).limit(6)
     @courses = Course.all.limit(4)
     @announcements = Announcement.all.limit(4)
   end
