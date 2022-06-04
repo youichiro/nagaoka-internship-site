@@ -21,6 +21,7 @@ ja:
       employee_course_order: 企業ユーザの講座申し込み
       announcement_category: お知らせカテゴリー
       announcement: お知らせ
+      nagaoka_company: 長岡市企業
     attributes:
       created_at: 作成日時
       updated_at: 更新日時
@@ -102,6 +103,10 @@ ja:
       announcement:
         title: タイトル
         contents: 本文
+      nagaoka_company:
+        number: 番号
+        name: 企業名
+        company_url: 企業URL
     errors:
       messages:
         record_invalid: "バリデーションに失敗しました: %{errors}"

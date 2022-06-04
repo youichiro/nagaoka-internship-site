@@ -244,10 +244,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_134803) do
     t.integer "number", null: false
     t.string "name", null: false
     t.string "company_url"
-    t.bigint "business_categories_id", null: false
+    t.bigint "business_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["business_categories_id"], name: "index_nagaoka_companies_on_business_categories_id"
+    t.index ["business_category_id"], name: "index_nagaoka_companies_on_business_category_id"
     t.index ["name"], name: "index_nagaoka_companies_on_name", unique: true
     t.index ["number"], name: "index_nagaoka_companies_on_number", unique: true
   end
@@ -313,7 +313,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_04_134803) do
   add_foreign_key "internships", "companies"
   add_foreign_key "internships", "internship_attendance_types"
   add_foreign_key "internships", "internship_categories"
-  add_foreign_key "nagaoka_companies", "business_categories", column: "business_categories_id"
+  add_foreign_key "nagaoka_companies", "business_categories"
   add_foreign_key "student_course_orders", "courses"
   add_foreign_key "student_course_orders", "students"
   add_foreign_key "student_details", "students"

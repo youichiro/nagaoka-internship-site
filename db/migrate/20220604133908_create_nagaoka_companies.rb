@@ -4,7 +4,7 @@ class CreateNagaokaCompanies < ActiveRecord::Migration[7.0]
       t.integer :number, null: false, index: { unique: true }
       t.string :name, null: false, index: { unique: true }
       t.string :company_url
-      t.references :business_categories, foreign_key: true, null: false
+      t.references :business_category, foreign_key: true, null: false
 
       t.timestamps
     end

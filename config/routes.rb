@@ -60,6 +60,7 @@ Rails.application.routes.draw do
     resources :employee_course_orders
     resources :announcement_categories
     resources :announcements
+    resources :nagaoka_companies
 
     root to: "companies#index"
   end
