@@ -6,15 +6,15 @@
     </div>
     <div class="col flex align-items-center">
       <%= f.label :company_business_category_name_eq, '業種', style: 'width: 140px' %>
-      <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { prompt: "指定しない" }, { class: "form-select w-100" } %>
+      <%= f.collection_select :company_business_category_name_eq, BusinessCategory.all, :name, :name, { include_blank: "指定しない" }, { class: "form-select w-100" } %>
     </div>
     <div class="col flex align-items-center">
       <%= f.label :internship_category_name_eq, 'カテゴリー', style: 'width: 140px' %>
-      <%= f.collection_select :internship_category_name_eq, InternshipCategory.all, :name, :name, { prompt: "指定しない" }, { class: "form-select w-100" } %>
+      <%= f.collection_select :internship_category_name_eq, InternshipCategory.all, :name, :name, { include_blank: '指定しない' }, { class: "form-select w-100" } %>
     </div>
     <div class="col flex align-items-center">
       <%= f.label :internship_attendance_type_name_eq, '参加方法', style: 'width: 140px' %>
-      <%= f.collection_select :internship_attendance_type_name_eq, InternshipAttendanceType.all, :name, :name, { prompt: "指定しない" }, { class: "form-select w-100" } %>
+      <%= f.collection_select :internship_attendance_type_name_eq, InternshipAttendanceType.all, :name, :name, { include_blank: "指定しない" }, { class: "form-select w-100" } %>
     </div>
   </div>
   <div class="text-center my-4">
