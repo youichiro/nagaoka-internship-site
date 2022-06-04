@@ -30,20 +30,23 @@
   </div>
 
   <div class="my-container">
-    <section class="mt-5">
+    <section class="mb-[100px]">
       <p class="font-section font-bold text-xl my-[32px]">講座一覧</p>
       <%= render 'partial/courses', courses: @courses %>
       <div class="text-center mt-4">
-        <%= link_to "全て見る", courses_path, class: 'link-primary-with-underline' %>
+        <%= link_to "全て見る", courses_path, class: "btn btn-primary text-white w-[200px]" %>
       </div>
     </section>
   </div>
+
+  <div class="w-100 h-[32px] bg-slate-100"></div>
+
   <div class="my-container">
-    <section class="section">
+    <section class="mb-[100px]">
       <p class="font-section font-bold text-xl my-[32px]">お知らせ一覧</p>
       <%= render 'partial/announcements', announcements: @announcements %>
       <div class="text-center mt-4">
-        <%= link_to "全て見る", announcements_path, class: 'link-primary-with-underline' %>
+        <%= link_to "全て見る", announcements_path, class: "btn btn-primary text-white w-[200px]" %>
       </div>
     </section>
   </div>

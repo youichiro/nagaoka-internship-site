@@ -1,3 +1,17 @@
 /* @tailwind base; */
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .card-info-th {
+    @apply py-1 px-2 bg-slate-400 text-white mr-4;
+  }
+
+  .card-title {
+    @apply font-bold text-xl no-underline text-slate-800 hover:underline;
+  }
+
+  .list-group-item-card {
+    @apply border-none  bg-white flex flex-col md:flex-row md:shadow-md;
+  }
+}
