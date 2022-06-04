@@ -8,6 +8,9 @@ class PagesController < ApplicationController
     @announcements = Announcement.all.limit(4)
   end
 
+  def steps
+  end
+
   def privacy_policy
   end
 
