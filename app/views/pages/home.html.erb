@@ -1,23 +1,33 @@
-<main class="home">
+<main class="bg-slate-100">
   <div class="card">
     <%= image_tag "top_copy.jpg", class: "hero-img" %>
   </div>
-  <div class="my-container px-0">
-    <section class="section">
-      <p class="section-title">インターンシップ情報</p>
+  <div class="my-container">
+    <section class="">
+      <p class="font-section font-bold text-xl my-[32px]">インターンシップ情報</p>
 
-      <%= search_form_for @q, url: internships_path do |f| %>
-      <%= render 'partial/internship_search_fields', f: f %>
-      <% end %>
+      <p>
+        <a class="btn btn-primary text-white" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample">
+          <i class="bi bi-caret-down-fill mr-1"></i>検索する
+        </a>
+      </p>
+      <div class="collapse mb-5" id="collapseExample">
+        <div class="card card-body">
+          <%= search_form_for @q, url: internships_path do |f| %>
+          <%= render 'partial/internship_search_fields', f: f %>
+          <% end %>
+        </div>
+      </div>
 
       <%= render 'partial/internships', internships: @internships %>
       <div class="text-center mt-4">
-        <%= link_to "全て見る", internships_path, class: 'link-primary-with-underline' %>
+        <%= link_to "全て見る", internships_path, class: "btn btn-primary text-white w-[200px]" %>
       </div>
     </section>
 
-    <section class="section">
-      <p class="section-title">講座一覧</p>
+    <section class="">
+      <p class="font-section font-bold text-xl my-[32px]">講座一覧</p>
       <%= render 'partial/courses', courses: @courses %>
       <div class="text-center mt-4">
         <%= link_to "全て見る", courses_path, class: 'link-primary-with-underline' %>
@@ -25,7 +35,7 @@
     </section>
 
     <section class="section">
-      <p class="section-title">お知らせ一覧</p>
+      <p class="font-section font-bold text-xl my-[32px]">お知らせ一覧</p>
       <%= render 'partial/announcements', announcements: @announcements %>
       <div class="text-center mt-4">
         <%= link_to "全て見る", announcements_path, class: 'link-primary-with-underline' %>

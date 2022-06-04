@@ -10,6 +10,10 @@
   <%= stylesheet_link_tag "application.bootstrap", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "application.tailwind", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
 
 <body class="min-vh-100 d-flex flex-column">
@@ -18,7 +22,7 @@
     <%= render 'partial/flash' %>
     <%= yield %>
   </main>
-  <footer class="mt-5" style=" background-color: whitesmoke;">
+  <footer class="mt-5 bg-white">
     <%= render 'partial/footer' %>
   </footer>
   <script src="https://player.vimeo.com/api/player.js" defer></script>
