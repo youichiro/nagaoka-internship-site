@@ -11,14 +11,15 @@
   <div class="bg-slate-100 pb-[100px]">
     <div class="my-container">
       <section>
-        <p class="font-section font-bold text-xl mt-[32px] mb-[12px]">インターンシップ情報</p>
-
-        <p>
-          <a class="btn bg-slate-400 text-white text-sm" data-bs-toggle="collapse" href="#collapseExample" role="button"
-            aria-expanded="false" aria-controls="collapseExample">
-            <i class="bi bi-caret-down-fill mr-1"></i>検索する
-          </a>
-        </p>
+        <div class="flex align-items-center mt-[32px] mb-[12px] gap-3">
+          <p class="font-section font-bold text-xl">インターンシップ情報</p>
+          <p>
+            <a class="btn bg-slate-400 text-white text-sm" data-bs-toggle="collapse" href="#collapseExample"
+              role="button" aria-expanded="false" aria-controls="collapseExample">
+              <i class="bi bi-caret-down-fill mr-1"></i>検索する
+            </a>
+          </p>
+        </div>
         <div class="collapse mb-5" id="collapseExample">
           <div class="card card-body">
             <%= search_form_for @q, url: internships_path do |f| %>
