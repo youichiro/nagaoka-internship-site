@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer components {
   .card-info-th {
     @apply py-1 px-2 bg-slate-400 text-white mr-4;
@@ -12,6 +13,18 @@
   }
 
   .list-group-item-card {
-    @apply border-none  bg-white flex flex-col md:flex-row md:shadow-md;
+    @apply border-none  bg-white flex flex-col md:flex-row shadow-md;
+  }
+
+  .checkup-card {
+    @apply w-[180px] h-[180px] md:w-[240px] md:h-[240px] flex flex-col justify-between rounded cursor-pointer;
+  }
+
+  .checkup-card-img-wrapper {
+    @apply w-[172px] h-[120px] md:w-[232px] md:h-[180px] rounded bg-white mt-[4px];
+  }
+
+  .checkup-card-img {
+    @apply w-full h-full object-cover object-top;
   }
 }

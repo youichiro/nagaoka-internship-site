@@ -1,0 +1,11 @@
+<div class="grid grid-cols-2">
+  <% nagaoka_companies.each do |company| %>
+  <ul>
+    <% if company.company_url.present? %>
+    <li><%= link_to company.name, company.company_url %></li>
+    <% else %>
+    <li><%= company.name %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</div>

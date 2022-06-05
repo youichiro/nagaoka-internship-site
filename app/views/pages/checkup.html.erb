@@ -1,0 +1,50 @@
+<div class="my-container mt-5">
+  <div class="font-bold text-lg text-center">かんたん長岡仕事診断</div>
+  <section class="text-center my-5">興味のある長岡のしごとは？</section>
+  <div class="max-w-[800px] mx-auto">
+    <div class="flex justify-center flex-wrap gap-2">
+      <div>
+        <a href='/checkup?interest=creator#checkup_internships' class="no-underline">
+          <div class="checkup-card align-items-center bg-sky-400 hover:bg-sky-500">
+            <div class="checkup-card-img-wrapper">
+              <%= image_tag "kids_mokkou_kyoushitsu_boy.png", class: "checkup-card-img" %>
+            </div>
+            <p class="font-bold text-white">ものづくり</p>
+          </div>
+        </a>
+      </div>
+      <div>
+        <a href='/checkup?interest=service#checkup_internships' class="no-underline">
+          <div class="checkup-card align-items-center bg-orange-400 hover:bg-orange-500">
+            <div class="checkup-card-img-wrapper">
+              <%= image_tag "job_hotel_roomservice_woman.png", class: "checkup-card-img" %>
+            </div>
+            <p class="font-bold text-white">サービス</p>
+          </div>
+        </a>
+      </div>
+      <div>
+        <a href='/checkup?interest=other#checkup_internships' class="no-underline">
+          <div class="checkup-card align-items-center bg-slate-400 hover:bg-slate-500">
+            <div class="checkup-card-img-wrapper">
+              <%= image_tag "life_wakaremichi_man.png", class: "checkup-card-img" %>
+            </div>
+            <p class="font-bold text-white">その他</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-20">
+    <div id="checkup_internships" class="text-lg text-center">おすすめのインターンシップ</div>
+    <%= render 'partial/internships', internships: @internships %>
+  </div>
+
+  <div class="mt-20">
+    <div class="text-lg text-center mb-3">関連する長岡市の企業</div>
+    <div class="max-w-[600px] mx-auto">
+      <%= render 'partial/nagaoka_companies', nagaoka_companies: @nagaoka_companies %>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
   get '/comment_form', to: 'pages#comment_form'
   get '/steps', to: 'pages#steps'
+  get '/checkup', to: 'pages#checkup'
 
   get '/hello', to: 'hello#index'
 
