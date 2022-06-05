@@ -20,9 +20,9 @@ class PagesController < ApplicationController
     end
 
     interest_business_categories = {
-      'creator' => ['IT・通信'],
-      'service' => ['建設・建築'],
-      'other' => ['自動車販売']
+      'creator' => ['メーカー(電気・電子・機械・食品・その他)', '建設・建築'],
+      'service' => ['小売・流通・自動車販売・運送・運輸', '卸売・商社', 'ソフトウエア・IT・通信', 'サービス・飲食・宿泊', '金融・保険', '官公庁・組合・団体・非営利団体'],
+      'other' => ['その他']
     }
     categories = BusinessCategory.where(name: interest_business_categories[interest])
     @internships = categories.map(&:companies).flatten.map(&:internships).flatten
