@@ -1,9 +1,10 @@
 <div class="my-container mt-5">
+  <% currect_interest = request.query_parameters['interest'] %>
   <div class="font-bold text-lg text-center">かんたん長岡仕事診断</div>
   <section class="text-center my-5">興味のある長岡のしごとは？</section>
   <div class="max-w-[800px] mx-auto">
     <div class="flex justify-center flex-wrap gap-2">
-      <div>
+      <div class="<%= currect_interest == 'creator' ? 'shadow-2xl' : '' %>">
         <a href='/checkup?interest=creator#checkup_internships' class="no-underline">
           <div class="checkup-card align-items-center bg-sky-400 hover:bg-sky-500">
             <div class="checkup-card-img-wrapper">
@@ -13,7 +14,7 @@
           </div>
         </a>
       </div>
-      <div>
+      <div class="<%= currect_interest == 'service' ? 'shadow-2xl' : '' %>">
         <a href='/checkup?interest=service#checkup_internships' class="no-underline">
           <div class="checkup-card align-items-center bg-orange-400 hover:bg-orange-500">
             <div class="checkup-card-img-wrapper">
@@ -23,7 +24,7 @@
           </div>
         </a>
       </div>
-      <div>
+      <div class="<%= currect_interest == 'other' ? 'shadow-2xl' : '' %>">
         <a href='/checkup?interest=other#checkup_internships' class="no-underline">
           <div class="checkup-card align-items-center bg-slate-400 hover:bg-slate-500">
             <div class="checkup-card-img-wrapper">
