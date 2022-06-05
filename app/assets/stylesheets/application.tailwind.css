@@ -5,7 +5,7 @@
 
 @layer components {
   .card-info-th {
-    @apply py-1 px-2 bg-slate-400 text-white mr-4;
+    @apply py-1 px-2 bg-slate-400 text-white mr-4 text-sm;
   }
 
   .card-title {
@@ -26,5 +26,27 @@
 
   .checkup-card-img {
     @apply w-full h-full object-cover object-top;
+  }
+
+  .checkup-hero {
+    @apply h-[300px] bg-slate-100 flex justify-center w-full bg-cover bg-bottom;
+  }
+
+  .top-hero-lg {
+    @apply pt-[40%] bg-cover bg-center relative;
+  }
+
+  .top-hero-button-lg {
+    @apply bg-orange-500 hover:bg-orange-400 border-none rounded text-white text-lg px-8 py-3 absolute bottom-10 left-1/2 font-bold shadow;
+    transform: translateX(-50%);
+  }
+
+  .top-hero-sm {
+    @apply pt-[60%] bg-cover bg-center relative;
+  }
+
+  .top-hero-button-sm {
+    @apply bg-orange-500 hover:bg-orange-400 border-none rounded text-white px-3 py-2 absolute bottom-5 left-1/2 font-bold shadow;
+    transform: translateX(-50%);
   }
 }

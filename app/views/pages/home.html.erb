@@ -1,14 +1,20 @@
 <main>
-  <div class="card">
-    <%= image_tag "top_copy.jpg", class: "w-100" %>
+  <div class="bg-[url('/assets/top.jpg')] top-hero-sm md:top-hero-lg md:bg-[url('/assets/top_copy.jpg')]">
+    <div>
+      <a href="/checkup">
+        <div class="top-hero-button-sm md:top-hero-button-lg">
+          <i class="bi bi-check-lg mr-1"></i>かんたん長岡仕事診断
+        </div>
+      </a>
+    </div>
   </div>
   <div class="bg-slate-100 pb-[100px]">
     <div class="my-container">
       <section>
-        <p class="font-section font-bold text-xl my-[32px]">インターンシップ情報</p>
+        <p class="font-section font-bold text-xl mt-[32px] mb-[12px]">インターンシップ情報</p>
 
         <p>
-          <a class="btn btn-primary text-white" data-bs-toggle="collapse" href="#collapseExample" role="button"
+          <a class="btn bg-slate-400 text-white text-sm" data-bs-toggle="collapse" href="#collapseExample" role="button"
             aria-expanded="false" aria-controls="collapseExample">
             <i class="bi bi-caret-down-fill mr-1"></i>検索する
           </a>
@@ -23,7 +29,7 @@
 
         <%= render 'partial/internships', internships: @internships %>
         <div class="text-center mt-4">
-          <%= link_to "全て見る", internships_path, class: "btn btn-primary text-white w-[200px]" %>
+          <%= link_to "全て見る", internships_path, class: "btn btn-primary text-white w-[200px] shadow" %>
         </div>
       </section>
     </div>
@@ -34,7 +40,7 @@
       <p class="font-section font-bold text-xl my-[32px]">講座一覧</p>
       <%= render 'partial/courses', courses: @courses %>
       <div class="text-center mt-4">
-        <%= link_to "全て見る", courses_path, class: "btn btn-primary text-white w-[200px]" %>
+        <%= link_to "全て見る", courses_path, class: "btn btn-primary text-white w-[200px] shadow" %>
       </div>
     </section>
   </div>
@@ -46,7 +52,7 @@
       <p class="font-section font-bold text-xl my-[32px]">お知らせ一覧</p>
       <%= render 'partial/announcements', announcements: @announcements %>
       <div class="text-center mt-4">
-        <%= link_to "全て見る", announcements_path, class: "btn btn-primary text-white w-[200px]" %>
+        <%= link_to "全て見る", announcements_path, class: "btn btn-primary text-white w-[200px] shadow" %>
       </div>
     </section>
   </div>
