@@ -25,7 +25,7 @@ class PagesController < ApplicationController
       'other' => ['その他']
     }
     categories = BusinessCategory.where(name: interest_business_categories[interest])
-    @internships = categories.map(&:companies).flatten.map(&:internships).flatten
+    @internships = categories.map(&:companies).flatten.map(&:internships).flatten.filter { |internship| internship.is_public == true }
     @nagaoka_companies = categories.map(&:nagaoka_companies).flatten
   end
 
