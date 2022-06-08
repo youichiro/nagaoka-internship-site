@@ -28,6 +28,9 @@
           </div>
         </div>
 
+        <% if @internships.empty? %>
+        <p>現在、公開中のインターンシップはありません。</p>
+        <% else %>
         <%= render 'partial/internships', internships: @internships %>
         <div class="text-right mt-4 mr-2">
           <a href=<%= internships_path %> class="top-more-link">
@@ -35,6 +38,7 @@
             <i class="bi bi-chevron-right"></i>
           </a>
         </div>
+        <% end %>
       </section>
     </div>
   </div>
@@ -43,6 +47,10 @@
     <div class="my-container">
       <section class="mb-[100px]">
         <p class="font-section font-bold text-2xl mb-4">講座一覧</p>
+
+        <% if @courses.empty? %>
+        <p>現在、公開中の講座はありません。</p>
+        <% else %>
         <%= render 'partial/courses', courses: @courses %>
         <div class="text-right mt-4 mr-2">
           <a href=<%= courses_path %> class="top-more-link">
@@ -50,13 +58,18 @@
             <i class="bi bi-chevron-right"></i>
           </a>
         </div>
+        <% end %>
       </section>
     </div>
   </div>
 
-  <div class="my-container">
+  <div class="my-container mt-16">
     <section>
-      <p class="font-section font-bold text-xl my-16">お知らせ一覧</p>
+      <p class="font-section font-bold text-xl mb-4">お知らせ一覧</p>
+
+      <% if @announcements.empty? %>
+      <p>現在、お知らせはありません。</p>
+      <% else %>
       <%= render 'partial/announcements', announcements: @announcements %>
       <div class="text-right mt-4 mr-2">
         <a href=<%= announcements_path %> class="top-more-link">
@@ -64,6 +77,7 @@
           <i class="bi bi-chevron-right"></i>
         </a>
       </div>
+      <% end %>
     </section>
   </div>
 </main>
