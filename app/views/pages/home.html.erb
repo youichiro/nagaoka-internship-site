@@ -1,5 +1,5 @@
 <main>
-  <div class="bg-[url('/assets/top.jpg')] top-hero-sm md:top-hero-lg md:bg-[url('/assets/top_copy.jpg')]">
+  <div class="bg-[url('/assets/top.png')] top-hero-sm md:top-hero-lg">
     <div>
       <a href="/checkup">
         <div class="top-hero-button-sm md:top-hero-button-lg">
@@ -8,11 +8,11 @@
       </a>
     </div>
   </div>
-  <div class="bg-slate-100 pb-[100px]">
+  <div class="bg-slate-100 pb-42 pt-16">
     <div class="my-container">
       <section>
-        <div class="flex align-items-center mt-[32px] mb-[12px] gap-3">
-          <p class="font-section font-bold text-xl">インターンシップ情報</p>
+        <div class="flex align-items-center mb-2 gap-3">
+          <p class="font-section font-bold text-2xl">インターンシップ情報</p>
           <p>
             <a class="btn bg-slate-400 text-white text-sm" data-bs-toggle="collapse" href="#collapseExample"
               role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -29,31 +29,40 @@
         </div>
 
         <%= render 'partial/internships', internships: @internships %>
-        <div class="text-center mt-4">
-          <%= link_to "全て見る", internships_path, class: "btn btn-primary text-white w-[200px] shadow" %>
+        <div class="text-right mt-4 mr-2">
+          <a href=<%= internships_path %> class="top-more-link">
+            <span class="">もっと見る</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="bg-slate-100 pb-42 pt-16">
+    <div class="my-container">
+      <section class="mb-[100px]">
+        <p class="font-section font-bold text-2xl mb-4">講座一覧</p>
+        <%= render 'partial/courses', courses: @courses %>
+        <div class="text-right mt-4 mr-2">
+          <a href=<%= courses_path %> class="top-more-link">
+            <span class="">もっと見る</span>
+            <i class="bi bi-chevron-right"></i>
+          </a>
         </div>
       </section>
     </div>
   </div>
 
   <div class="my-container">
-    <section class="mb-[100px]">
-      <p class="font-section font-bold text-xl my-[32px]">講座一覧</p>
-      <%= render 'partial/courses', courses: @courses %>
-      <div class="text-center mt-4">
-        <%= link_to "全て見る", courses_path, class: "btn btn-primary text-white w-[200px] shadow" %>
-      </div>
-    </section>
-  </div>
-
-  <div class="w-100 h-[32px] bg-slate-100"></div>
-
-  <div class="my-container">
     <section>
-      <p class="font-section font-bold text-xl my-[32px]">お知らせ一覧</p>
+      <p class="font-section font-bold text-xl my-16">お知らせ一覧</p>
       <%= render 'partial/announcements', announcements: @announcements %>
-      <div class="text-center mt-4">
-        <%= link_to "全て見る", announcements_path, class: "btn btn-primary text-white w-[200px] shadow" %>
+      <div class="text-right mt-4 mr-2">
+        <a href=<%= announcements_path %> class="top-more-link">
+          <span class="">もっと見る</span>
+          <i class="bi bi-chevron-right"></i>
+        </a>
       </div>
     </section>
   </div>
