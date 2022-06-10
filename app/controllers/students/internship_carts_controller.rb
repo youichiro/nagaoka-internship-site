@@ -16,7 +16,7 @@ class Students::InternshipCartsController < ApplicationController
   def destroy
     @cart = InternshipCart.find(params[:id])
     @cart.destroy
-    redirect_to student_internships_url(@cart.student)
+    redirect_to request.referer, notice: "お気に入りから削除しました"
   end
 
   private

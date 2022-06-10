@@ -53,4 +53,12 @@
   .top-more-link {
     @apply no-underline text-slate-700 hover:text-slate-600 font-bold;
   }
+
+  .table-th {
+    @apply w-1/4 border border-white px-5 py-3 bg-sky-100 text-slate-600 text-sm md:text-base;
+  }
+
+  .table-td {
+    @apply border border-white px-5 py-3 bg-sky-50;
+  }
 }

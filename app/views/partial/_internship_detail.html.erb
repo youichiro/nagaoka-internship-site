@@ -1,50 +1,105 @@
-<h3><%= internship.title %></h3>
+<div class="badge bg-primary mb-3">
+  <%= internship.company.business_category.name %>
+</div>
+<h3 class="mb-3"><%= internship.company.name %></h3>
+<h4><%= internship.title %></h4>
 
-<div class="my-3 w-100">
+<div class="my-3 text-slate-600"><%= internship.description %></div>
+
+<div class="my-5 md:mx-12">
   <%= render "partial/slider", image_urls: internship.image_urls %>
 </div>
 
-<table class="table my-5">
+<h4>インターンシップ情報</h4>
+
+<table class="table-fixed my-3 w-100">
   <tbody>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.description' %></th>
-      <td><%= internship.description %></td>
+    <tr class="table-tr">
+      <th class="table-th">期間</th>
+      <td class="table-td"><%= internship.terms %>日間</td>
     </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.start_date' %></th>
-      <td><%= internship.start_date %></td>
+    <tr class="table-tr">
+      <% if internship.terms > 1 %>
+      <th class="table-th">日程</th>
+      <td class="table-td"><%= l internship.start_date, format: :ymd %> ~ <%= l internship.end_date, format: :ymd %>
+      </td>
+      <% else %>
+      <th class="table-th">実施日</th>
+      <td class="table-td"><%= l internship.start_date, format: :ymd %></td>
+      <% end %>
     </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.end_date' %></th>
-      <td><%= internship.end_date %></td>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.internship.deadline' %></th>
+      <td class="table-td"><%= l internship.deadline, format: :ymd %></td>
     </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.deadline' %></th>
-      <td><%= internship.deadline %></td>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.internship.location' %></th>
+      <td class="table-td"><%= internship.location %></td>
     </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.location' %></th>
-      <td><%= internship.location %></td>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.internship.target' %></th>
+      <td class="table-td"><%= internship.target %></td>
     </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.target' %></th>
-      <td><%= internship.target %></td>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.internship.acceptable_number' %></th>
+      <td class="table-td"><%= internship.acceptable_number %>名</td>
     </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.acceptable_number' %></th>
-      <td><%= internship.acceptable_number %></td>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.internship.others' %></th>
+      <td class="table-td"><%= internship.others %></td>
     </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.internship.others' %></th>
-      <td><%= internship.others %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.created_at' %></th>
-      <td><%= l internship.created_at, format: :ymd %></td>
-    </tr>
-    <tr>
-      <th><%= t 'activerecord.attributes.updated_at' %></th>
-      <td><%= l internship.updated_at, format: :ymd %></td>
+    <tr class="table-tr">
+      <th class="table-th">最終更新日</th>
+      <td class="table-td"><%= l internship.updated_at, format: :ymd %></td>
     </tr>
   </tbody>
 </table>
+
+<div class="my-3 text-right">
+  <%= link_to "https://nagaoka-shukatsuondemand.jp/all-internship/", :target=>["_blank"], class: "btn btn-primary text-white" do %>
+  <i class="bi bi-play-circle-fill"></i> 紹介動画を見る
+  <% end %>
+</div>
+
+<h4 class="mt-5">企業情報</h4>
+
+<table class="table-fixed my-3 w-100">
+  <tbody>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.company.name' %></th>
+      <td class="table-td"><%= link_to internship.company.name, company_path(internship.company) %></td>
+    </tr>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.company.contact_name' %></th>
+      <td class="table-td"><%= internship.company.contact_name %></td>
+    </tr>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.company.contact_email' %></th>
+      <td class="table-td"><%= internship.company.contact_email %></td>
+    </tr>
+    <tr class="table-tr">
+      <th class="table-th"><%= t 'activerecord.attributes.company.contact_phone_number' %></th>
+      <td class="table-td"><%= internship.company.contact_phone_number %></td>
+    </tr>
+  </tbody>
+</table>
+
+<% if current_student %>
+<div class="my-5 flex justify-end">
+  <% if @cart.present? || @order.present? %>
+  <%= button_to student_internship_cart_path(id: @cart.id, student_id: current_student.id),
+      method: :delete,
+      class: "btn btn-outline-secondary" do
+    %>
+  <i class="bi bi-star-fill text-warning"></i> お気に入りを外す
+  <% end %>
+  <% else %>
+  <%= button_to student_internship_carts_path(current_student),
+      params: { internship_id: @internship.id },
+      class: "btn btn-warning shadow" do
+    %>
+  <i class="bi bi-star"></i> お気に入りに追加する
+  <% end %>
+  <% end %>
+</div>
+<% end %>
