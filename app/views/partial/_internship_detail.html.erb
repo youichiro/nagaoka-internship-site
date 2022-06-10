@@ -1,7 +1,7 @@
 <div class="badge bg-primary mb-3">
   <%= internship.company.business_category.name %>
 </div>
-<h3 class="mb-3"><%= internship.company.name %></h3>
+<h4 class="mb-3"><%= internship.company.name %></h4>
 <h4><%= internship.title %></h4>
 
 <div class="my-3 text-slate-600"><%= internship.description %></div>
@@ -90,13 +90,15 @@
 
 <% if current_student %>
 <div class="my-5 flex justify-end">
-  <% if @cart.present? || @order.present? %>
+  <% if @cart.present? %>
   <%= button_to student_internship_cart_path(id: @cart.id, student_id: current_student.id),
       method: :delete,
       class: "btn btn-outline-secondary" do
     %>
   <i class="bi bi-star-fill text-warning"></i> お気に入りを外す
   <% end %>
+  <% elsif @order.present? %>
+  <button class="btn disabled">申し込み済み</button>
   <% else %>
   <%= button_to student_internship_carts_path(current_student),
       params: { internship_id: @internship.id },

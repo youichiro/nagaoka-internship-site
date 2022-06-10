@@ -15,6 +15,10 @@ class Internship < ApplicationRecord
 
   has_one_attached :thumbnail
 
+  def title_with_company_name
+    company.name + ' | ' + title
+  end
+
   def terms
     (end_date - start_date).to_i + 1
   end
