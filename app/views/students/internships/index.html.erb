@@ -7,12 +7,18 @@
 <% end %>
 <ul class="list-group">
   <% @orders.each do |order| %>
-  <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
     <%= link_to order.internship.title, internship_path(id: order.internship.id), class: "link-primary" %>
-    <%= button_to "連絡したボタン",
-      student_internship_order_contact_path(student_id: current_student.id, internship_order_id: order.id),
-      class: 'btn btn-primary text-white'
-    %>
+    <div class="flex align-items-center">
+      <span>連絡済み？</span>
+      <% if !order.is_contacted %>
+      <%= button_to student_internship_order_contact_path(student_id: current_student.id, internship_order_id: order.id), class: 'bg-white border-none' do %>
+      <i class="bi bi-check-circle-fill text-xl text-slate-300 hover:text-green-400"></i>
+      <% end %>
+      <% else %>
+      <i class="bi bi-check-circle-fill text-xl text-green-400 mx-1"></i>
+      <% end %>
+    </div>
   </li>
   <% end %>
 </ul>
@@ -26,8 +32,8 @@
   <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
     <%= link_to cart.internship.title, internship_path(id: cart.internship.id), class: "link-primary" %>
     <div class="d-flex gap-3">
-      <%= button_to "申し込む", student_internship_orders_path(internship_cart_id: cart.id), class: 'btn btn-warning btn-sm' %>
-      <%= button_to "キャンセル", student_internship_cart_path(id: cart.id), method: :delete, class: 'btn btn-danger btn-sm' %>
+      <%= button_to "申し込む", student_internship_orders_path(internship_cart_id: cart.id), data: { confirm: t('本当に申し込みますか？') }, class: 'btn btn-warning btn-sm' %>
+      <%= button_to "キャンセル", student_internship_cart_path(id: cart.id), method: :delete, data: { confirm: t('本当にキャンセルしますか？') }, class: 'btn btn-danger text-white btn-sm' %>
     </div>
   </li>
   <% end %>

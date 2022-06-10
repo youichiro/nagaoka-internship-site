@@ -8,15 +8,16 @@ class Students::InternshipOrdersController < ApplicationController
     @cart.destroy!
     if @order.save
       StudentMailer.with(student: current_student, internship: @cart.internship).internship_order_confirm_mail.deliver_later
-      redirect_to request.referer, notice: "インターンシップを申し込みました"
+      redirect_to student_internships_path(current_student), notice: "インターンシップを申し込みました"
     else
-      redirect_to request.referer, status: :unprocessable_entity, alert: "インターンシップを申し込めませんでした"
+      redirect_to student_internships_path(current_student), status: :unprocessable_entity, alert: "インターンシップを申し込めませんでした"
     end
   end
 
   def contact
     @order = InternshipOrder.find(params[:internship_order_id])
     @order.toggle!(:is_contacted)
+    redirect_to student_internships_path(current_student)
   end
 
   private
