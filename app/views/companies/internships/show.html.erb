@@ -2,7 +2,7 @@
 
 <%= render 'partial/internship_detail', internship: @internship %>
 
-<div class="my-5 d-flex justify-content-between">
+<div class="mt-[80px] d-flex justify-content-between">
   <%= link_to "戻る", company_internships_path(@company), class: 'link-primary-with-underline' %>
   <div class="d-flex gap-2">
     <%= link_to "編集する", edit_company_internship_path(@company), class: 'btn btn-primary text-white' %>
