@@ -3,7 +3,7 @@ class Companies::InternshipsController < ApplicationController
   before_action :validate_company!
 
   def index
-    @internships = Internship.all
+    @internships = Internship.where(company_id: params[:company_id])
     @company = Company.find(params[:company_id])
   end
 
