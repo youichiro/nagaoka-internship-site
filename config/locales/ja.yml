@@ -67,6 +67,8 @@ ja:
         others: その他
         gif_url: GIFのURL
         is_public: 公開しているか
+        internship_attendance_type_id: 参加方法
+        internship_category_id: カテゴリー
       internship_cart:
         student_id: 学生ユーザ
         internship_id: インターンシップ

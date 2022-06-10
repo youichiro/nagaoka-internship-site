@@ -5,7 +5,7 @@
 <p>ご登録されているインターンシップはありません</p>
 <% end %>
 
-<ul class="list-group list-group-flush">
+<ul class="list-group">
   <% @internships.each do |internship| %>
   <%= link_to internship.title, company_internship_path(id: internship.id), class: "list-group-item list-group-item-action" %>
   <% end %>

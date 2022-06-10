@@ -1,8 +1,10 @@
 <%= bootstrap_form_with(model: internship, url: url, local: true) do |f| %>
 <%= f.text_field :title %>
-<%= f.text_area :description %>
+<%= f.collection_select :internship_attendance_type_id, InternshipAttendanceType.all, :id, :name, { include_blank: "選択してください" } %>
+<%= f.collection_select :internship_category_id, InternshipCategory.all, :id, :name, { include_blank: "選択してください" } %>
 <%= f.date_field :start_date %>
 <%= f.date_field :end_date %>
+<%= f.text_area :description %>
 <%= f.date_field :deadline %>
 <%= f.text_field :location %>
 <%= f.text_field :target %>
@@ -10,5 +12,5 @@
 <%= f.number_field :acceptable_number %>
 <%= f.text_area :others %>
 
-<%= f.submit submit_label, class: "btn btn-primary text-white w-100" %>
+<%= f.submit submit_label, class: "btn btn-primary mt-3 text-white w-100" %>
 <% end %>

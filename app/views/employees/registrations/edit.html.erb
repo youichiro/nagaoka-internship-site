@@ -11,8 +11,8 @@
 <%= f_employee_detail.text_field :name %>
 <% end %>
 
-<%= f.submit "変更する", class: "btn btn-primary text-white" %>
+<%= f.submit "変更する", class: "btn btn-primary my-3 text-white w-100" %>
 <% end %>
 
-<%= button_to 'アカウントを削除する', registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: 'btn btn-danger w-100 my-3' %>
+<%= button_to 'アカウントを削除する', registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: 'btn btn-danger mt-5 text-white w-100' %>
 <% end %>

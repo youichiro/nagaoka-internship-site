@@ -61,7 +61,8 @@ class Companies::InternshipsController < ApplicationController
   def internship_params
     params.require(:internship).permit(
       :title, :description, :start_date, :end_date, :deadline,
-      :location, :target, :thumbnail, :acceptable_number, :others, :company_id
+      :location, :target, :thumbnail, :acceptable_number, :others, :company_id,
+      :internship_attendance_type_id, :internship_category_id
     )
   end
 end

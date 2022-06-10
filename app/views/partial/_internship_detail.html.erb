@@ -30,7 +30,11 @@
     </tr>
     <tr class="table-tr">
       <th class="table-th"><%= t 'activerecord.attributes.internship.deadline' %></th>
+      <% if internship.deadline.present? %>
       <td class="table-td"><%= l internship.deadline, format: :ymd %></td>
+      <% else %>
+      <td class="table-td"></td>
+      <% end %>
     </tr>
     <tr class="table-tr">
       <th class="table-th"><%= t 'activerecord.attributes.internship.location' %></th>

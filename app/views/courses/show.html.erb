@@ -26,7 +26,11 @@
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.deadline' %></th>
+        <% if @course.deadline.present? %>
         <td class="table-td"><%= l @course.deadline, format: :ymd %></td>
+        <% else %>
+        <td class="table-td"></td>
+        <% end %>
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.place' %></th>

@@ -2,6 +2,8 @@ class Internship < ApplicationRecord
   validates :title, presence: true, length: { maximum: 100 }, uniqueness: { scope: :company_id }
   validates :start_date, presence: true
   validates :end_date, presence: true, comparison: { greater_than_or_equal_to: :start_date }
+  validates :internship_attendance_type_id, presence: true
+  validates :internship_category_id, presence: true
 
   belongs_to :company
   belongs_to :internship_category
