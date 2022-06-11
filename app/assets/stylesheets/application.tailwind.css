@@ -13,7 +13,7 @@
   }
 
   .list-group-item-card {
-    @apply border-none  bg-white flex flex-col md:flex-row shadow-md;
+    @apply border-none  bg-white flex flex-col md:flex-row shadow-md items-center;
   }
 
   .checkup-card {
