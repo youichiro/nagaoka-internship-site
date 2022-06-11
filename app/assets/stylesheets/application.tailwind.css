@@ -55,10 +55,10 @@
   }
 
   .table-th {
-    @apply w-1/4 border border-white px-5 py-3 bg-sky-100 text-slate-600 text-sm md:text-base;
+    @apply w-1/4 border border-white px-3 md:px-5 py-3 bg-sky-100 text-slate-600 text-sm md:text-base;
   }
 
   .table-td {
-    @apply border border-white px-5 py-3 bg-sky-50;
+    @apply border border-white px-3 md:px-5 py-3 bg-sky-50;
   }
 }
