@@ -3,7 +3,7 @@
     <span class="badge mb-3"
       style="background-color: <%= @course.course_category.bg_color %>;"><%= @course.course_category.name %></span>
     <h3 class="mb-3"><%= @course.title %></h3>
-    <div class="text-slate-600"><%= @course.description %></div>
+    <div class="text-slate-600"><%= simple_format(@course.description) %></div>
   </div>
 
   <div class="my-5 md:mx-12">
@@ -47,12 +47,12 @@
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.others' %></th>
-        <td class="table-td"><%= @course.others %></td>
+        <td class="table-td"><%= simple_format(@course.others) %></td>
       </tr>
       <% if current_student || current_employee || current_admin_user %>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.announcement' %></th>
-        <td class="table-td"><%= @course.announcement %></td>
+        <td class="table-td"><%= simple_format(@course.announcement) %></td>
       </tr>
       <% end %>
     </tbody>

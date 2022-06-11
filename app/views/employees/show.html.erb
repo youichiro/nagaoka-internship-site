@@ -25,7 +25,7 @@
     </tr>
     <tr>
       <th><%= t 'activerecord.attributes.company.business_description' %></th>
-      <td><%= @employee.company.business_description %></td>
+      <td><%= simple_format(@employee.company.business_description) %></td>
     </tr>
     <tr>
       <th><%= t 'activerecord.attributes.company.number_of_employee' %></th>

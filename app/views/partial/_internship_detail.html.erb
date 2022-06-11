@@ -4,7 +4,7 @@
 <h4 class="mb-3"><%= internship.company.name %></h4>
 <h4><%= internship.title %></h4>
 
-<div class="my-3 text-slate-600"><%= internship.description %></div>
+<div class="my-3 text-slate-600"><%= simple_format(internship.description) %></div>
 
 <div class="my-5 md:mx-12">
   <%= render "partial/slider", image_urls: internship.image_urls %>
@@ -50,7 +50,7 @@
     </tr>
     <tr class="table-tr">
       <th class="table-th"><%= t 'activerecord.attributes.internship.others' %></th>
-      <td class="table-td"><%= internship.others %></td>
+      <td class="table-td"><%= simple_format(internship.others) %></td>
     </tr>
     <tr class="table-tr">
       <th class="table-th">最終更新日</th>

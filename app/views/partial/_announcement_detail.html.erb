@@ -1,6 +1,6 @@
 <h3 class="my-5"><%= announcement.title %></h3>
 
-<div class="my-3 w-100">
+<div class="my-3 w-100 mx-5">
   <% if announcement.thumbnail.representable? %>
   <%= image_tag announcement.thumbnail.representation(resize_to_limit: [800, 800]), class: 'w-100' %>
   <% else %>
@@ -8,7 +8,7 @@
   <% end %>
 </div>
 
-<p>作成日: <%= l announcement.created_at, format: :ymd %></p>
-<p>
-  <td><%= announcement.contents %></td>
-</p>
+<div class="mt-5">
+  <%= simple_format(announcement.contents) %>
+</div>
+<p class="text-right text-slate-600 mt-3">作成日: <%= l announcement.created_at, format: :ymd %></p>
