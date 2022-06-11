@@ -4,6 +4,6 @@ class AnnouncementCategory < ApplicationRecord
   has_many :announcements, dependent: :restrict_with_exception
 
   def bg_color
-    color.present? ? color : 'teal'
+    color.present? ? color : '#42AAC7'
   end
 end
