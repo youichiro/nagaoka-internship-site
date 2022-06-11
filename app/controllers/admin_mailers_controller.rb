@@ -19,7 +19,9 @@ class AdminMailersController < ApplicationController
       return
     end
 
-    AdminMailer.with(emails: @emails, subject: params[:subject], body: params[:body]).send_mail.deliver_later
+    @emails.each do |email|
+      AdminMailer.with(email: email, subject: params[:subject], body: params[:body]).send_mail.deliver_later
+    end
     redirect_to request.referer, notice: 'メールを送信しました'
   end
 end

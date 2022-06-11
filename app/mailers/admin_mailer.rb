@@ -1,8 +1,8 @@
 class AdminMailer < ApplicationMailer
   def send_mail
-    @emails = params[:emails]
+    @email = params[:email]
     @subject = params[:subject]
     @body = params[:body]
-    mail(to: @emails, subject: @subject)
+    mail(to: @email, subject: @subject)
   end
 end
