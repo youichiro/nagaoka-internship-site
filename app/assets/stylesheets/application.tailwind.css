@@ -61,4 +61,16 @@
   .table-td {
     @apply border border-white px-3 md:px-5 py-3 bg-sky-50;
   }
+
+  .step-card {
+    @apply border-2 border-solid border-slate-300 rounded-lg;
+  }
+
+  .step-card-header {
+    @apply bg-slate-200 px-5 py-3 text-lg rounded-t;
+  }
+
+  .step-card-body {
+    @apply p-5;
+  }
 }
