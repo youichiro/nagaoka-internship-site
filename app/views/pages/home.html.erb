@@ -28,10 +28,8 @@
           </div>
         </div>
 
-        <% if @internships.empty? %>
-        <p>現在、公開中のインターンシップはありません。</p>
-        <% else %>
         <%= render 'partial/internships', internships: @internships %>
+        <% if !@internships.empty? %>
         <div class="text-right mt-4 mr-2">
           <a href=<%= internships_path %> class="top-more-link">
             <span class="">もっと見る</span>
