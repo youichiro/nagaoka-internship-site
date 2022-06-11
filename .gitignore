@@ -51,4 +51,4 @@
 !/tmp/db_dump/production/
 !/tmp/db_dump/production/.keep
 
-.vecode/
+.vscode
