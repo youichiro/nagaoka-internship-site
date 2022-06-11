@@ -83,7 +83,6 @@ classDiagram
     number_of_employee
     *contact_name
     *contact_email
-    gif_url
     is_public
   }
 
@@ -116,7 +115,6 @@ classDiagram
     deadline
     location
     target
-    gif_url
     acceptable_number
     others
     is_public

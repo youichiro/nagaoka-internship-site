@@ -13,9 +13,7 @@ class Company < ApplicationRecord
   has_one_attached :thumbnail
 
   def image_urls
-    array = []
-    array = array + [gif_url] if gif_url.present?
-    array = array + [thumbnail.representation(resize_to_limit: [800, 800])] if thumbnail.representable?
+    array = [thumbnail.representation(resize_to_limit: [800, 800])] if thumbnail.representable?
     array = ['no_image.png'] if array.empty?
     array
   end

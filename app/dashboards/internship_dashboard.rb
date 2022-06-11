@@ -14,7 +14,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     target: Field::String,
     acceptable_number: Field::Number,
     others: Field::Text,
-    gif_url: Field::String,
     is_public: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -45,7 +44,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     thumbnail
     acceptable_number
     others
-    gif_url
     is_public
     created_at
     updated_at
@@ -65,7 +63,6 @@ class InternshipDashboard < Administrate::BaseDashboard
     thumbnail
     acceptable_number
     others
-    gif_url
     is_public
   ].freeze
 

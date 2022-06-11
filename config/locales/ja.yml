@@ -44,7 +44,6 @@ ja:
         contact_name: お問い合わせ担当者
         contact_email: お問い合わせメールアドレス
         thumbnail: サムネイル
-        gif_url: GIFのURL
         is_public: 公開しているか
       employee_detail:
         name: ユーザー氏名
@@ -65,7 +64,6 @@ ja:
         thumbnail: サムネイル
         acceptable_number: 受け入れ可能人数
         others: その他
-        gif_url: GIFのURL
         is_public: 公開しているか
         internship_attendance_type_id: 参加方法
         internship_category_id: カテゴリー
