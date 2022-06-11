@@ -43,7 +43,7 @@
 
   <div class="bg-slate-100">
     <div class="my-container">
-      <section class="mb-[100px]">
+      <section class="mb-5">
         <p class="font-section font-bold text-2xl mb-4">講座一覧</p>
 
         <% if @courses.empty? %>
@@ -77,5 +77,9 @@
       </div>
       <% end %>
     </section>
+  </div>
+
+  <div class="my-container mt-5">
+    <%= link_to image_tag("banner1.jpg", class: "max-w-[500px]"), 'https://nagaoka-shukatsuondemand.jp/', :target=>["_blank"], class: 'flex justify-center' %>
   </div>
 </main>
