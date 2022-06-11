@@ -65,4 +65,7 @@ Rails.application.routes.draw do
 
     root to: "companies#index"
   end
+
+  get '/admin/mailers/form', to: 'admin_mailers#form'
+  post '/admin/mailers/post', to: 'admin_mailers#post'
 end

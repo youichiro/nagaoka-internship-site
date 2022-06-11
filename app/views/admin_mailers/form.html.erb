@@ -1,0 +1,20 @@
+<div class="my-container">
+  <%= form_with url: admin_mailers_post_path do |f| %>
+  <div class="mt-5">
+    <%= f.label "グループ", class: "form-label" %>
+    <%= f.select :group, ['student', 'employee', 'all'], {}, { class: "form-select w-100" } %>
+  </div>
+
+  <div class="mt-3">
+    <%= f.label "題目", class: "form-label" %>
+    <%= f.text_field :subject, class: "form-control" %>
+  </div>
+
+  <div class="mt-3">
+    <%= f.label "本文", class: "form-label" %>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+
+  <%= f.submit "メールを一斉送信する", data: { confirm: t('本当に送信しますか？') }, class: "btn btn-primary mt-5 text-white" %>
+  <% end %>
+</div>
