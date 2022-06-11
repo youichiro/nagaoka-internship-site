@@ -1,4 +1,6 @@
 <div class="my-container">
   <%= render 'partial/announcement_detail', announcement: @announcement %>
-  <%= link_to "戻る", :back, class: 'link-primary-with-underline' %>
+  <div class="mt-5">
+  <i class="bi bi-chevron-left"></i><%= link_to "戻る", :back, class: 'link-primary-with-underline' %>
+  </div>
 </div>
