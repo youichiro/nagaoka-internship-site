@@ -1,0 +1,10 @@
+```uml
+@startuml
+entity Entity01 {
+  * identifying_attribute
+  --
+  * mandatory_attribute
+  optional_attribute
+}
+@enduml
+```
