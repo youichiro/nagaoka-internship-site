@@ -1,7 +1,7 @@
 <div class="my-container">
   <div class="d-flex flex-column flex-md-row gap-5 my-5">
 
-    <div class="list-group" style="min-width: 240px;">
+    <div class="list-group min-w-[240px]">
       <%= link_to "ユーザ情報", student_path(current_student), class: "list-group-item list-group-item-action #{current_page?(student_path(current_student)) ? 'active' : ''}" %>
       <%= link_to "ユーザ情報を編集する", edit_student_registration_path, class: "list-group-item list-group-item-action #{current_page?(edit_student_registration_path) ? 'active' : ''}" %>
       <%= link_to "インターンシップ一覧", student_internships_path(current_student), class: "list-group-item list-group-item-action #{current_page?(student_internships_path(current_student)) ? 'active' : ''}" %>
