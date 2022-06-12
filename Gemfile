@@ -57,6 +57,7 @@ gem 'administrate-field-active_storage'
 gem 'sd_notify'
 gem 'ransack'
 gem 'cssbundling-rails'
+gem 'rinku'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
