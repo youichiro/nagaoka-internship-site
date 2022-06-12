@@ -16,7 +16,7 @@ polymorphism: false
 sort: true
 warn: true
 title: "nagaoka-internship-site"
-exclude: "ActiveStorage::Blob,ActiveStorage::VariantRecord,ActiveStorage::Attachment"
+exclude: "ActiveStorage::Blob,ActiveStorage::VariantRecord,ActiveStorage::Attachment,ActiveRecord::InternalMetadata,ActiveRecord::SchemaMigration"
 only: null
 only_recursion_depth: null
 prepend_primary: false
