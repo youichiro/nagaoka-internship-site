@@ -52,7 +52,7 @@
     </tr>
     <tr class="table-tr">
       <th class="table-th"><%= t 'activerecord.attributes.internship.others' %></th>
-      <td class="table-td"><%= simple_format(internship.others) %></td>
+      <td class="table-td"><%= Rinku.auto_link(simple_format(internship.others), :urls, 'target="_blank"').html_safe %></td>
     </tr>
     <tr class="table-tr">
       <th class="table-th">最終更新日</th>

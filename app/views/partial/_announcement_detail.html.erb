@@ -7,6 +7,6 @@
 </div>
 
 <div class="mt-5">
-  <%= simple_format(announcement.contents) %>
+  <%= Rinku.auto_link(simple_format(announcement.contents), :urls, 'target="_blank"').html_safe %>
 </div>
 <p class="text-right text-slate-600 mt-3">作成日: <%= l announcement.created_at, format: :ymd %></p>

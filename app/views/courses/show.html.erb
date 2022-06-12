@@ -45,12 +45,12 @@
       </tr>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.others' %></th>
-        <td class="table-td"><%= simple_format(@course.others) %></td>
+        <td class="table-td"><%= Rinku.auto_link(simple_format(@course.others), :urls, 'target="_blank"').html_safe %></td>
       </tr>
       <% if current_student || current_employee || current_admin_user %>
       <tr>
         <th class="table-th"><%= t 'activerecord.attributes.course.announcement' %></th>
-        <td class="table-td"><%= simple_format(@course.announcement) %></td>
+        <td class="table-td"><%= Rinku.auto_link(simple_format(@course.announcement), :urls, 'target="_blank"').html_safe %></td>
       </tr>
       <% end %>
     </tbody>
