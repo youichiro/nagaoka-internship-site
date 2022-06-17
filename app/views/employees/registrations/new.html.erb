@@ -32,7 +32,7 @@
 
   <%= f.email_field :email %>
   <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation, required: true %>
 
   <%= f.fields_for :employee_detail do |f_employee_detail| %>
   <%= f_employee_detail.text_field :name %>

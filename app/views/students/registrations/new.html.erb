@@ -19,7 +19,7 @@
   <%= bootstrap_form_with(model: @student, url: student_registration_path, local: true) do |f| %>
   <%= f.email_field :email, autofocus: true %>
   <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation, required: true %>
 
   <%= f.fields_for :student_detail do |f_student_detail| %>
   <%= f_student_detail.text_field :name %>
