@@ -9,6 +9,7 @@ as defined by the routes in the `admin/` namespace
 
 <nav class="navigation" role="navigation">
   <%= link_to(t("administrate.navigation.back_to_app"), root_url, class: "button button--alt button--nav") if defined?(root_url) %>
+  <a href="/admin/mailers/form" class="button button--alt button--nav">メール一括送信フォーム</a>
 
   <% Administrate::Namespace.new(namespace).resources_with_index_route.each do |resource| %>
     <%= link_to(
